@@ -68,11 +68,4 @@ struct StringBuilders {
     }
 }
 
-makeText {
-    "Start"
-    if Bool.random() {
-        "True"
-    } else {
-        "False"
-    }
-}
+
