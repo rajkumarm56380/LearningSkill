@@ -1,62 +1,52 @@
-import UIKit
-
-// Generic Functions
- // It can work with any type
-
-print("Generic Functions")
-func swapValue<T>(_ aVal: inout T, _ bVal: inout T) {
-    let temp = aVal
-    aVal = bVal
-    bVal = temp
-}
- 
-var valA = 20
-var valB = 50
-print("SwapValue =",swapValue(&valA, &valB))
-print(String(repeating: "-", count: 50))
-
-func printString<T:CustomStringConvertible>(_ aVal: [T]) {
-    aVal.forEach{ print($0)}
+protocol Appendable {
+  associatedtype Element
+  var collection: [Element] { get set }
+  mutating func append(_ element: Element)
 }
 
-print(printString(["Raj","Kumar","Mahalingam","iOS"]))
-print(String(repeating: "-", count: 50))
+class CustomGenericArray<T>: Appendable {
+  var collection = [T]()
 
-print("Generic Struct")
+  func append(_ element: T) {
+    collection.append(element)
+  }
+}
 
-struct Stack<Element> {
-    var elementList: [Element]
-    
-    mutating func addElement(_ element: Element) {
-        elementList.append(element)
-    }
-    mutating func getElement() -> Element? {
-        elementList.last
+class StringArray: Appendable {
+    typealias Item = String
+    var collection: [String] = []
+    func append(_ item: String) {
+        collection.append(item)
     }
 }
 
+class NumberArray: Appendable {
+  var collection = [Int]()
+  
+  func append(_ element: Int) {
+    collection.append(element)
+  }
+}
 
-var objInt = Stack(elementList:[12,14,15,16])
-var objString = Stack<String>(elementList:["Rajkumar","Mahalingam","iOS","Test"])
-      
-print(objInt.getElement())
-print(objString.getElement())
+var stringArray = StringArray()
+stringArray.append("Hello")
+stringArray.append("World")
+print("stringArray", stringArray.collection)
+
+var numberArray = NumberArray()
+numberArray.append(1)
+numberArray.append(2)
+print("numberArray", numberArray.collection)
 
 print(String(repeating: "-", count: 50))
 
-print("Generic Class")
+var genericArrayString = CustomGenericArray<String>()
+genericArrayString.append("Rajkumar")
+genericArrayString.append("Mahalingam")
+print("genericArrayString", genericArrayString.collection)
 
-class GenericClass<Element> {
-    
-    private var elementList: [Element] = []
-
-    func addElement(_ element: Element) {
-        elementList.append(element)
-    }
-    
-    func getList() -> [Element] {
-        elementList
-    }
-}
-
+var genericArrayInt = CustomGenericArray<Int>()
+genericArrayInt.append(90)
+genericArrayInt.append(10)
+print("genericArrayInt", genericArrayInt.collection)
 print(String(repeating: "-", count: 50))
