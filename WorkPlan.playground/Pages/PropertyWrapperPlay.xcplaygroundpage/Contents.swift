@@ -53,8 +53,8 @@ print(String(repeating: "-", count: 50))
 struct UserDefault<Value> {
     let key: String
     let defaultValue: Value
-    var container: UserDefaults = .standard
-    
+    @MainActor var container: UserDefaults = .standard
+
     var wrappedValue: Value {
         get {
             return container.object(forKey: key) as? Value ?? defaultValue
@@ -67,8 +67,8 @@ struct UserDefault<Value> {
 
 extension UserDefaults {
     
-    nonisolated(unsafe) static let groupUserDefaults = UserDefaults(suiteName: "group.com.swiftlee.app")!
-    
+    @MainActor static let groupUserDefaults = UserDefaults(suiteName: "group.com.swiftlee.app")!
+
     @UserDefault(key: "has_seen_app_introduction", defaultValue: false, container: .groupUserDefaults)
     static var hasSeenAppIntroduction: Bool
 
