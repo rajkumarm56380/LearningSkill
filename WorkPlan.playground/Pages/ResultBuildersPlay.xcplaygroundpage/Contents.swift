@@ -136,8 +136,6 @@ struct OptionalBuilder {
     }
 }
 
-
-
 let showFlag = true
 @OptionalBuilder
 func makeOptional(flag: Bool) -> String {

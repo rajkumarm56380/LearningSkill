@@ -34,6 +34,7 @@ struct Box<T> {
 
 let intBox = Box(value: 5)
 let stringBox = Box(value: "Hello")
+
 print("intBox ==> ", intBox)
 print("stringBox ==> ", stringBox)
 

@@ -23,7 +23,7 @@ struct Person {
     @MyWrapper var age: Int = -10
 }
 var person = Person()
-print("Nonnegative result ==> ",person.age)
+print("result ==> ",person.age)
 
 print(String(repeating: "-", count: 50))
 @propertyWrapper
