@@ -17,6 +17,16 @@ swapValues(&str1, &str2)
 print(str1, str2)  // ✅ Output: Swift Hello
 print(String(repeating: "-", count: 50))
 
+func add<T: Numeric>(_ a: T, _ b: T) -> T {
+    return a + b
+}
+
+print(add(10, 20))       // ✅ Output: 30
+print(add(5.5, 2.3))     // ✅ Output: 7.8
+// print(add("Hello", "Swift")) ❌ Error: String does not conform to Numeric
+print(String(repeating: "-", count: 50))
+
+
 // This function only works for types that can be compared using '=='
 func findIndex<T: Equatable>(of valueToFind: T, in array: [T]) -> Int? {
     for (index, value) in array.enumerated() {
@@ -26,18 +36,6 @@ func findIndex<T: Equatable>(of valueToFind: T, in array: [T]) -> Int? {
 }
 
 print("findIndex ==> ",findIndex(of: 50, in: [30,10,60,30,90,50,20]) ?? [0])
-print(String(repeating: "-", count: 50))
-
-struct Box<T> {
-    let value: T
-}
-
-let intBox = Box(value: 5)
-let stringBox = Box(value: "Hello")
-
-print("intBox ==> ", intBox)
-print("stringBox ==> ", stringBox)
-
 print(String(repeating: "-", count: 50))
 
 func compare<T: Equatable>(_ a: T, _ b: T) -> Bool {
@@ -103,6 +101,17 @@ let second = Set(numbers).sorted(by: >).dropFirst().first
 print(second ?? "None") // 45
 print(String(repeating: "-", count: 50))
 
+struct Box<T> {
+    let value: T
+}
+
+let intBox = Box(value: 5)
+let stringBox = Box(value: "Hello")
+
+print("intBox ==> ", intBox)
+print("stringBox ==> ", stringBox)
+
+print(String(repeating: "-", count: 50))
 
 struct Stack<T> {
     private var elements: [T] = []
@@ -128,19 +137,9 @@ print(intStack.pop()!)  // ✅ Output: 2
 var stringStack = Stack<String>()
 stringStack.push("Swift")
 stringStack.push("Generics")
+stringStack.peek()
 print(stringStack.pop()!)  // ✅ Output: Generics
 print(String(repeating: "-", count: 50))
-
-
-func add<T: Numeric>(_ a: T, _ b: T) -> T {
-    return a + b
-}
-
-print(add(10, 20))       // ✅ Output: 30
-print(add(5.5, 2.3))     // ✅ Output: 7.8
-// print(add("Hello", "Swift")) ❌ Error: String does not conform to Numeric
-print(String(repeating: "-", count: 50))
-
 
 protocol ContainerProtocol {
     associatedtype Item
@@ -155,6 +154,9 @@ struct IntContainer: ContainerProtocol {
         items.append(item)
     }
 
+    mutating func itemLast() -> Int? {
+        items.popLast()
+    }
     func getItems() -> [Int] {
         return items
     }
@@ -163,12 +165,13 @@ struct IntContainer: ContainerProtocol {
 var objNumbers = IntContainer()
 objNumbers.add(5)
 objNumbers.add(10)
+objNumbers.itemLast()
 print("IntContainer",objNumbers.getItems())  // ✅ Output: [5, 10]
 
 protocol Appendable {
   associatedtype Element
   var collection: [Element] { get set }
-  mutating func append(_ element: Element)
+  func append(_ element: Element)
 }
 
 class CustomGenericArray<T>: Appendable {
@@ -220,6 +223,7 @@ genericArrayInt.append(10)
 print("genericArrayInt", genericArrayInt.collection)
 print(String(repeating: "-", count: 50))
 
+print("Generic View")
 
 struct CustomList<Content: View>: View {
     let content: () -> Content
@@ -235,7 +239,28 @@ CustomList {
     Text("Hello")
 }
 
+struct StruckView<Content: View>: View {
+    let content: () -> Content
+    
+    var body: some View {
+        VStack {
+            content()
+        }
+    }
+}
 
+StruckView {
+    Button(action: {
+        print("Click action")
+    }) {
+        HStack {
+            Image(systemName:"star.fill")
+                .foregroundColor(.yellow)
+            Text("Click")
+                .font(.title)
+        }
+    }
+}
 struct Container<Content: View>: View {
     @ViewBuilder let content: Content
 
