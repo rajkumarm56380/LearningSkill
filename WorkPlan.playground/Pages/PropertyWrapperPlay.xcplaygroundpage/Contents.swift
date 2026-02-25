@@ -140,8 +140,12 @@ print(objCaseUS)
 struct UserDefaultSam<Value> {
     let key: String
     let defaultValue: Value
-    @MainActor var container: UserDefaults = .standard
-
+    let container: UserDefaults = .standard
+    
+    init(key: String, defaultValue: Value) {
+        self.key = key
+        self.defaultValue = defaultValue
+    }
     var wrappedValue: Value {
         get {
             return container.object(forKey: key) as? Value ?? defaultValue
@@ -152,11 +156,11 @@ struct UserDefaultSam<Value> {
     }
 }
 
-extension UserDefaultSam {
+struct TestUserDefaultSam {
     
    // @MainActor static let groupUserDefaults = UserDefaultSam(suiteName: "group.com.swiftlee.app")!
-/*
-    @UserDefaultSam(key: "has_seen_app_introduction", defaultValue: false, container: .groupUserDefaults)
+
+    @UserDefaultSam(key: "has_seen_app_introduction", defaultValue: false)
     static var hasSeenAppIntroduction: Bool
 
     @UserDefaultSam(key: "username", defaultValue: "Antoine van der Lee")
@@ -167,12 +171,12 @@ extension UserDefaultSam {
 
     @UserDefaultSam(key: "Values", defaultValue: 1000)
     static var values: Int
-*/
+
 }
 
 /*
-UserDefaultSam.hasSeenAppIntroduction = false
-print("hasSeenAppIntroduction ==> ",UserDefaults.hasSeenAppIntroduction) // Prints: false
+UserDefaultSam<Bool>.hasSeenAppIntroduction = false
+print("hasSeenAppIntroduction ==> ",UserDefaultSam.hasSeenAppIntroduction) // Prints: false
 
 UserDefaultSam.hasSeenAppIntroduction = true
 print("hasSeenAppIntroduction ==> ",UserDefaults.hasSeenAppIntroduction) // Prints: true
@@ -203,14 +207,19 @@ var objCase = TestCase()
 objCase.name = "testing"
 print(objCase.name)
 
-
-
 @propertyWrapper
 @MainActor
+
 struct CustomDefaults<Value> {
     let key: String
     let defaultValue: Value
-    @MainActor var container: UserDefaults = .standard
+    let container: UserDefaults
+    
+    init(key: String, defaultValue: Value, container: UserDefaults = .standard) {
+        self.key = key
+        self.defaultValue = defaultValue
+        self.container = container
+    }
     
     var wrappedValue: Value {
         get {
@@ -222,9 +231,11 @@ struct CustomDefaults<Value> {
     }
 }
 
-extension CustomDefaults {
+struct TestCustomDefaults {
     
-    @CustomDefaults(key: "Tesing", defaultValue: "Testing")
-    static var name: String
+    @CustomDefaults(key: "username", defaultValue: "")
+    static var username: String
     
+    @CustomDefaults(key: "login_key", defaultValue: false)
+    static var login
 }
