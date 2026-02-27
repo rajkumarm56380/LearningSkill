@@ -2,11 +2,124 @@ import Foundation
 
 print(String(repeating: "-", count: 50))
 print("RESULT BUILDER")
-print("BUILDBLOCK METHOD")
+print("------------- BUILDBLOCK METHOD ---------------")
 // Purpose
 // Combines multiple expressions inside the builder block.
 
+@resultBuilder
+
+struct SimpleStringBuilder {
+    static func buildBlock(_ components: String...) -> String {
+        components.joined(separator: "\n")
+    }
+}
+
+let joined = SimpleStringBuilder.buildBlock(
+    "Testing",
+    "iOS",
+    "result builder"
+)
+print("Simple Joined String ==>", joined)
+print(String(repeating: "-", count: 50))
+
+@SimpleStringBuilder func makeSentence3() -> String {
+    "Why settle for a Duke"
+    "when you can have"
+    "a Prince?"
+}
+
+print("makeSentence3 ==>", makeSentence3())
+print(String(repeating: "-", count: 50))
+print("------ConditionalStringBuilder----------")
+
+@resultBuilder
+struct conditionalStringBuilder {
+    static func buildBlock(_ components: String...) -> String {
+        components.joined(separator: "\n")
+    }
+
+    static func buildEither(first component: String) -> String {
+        return component
+    }
+
+    static func buildEither(second component: String) -> String {
+        component
+    }
+}
+
+@conditionalStringBuilder func makeConditionString() -> String {
+    "Why settle for a Duke"
+    "when you can have"
+    if Bool.random() {
+        "a Prince?"
+    } else {
+        "a king?"
+    }
+}
+
+print("makeConditionString ==>", makeConditionString())
+print(String(repeating: "-", count: 50))
+
+@resultBuilder
+struct StringIntBuilders {
+    // // Required buildBlock to combine components
+    static func buildBlock(_ components: String...) -> String {
+        components.joined(separator: "\n")
+    }
+
+    // Optional buildExpression to handle raw String literals
+    static func buildExpression(_ expression: String) -> String {
+        expression
+    }
+
+    // Optional buildExpression overload to handle Int literals and convert them to String
+    static func buildExpression(_ expression: Int) -> String {
+        String(describing: expression)
+    }
+}
+
+func buildString(@StringIntBuilders block: () -> String) -> String {
+    block()
+}
+
+let buildStringResult = buildString {
+    "Hello"        // Calls buildExpression("Hello")
+    123            // Calls buildExpression(123)
+    "World"        // Calls buildExpression("World")
+}
+
+print(buildStringResult)
+// Output: Hello 123 World
+
+print(String(repeating: "-", count: 50))
 print("String Array")
+@resultBuilder
+struct ComplexStringBuilder {
+    static func buildBlock(_ components: String...) -> String {
+        components.joined(separator: "\n")
+    }
+
+    static func buildEither(first component: String) -> String {
+        return component
+    }
+
+    static func buildEither(second component: String) -> String {
+        return component
+    }
+
+    static func buildArray(_ components: [String]) -> String {
+        components.joined(separator: "\n")
+    }
+}
+
+@ComplexStringBuilder func countDown() -> String {
+    for i in (0...10).reversed() {
+        "\(i)..."
+    }
+    "Lift off!"
+}
+
+print("ComplexStringBuilder ===>", countDown())
 
 @resultBuilder
 struct StringArray {
@@ -26,6 +139,7 @@ let resultStringArray = makeStringArray {
 }
 
 print("RESULT STRING ARRAY", resultStringArray)
+print(String(repeating: "-", count: 50))
 
 @resultBuilder
 struct IntArray {
@@ -54,6 +168,7 @@ struct UpperCase {
         components.uppercased()
     }
 }
+
 func makeUpperCase(@UpperCase content:() -> String) -> String {
     content()
 }
@@ -107,11 +222,11 @@ print("Valid String ==>", getString)
 
 @resultBuilder
 struct UpperBuilder {
-    static func buildExpression(_ expression: String) -> String {
-        expression.uppercased()
-    }
     static func buildBlock(_ components: String...) -> [String] {
         components
+    }
+    static func buildExpression(_ expression: String) -> String {
+        expression.uppercased()
     }
 }
 
