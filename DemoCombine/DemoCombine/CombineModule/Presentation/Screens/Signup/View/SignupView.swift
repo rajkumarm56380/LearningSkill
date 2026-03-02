@@ -17,7 +17,7 @@ struct SignupView: View {
             TextField("Name", text: $viewModel.name)
                 .textFieldStyle(.roundedBorder)
                 .accessibilityIdentifier("signup_name")
-
+            
             TextField("Email", text: $viewModel.email)
                 .textFieldStyle(.roundedBorder)
                 .accessibilityIdentifier("signup_email")
@@ -34,18 +34,14 @@ struct SignupView: View {
                 Text(error)
                     .foregroundColor(.red)
             }
-
-            NavigationLink(
-                destination: LoginView(
-                    viewModel: DIContainer.shared.makeLoginVM()
-                ),
-                isActive: $viewModel.isSignedUp
-            ) {
-                EmptyView()
-            }
         }
         .padding()
         .navigationTitle("Signup")
+        .navigationDestination(isPresented: $viewModel.isSignedUp) {
+            LoginView(
+                viewModel: DIContainer.shared.makeLoginVM()
+            )
+        }
     }
 }
 
