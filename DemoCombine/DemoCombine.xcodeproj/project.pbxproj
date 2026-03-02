@@ -29,9 +29,26 @@
 		CEDEE7AC2F4EEE30000ECB54 /* DemoCombineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoCombineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		18D89D1D2F55BDA7009E534F /* Exceptions for "DemoCombine" folder in "DemoCombineTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				CombineModule/App/DIContainer.swift,
+				CombineModule/Domain/UseCase/FetchUsersUseCase.swift,
+				CombineModule/Domain/UseCase/LoginUseCase.swift,
+				CombineModule/Domain/UseCase/SignupUseCase.swift,
+				CombineModule/Presentation/Screens/Login/LoginViewModelTests.swift,
+			);
+			target = CEDEE7A12F4EEE30000ECB54 /* DemoCombineTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CEDEE7942F4EEE2E000ECB54 /* DemoCombine */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				18D89D1D2F55BDA7009E534F /* Exceptions for "DemoCombine" folder in "DemoCombineTests" target */,
+			);
 			path = DemoCombine;
 			sourceTree = "<group>";
 		};

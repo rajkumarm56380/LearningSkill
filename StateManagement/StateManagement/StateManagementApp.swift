@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct StateManagementApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+    @StateObject private var theme = ThemeManager()
+        var body: some Scene {
+            WindowGroup {
+                CounterScreenView()
+                    .environmentObject(theme)
+            }
         }
-    }
 }

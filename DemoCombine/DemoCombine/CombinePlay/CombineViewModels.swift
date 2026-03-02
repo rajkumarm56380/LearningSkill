@@ -105,7 +105,7 @@ final class CombineViewModels: ObservableObject {
             .store(in: &cancellables)
     }
 
-    struct User: Decodable { let id: Int }
+    //struct User: Decodable { let id: Int }
     func demoAPI () {
         URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)

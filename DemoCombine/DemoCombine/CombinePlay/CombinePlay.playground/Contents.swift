@@ -4,6 +4,32 @@ import Combine
 
 private var cancellables = Set<AnyCancellable>()
 
+let numbers = [1, 2, 3, 4, 5]
+let publisherNum = numbers.publisher
+
+let subscriberNum = publisherNum.sink { value in
+    print("Received value: \(value)")
+}
+
+
+/// A Publisher that emits an array of integers
+let publisherArray = Just([1, 2, 3, 4, 5])
+
+// A Subscriber that receives and prints the array
+let subscriberArray = Subscribers.Sink<[Int], Never>(receiveCompletion: { completion in
+    switch completion {
+    case .finished:
+        print("Finished")
+    case .failure(let error):
+        print("Error: \(error)")
+    }
+}, receiveValue: { array in
+    print("Received array: \(array)")
+})
+
+// Subscribe the Subscriber to the Publisher
+publisherArray.subscribe(subscriberArray)
+
 let url = URL(string: "https://jsonplaceholder.typicode.com/users/1")!
 
 // Receives values from a publisher.

@@ -11,7 +11,7 @@ import SwiftUI
 struct DemoCombineApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SignupView(viewModel: DIContainer.shared.makeSignupVM())
         }
     }
 }
