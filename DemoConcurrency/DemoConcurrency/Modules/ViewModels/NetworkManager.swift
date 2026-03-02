@@ -1,11 +1,11 @@
 //
-//  CombineViewModels.swift
-//  DemoCombine
+//  NetworkManager.swift
+//  DemoConcurrency
 //
-//  Created by Apple on 25/02/26.
+//  Created by Apple on 02/03/26.
 //
 
-import SwiftUI
+import Foundation
 import Combine
 
 class NetworkManager: ObservableObject {
@@ -36,14 +36,5 @@ class NetworkManager: ObservableObject {
 
         isLoading = true
     }
-
-    func fetch() -> Future<String, Error> {
-        Future { promise in
-            DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
-                promise(.success("Done"))
-            }
-        }
-    }
-
-    
 }
+

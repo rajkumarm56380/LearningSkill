@@ -8,15 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+    @StateObject private var networkManager = NetworkManager()
+
+        var body: some View {
+            VStack {
+                if networkManager.isLoading {
+                    ProgressView()
+                } else if let user = networkManager.user {
+                    Text("User: \(user.name)")
+                } else {
+                    Text("No user data.")
+                }
+
+                Button("Fetch User") {
+                    networkManager.fetchUser()
+                }
+            }
+            .padding()
         }
-        .padding()
-    }
+
 }
 
 #Preview {
