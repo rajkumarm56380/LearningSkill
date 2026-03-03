@@ -3,7 +3,7 @@ import UIKit
 import Foundation
 
 class NetworkManager {
-    static let shared = NetworkManager()
+    @MainActor static let shared = NetworkManager()
 
     private init() {}
 

@@ -53,6 +53,7 @@ let objAreaOfTriangle = objmanager.area(shape: objtriangleShape)
 protocol PlayerInfo {
     func getPlayerInfo() -> String
 }
+
 class BatsmanOnly: PlayerInfo {
     private var name: String
 
@@ -103,13 +104,18 @@ extension Int {
         }
         return false
     }
+    
+    func addInt(_ number: Int) -> Int {
+        return self + number
+    }
 }
+
 
 let intValue = 99
 
 print(intValue.multipleInt(of: 10)) // 990
 print(intValue.isNegative()) // false
-
+print(intValue.addInt(2))
 
 protocol Info {
     func animalInfo() -> String

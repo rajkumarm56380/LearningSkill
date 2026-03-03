@@ -69,6 +69,21 @@ let result = findSecondLargest(in: [10, 20, 4, 45, 99, 99]) // Returns 45
 print("findSecondLargest ==> ",result ?? 0)
 print(String(repeating: "-", count: 50))
 
+func findSecondLargeValue(in numbers: [Int]) -> Int? {
+    var max = Int.min
+    var secondMax = Int.min
+    
+    for number in numbers {
+        if number > max {
+            secondMax = max
+            max = number
+        } else if (number > secondMax && number != max) {
+            secondMax = number
+        }
+    }
+    return secondMax == Int.min ? nil : secondMax
+    
+}
 extension Collection where Element: Comparable {
     func secondLargest() -> Element? {
         guard count >= 2 else { return nil }
@@ -312,6 +327,16 @@ final class ThreadSafeBox<T> {
     }
 }
 
+protocol UseCaseProtocol {
+    associatedtype Intput
+    associatedtype Output
+    
+    func execute(input: Intput) async throws-> Output
+}
 
-
+struct APIUseCase: UseCaseProtocol {
+    func execute(input: Void) async throws -> [String] {
+        []
+    }
+}
 

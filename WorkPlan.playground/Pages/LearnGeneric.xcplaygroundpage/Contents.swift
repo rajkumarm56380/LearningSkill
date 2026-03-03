@@ -6,26 +6,29 @@ import SwiftUI
 func addVal<T: Numeric>(_ aVal: T, _ bVal: T) -> T {
     return aVal + bVal
 }
-
 print(addVal(20, 50))
-
 func add<T: Numeric>(_ a: T, _ b: T) -> T {
     return a + b
 }
-
 print(add(10, 20))
+
+func addNumberic<T: Numeric>(_ aVal: T, _ bVal: T) -> T {
+    return aVal + bVal
+}
 
 func compareVal<T: Comparable>(_ aVal: T, _ bVal: T) -> Bool {
     return aVal > bVal
 }
-
 print(compareVal(90, 50))
 
 func min<T: Comparable>(_ x: T, _ y: T) -> T {
        return y < x ? y : x
 }
-
 print(min(60, 20))
+
+func maxVal<T: Comparable>(_ xVal: T, yVal: T) -> Bool {
+    return xVal > yVal
+}
 
 struct StackLists<Element> {
     private var items: [Element] = []
@@ -49,6 +52,28 @@ objStackInt.addItem(60)
 objStackInt.addItem(10)
 objStackInt.popLastItem()
 
+struct structGenerics<Value> {
+    private var items: [Value] = []
+    
+    mutating func addValue(_ value: Value) {
+        items.append(value)
+    }
+    mutating func getValue() -> [Value]? {
+        return items
+    }
+}
+
+var objIntSG = structGenerics<Int>()
+objIntSG.addValue(20)
+objIntSG.addValue(70)
+objIntSG.addValue(10)
+print("Generics struct Int ==> ", objIntSG.getValue() ?? [])
+
+var objStringSG = structGenerics<String>()
+objStringSG.addValue("Raj")
+objStringSG.addValue("Kumar")
+objStringSG.addValue("M")
+print("Generics struct String ==> ", objStringSG.getValue() ?? [])
 
 func findIndex<T: Equatable>(_ values:[T], findValue: T) -> Int? {
     for (index, value) in values.enumerated() {
@@ -105,14 +130,12 @@ for shape in shapes {
     shape.draw() // Dynamic dispatch is used here
 }
 
-
 extension Array where Element: Equatable {
     func containsAndPrint(_ item: Element) {
         if self.contains(item) {
             print("The array contains the item.")
         }
     }
-    
 }
 
 let equatableArray = [1, 2, 3]

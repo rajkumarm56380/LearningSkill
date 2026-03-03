@@ -1,7 +1,5 @@
 import UIKit
 
-
-
 // Abstraction: Animal
 protocol Animal {
     func makeSound()
@@ -92,8 +90,34 @@ class DataManager {
 // Usage
 let databaseService = DatabaseService()
 let dataManager = DataManager(dataService: databaseService)
-print(dataManager.getData())
+print("DataBase Service ==> ",dataManager.getData())
 
+
+protocol PlayerProtocol {
+    func getPlayerInfo() -> String
+}
+
+class Batsmans: PlayerProtocol {
+   
+    func getPlayerInfo() -> String {
+        return "Batsman name is Rajkumar"
+    }
+}
+
+class PlayerManage {
+    private let objPlayer: PlayerProtocol
+    
+    init(objPlayer: PlayerProtocol) {
+        self.objPlayer = objPlayer
+    }
+    func getInfo() -> String {
+        return objPlayer.getPlayerInfo()
+    }
+}
+
+let objBatsman = Batsmans()
+let objPlayerManage = PlayerManage(objPlayer: objBatsman)
+print("DIP Player Manager ==> ",objPlayerManage.getInfo())
 
 protocol NotificationService {
     func sendNotification(to recipient: String, message: String)

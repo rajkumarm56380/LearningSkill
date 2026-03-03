@@ -59,11 +59,11 @@ class SquareLiskov: ShapeLiskov {
 let objRectangle = RectangleLiskov()
 objRectangle.length = 5
 objRectangle.width = 5
-print(objRectangle.area)  // Output: 25.0
+print("ObjRectangle ==> ",objRectangle.area)  // Output: 25.0
 
 let objSquare = SquareLiskov()
 objSquare.width = 6
-print(objSquare.area)     // Output: 36.0   
+print("objSquare ==> ",objSquare.area)     // Output: 36.0
 
 protocol Bird {
     func move()

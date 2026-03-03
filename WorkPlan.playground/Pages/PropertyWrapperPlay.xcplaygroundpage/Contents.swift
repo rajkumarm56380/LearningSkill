@@ -104,7 +104,6 @@ struct UserDefaultNew<Value> {
             guard let value = userDefaults.object(forKey: key) else {
                 return defaultValue
             }
-
             return value as? Value ?? defaultValue
         }
         set {
@@ -174,6 +173,18 @@ struct TestUserDefaultSam {
 
 }
 
+let objSamBool: () = TestUserDefaultSam.hasSeenAppIntroduction = true
+print("Object Bool ==> ",objSamBool)
+
+let ojbSamUser: () = TestUserDefaultSam.username = "Testing"
+print("Object User ==> ",ojbSamUser)
+
+let ojbSamString: () = TestUserDefaultSam.yearOfBirth = "2026"
+print("Object STring ==> ",ojbSamString)
+
+let ojbSamInt: () = TestUserDefaultSam.values = 965
+print("Object Int ==> ",ojbSamInt)
+
 /*
 UserDefaultSam<Bool>.hasSeenAppIntroduction = false
 print("hasSeenAppIntroduction ==> ",UserDefaultSam.hasSeenAppIntroduction) // Prints: false
@@ -208,8 +219,24 @@ objCase.name = "testing"
 print(objCase.name)
 
 @propertyWrapper
-@MainActor
+struct StringWrapper {
+    private var value: String = ""
+    var wrappedValue: String {
+        get { value }
+        set { value = newValue.lowercased() }
+    }
+}
 
+struct TestingStringWrap {
+    @StringWrapper var name
+}
+
+var objLowCase = TestingStringWrap()
+objLowCase.name = "KUMAR"
+print("obj Low Case ==> \(objLowCase.name)")
+
+@propertyWrapper
+@MainActor
 struct CustomDefaults<Value> {
     let key: String
     let defaultValue: Value

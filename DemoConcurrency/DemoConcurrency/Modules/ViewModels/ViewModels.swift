@@ -2,7 +2,7 @@
 //  ViewModels.swift
 //  DemoConcurrency
 //
-//  Created by Apple on 02/03/26.
+//  Created by user on 02/03/26.
 //
 
 import Foundation
@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 
- class ViewModel: ObservableObject {
+class ViewModel: ObservableObject {
     @Published var counter = 0 // Publisher
     private var cancellables = Set<AnyCancellable>()
     init() {
@@ -24,9 +24,68 @@ import Combine
     func increment() {
         counter += 1
     }
-}
+    
+    func fetchUser() async throws -> String {
+        try await Task.sleep(nanoseconds: 1)
+        return "Testing"
+    }
+    
+    func loadData() async throws {
+        let data1 = try await fetchUser()
+        let data2 = try await fetchUser()
+        let data3 = try await fetchUser()
+        
+        print("Data1 ==> \(data1), Data2 ==> \(data2), Data3 ==> \(data3)")
+    }
+    
+    func fetchMessage() async -> String {
+        return "Fetching Message ..."
+    }
+    
+    func loadTask() {
+        Task {
+            let result = await fetchMessage()
+            print("result ==> \(result)")
+        }
+    }
+    
+    func fetchUsers() async throws -> [User] {
+        let url = URL(string: "https://api.example.com/users")!
+        let (data, _) = try await URLSession.shared.data(from: url)
+        return try JSONDecoder().decode([User].self, from: data)
+    }
+    
+    func loadUsers() {
+        Task {
+            do {
+                let users = try await fetchUsers()
+                print(users)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    func fetchAll() async throws -> [User] {
+        try await withThrowingTaskGroup(of: User.self) { group in
 
+            for id in 1...5 {
+                group.addTask {
+                    try await fetchUser(id: id)
+                }
+            }
 
+            var users: [User] = []
+
+            for try await user in group {
+                users.append(user)
+            }
+
+            return users
+        }
+    }}
+
+/*
 // map: Transforms the data emitted by a publisher.
 let publishers = Just(5)
 publishers
@@ -57,3 +116,4 @@ let publisher2 = PassthroughSubject<String, Never>()
 publisher1
     .combineLatest(publisher2)
     .sink { print($0, $1) }
+*/

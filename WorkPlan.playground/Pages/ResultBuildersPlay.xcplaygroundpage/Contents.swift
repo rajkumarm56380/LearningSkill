@@ -3,6 +3,7 @@ import Foundation
 print(String(repeating: "-", count: 50))
 print("RESULT BUILDER")
 print("------------- BUILDBLOCK METHOD ---------------")
+
 // Purpose
 // Combines multiple expressions inside the builder block.
 
@@ -39,7 +40,7 @@ struct conditionalStringBuilder {
     }
 
     static func buildEither(first component: String) -> String {
-        return component
+        component
     }
 
     static func buildEither(second component: String) -> String {
@@ -100,11 +101,11 @@ struct ComplexStringBuilder {
     }
 
     static func buildEither(first component: String) -> String {
-        return component
+        component
     }
 
     static func buildEither(second component: String) -> String {
-        return component
+        component
     }
 
     static func buildArray(_ components: [String]) -> String {
@@ -119,6 +120,7 @@ struct ComplexStringBuilder {
     "Lift off!"
 }
 
+print(String(repeating: "-", count: 50))
 print("ComplexStringBuilder ===>", countDown())
 
 @resultBuilder
@@ -172,6 +174,9 @@ struct UpperCase {
 func makeUpperCase(@UpperCase content:() -> String) -> String {
     content()
 }
+
+let caseUpper = UpperCase.buildBlock("rajkumar dharma")
+print("Case Upper", caseUpper)
 
 let caseString = makeUpperCase{
     "rajkumar mahalingam"
