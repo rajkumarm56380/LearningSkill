@@ -1,6 +1,9 @@
 import Combine
 import Foundation
 
+var x : Int = nil
+
+
 // Custom Publisher emitting integers from 1 to 5
 class CustomIntPublisher: Publisher {
     typealias Output = Int
