@@ -29,9 +29,32 @@
 		CE50F22F2F6432870020C643 /* VenuesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenuesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		18BABFD62F65374200146AE9 /* Exceptions for "VenuesApp" folder in "VenuesAppTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Data/Mock/MockVenueService.swift,
+				Domain/Entities/Venue.swift,
+				Domain/UseCases/GetNearbyVenuesUseCase.swift,
+			);
+			target = CE50F2242F6432870020C643 /* VenuesAppTests */;
+		};
+		18BAC0B72F65472E00146AE9 /* Exceptions for "VenuesApp" folder in "VenuesApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CE50F2142F6432850020C643 /* VenuesApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		CE50F2172F6432850020C643 /* VenuesApp */ = {
+		18BABF9D2F652F5B00146AE9 /* VenuesApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				18BAC0B72F65472E00146AE9 /* Exceptions for "VenuesApp" folder in "VenuesApp" target */,
+				18BABFD62F65374200146AE9 /* Exceptions for "VenuesApp" folder in "VenuesAppTests" target */,
+			);
 			path = VenuesApp;
 			sourceTree = "<group>";
 		};
@@ -75,7 +98,7 @@
 		CE50F20C2F6432850020C643 = {
 			isa = PBXGroup;
 			children = (
-				CE50F2172F6432850020C643 /* VenuesApp */,
+				18BABF9D2F652F5B00146AE9 /* VenuesApp */,
 				CE50F2282F6432870020C643 /* VenuesAppTests */,
 				CE50F2322F6432870020C643 /* VenuesAppUITests */,
 				CE50F2162F6432850020C643 /* Products */,
@@ -108,7 +131,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				CE50F2172F6432850020C643 /* VenuesApp */,
+				18BABF9D2F652F5B00146AE9 /* VenuesApp */,
 			);
 			name = VenuesApp;
 			packageProductDependencies = (
@@ -396,8 +419,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VenuesApp/Preview Content\"";
+				DEVELOPMENT_TEAM = Y5JRK2KW44;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = VenuesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -408,7 +433,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = User.VenuesApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampleapp.testpoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -424,8 +449,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VenuesApp/Preview Content\"";
+				DEVELOPMENT_TEAM = Y5JRK2KW44;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = VenuesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -436,7 +463,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = User.VenuesApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampleapp.testpoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -450,10 +477,12 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y5JRK2KW44;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = User.VenuesAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampleapp.test.poc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -468,10 +497,12 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y5JRK2KW44;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = User.VenuesAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampleapp.test.poc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;

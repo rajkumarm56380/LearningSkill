@@ -11,7 +11,7 @@ import SwiftUI
 struct VenuesAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DependencyContainer.makeVenueListView()
         }
     }
 }
