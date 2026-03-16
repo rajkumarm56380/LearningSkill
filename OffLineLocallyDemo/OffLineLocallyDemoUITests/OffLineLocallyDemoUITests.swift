@@ -2,7 +2,6 @@
 //  OffLineLocallyDemoUITests.swift
 //  OffLineLocallyDemoUITests
 //
-//  Created by user on 13/03/26.
 //
 
 import XCTest

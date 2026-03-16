@@ -2,7 +2,6 @@
 //  WeatherAppApp.swift
 //  WeatherApp
 //
-//  Created by user on 13/03/26.
 //
 
 import SwiftUI

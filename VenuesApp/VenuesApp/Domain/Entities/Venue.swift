@@ -2,7 +2,6 @@
 //  Venue.swift
 //  VenuesApp
 //
-//  Created by Apple on 14/03/26.
 //
 
 import Foundation

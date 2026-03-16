@@ -2,7 +2,6 @@
 //  WeatherAppUITests.swift
 //  WeatherAppUITests
 //
-//  Created by user on 13/03/26.
 //
 
 import XCTest

@@ -2,7 +2,6 @@
 //  VenueListViewModelTests.swift
 //  VenuesAppTests
 //
-//  Created by Apple on 14/03/26.
 //
 
 import XCTest
