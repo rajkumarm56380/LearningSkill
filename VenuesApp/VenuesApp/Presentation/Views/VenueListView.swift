@@ -4,30 +4,35 @@
 //
 //
 
+import Combine
 import SwiftUI
 
 struct VenueListView: View {
     @StateObject var viewModel: VenueListViewModel
 
     var body: some View {
-        NavigationView {
-            VStack {
+        NavigationStack {
+            ScrollView {
                 if viewModel.isLoading {
                     ProgressView()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-                /*List(viewModel.veneusList, id: \.id) { venue in
-                    VStack(alignment: .leading) {
-                        Text(venue.displayName)
-                            .font(.headline)
-                        Text("\(venue.distance) km away")
-                            .font(.caption)
+
+                LazyVStack(spacing: 16) {
+                    ForEach(viewModel.venuesList) { venue in
+                        VenueCardView(venue: venue)
                     }
-                }*/
+                }
+                .padding(.top)
             }
             .navigationTitle("Nearby Venues")
-            .onAppear {
-                viewModel.loadVenues()
-            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.indigo, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarColorScheme(.dark, for: .navigationBar)
+        }
+        .onAppear {
+            viewModel.loadVenues()
         }
     }
 }

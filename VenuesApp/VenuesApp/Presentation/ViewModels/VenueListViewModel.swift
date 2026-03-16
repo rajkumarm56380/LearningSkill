@@ -5,12 +5,14 @@
 //
 
 import Combine
+import Foundation
 
 final class VenueListViewModel: ObservableObject {
 
-    @Published var veneusList: [Venue] = []
+    @Published var venuesList: [LocalResult] = []
     @Published var isLoading = false
     @Published var errorMessage: String?
+
     private var cancellables = Set<AnyCancellable>()
     private let useCase: GetNearbyVenuesUseCaseProtocol
 
@@ -20,19 +22,28 @@ final class VenueListViewModel: ObservableObject {
 
     func loadVenues() {
         isLoading = true
+        
         useCase.execute()
-            .sink{ completion in
+            .receive(on: DispatchQueue.main)
+            .sink{  [weak self] completion in
+
+                guard let self = self else { return }
                 self.isLoading = false
+
                 if case .failure(let error) = completion {
                     self.errorMessage = error.localizedDescription
                 }
+
             } receiveValue: { [weak self] venues in
-                if venues.isEmpty {
-                    self?.veneusList = VenueMockData.loadVenues()
+
+                guard let self = self else { return }
+
+                if venues.localResults.isEmpty {
+                    self.venuesList = VenueMockData.getVenuesList()
                 } else {
-                    self?.veneusList = venues
+                    self.venuesList = venues.localResults
                 }
-                self?.isLoading = false
+
             }
             .store(in: &cancellables)
     }

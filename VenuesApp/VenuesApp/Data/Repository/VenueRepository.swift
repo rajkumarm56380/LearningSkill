@@ -7,7 +7,7 @@
 import Combine
 
 protocol VenueRepositoryProtocol {
-    func getNearByVenues() -> AnyPublisher<[Venue], Never>
+    func getNearByVenues() -> AnyPublisher<Venue, Error>
 }
 
 final class VenueRepository: VenueRepositoryProtocol {
@@ -22,28 +22,35 @@ final class VenueRepository: VenueRepositoryProtocol {
         self.networkMonitor = networkMonitor
     }
 
-    func getNearByVenues() -> AnyPublisher<[Venue], Never> {
+    func getNearByVenues() -> AnyPublisher<Venue, Error> {
         if networkMonitor.isConnected {
             return api.fetchVenues()
                 .handleEvents(receiveOutput: { [weak self] venues in
-                    print("api.fetchVenues ===> \(venues)")
+                    print("api.fetchVenues ===> \(venues.localResults.count)")
                     self?.cache.save(venues)
                 }, receiveCompletion: { _ in
-                         print("in completion handler")
+                    print("in completion handler")
                 }, receiveCancel: {
-                         print("received cancel")
+                    print("received cancel")
                 })
-                .catch{ _ in
-                    Just(MockVenueService.venues())
-                }.eraseToAnyPublisher()
+                .catch { [weak self] _ in
+                    guard let cached = self?.cache.load() else {
+                        return Empty<Venue, Never>(completeImmediately: true).eraseToAnyPublisher()
+                    }
+                    return Just(cached)
+                        .eraseToAnyPublisher()
+                }
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
         } else {
-            let cached = cache.load()
-            print("cached ===> \(cached)")
-            if cached.isEmpty {
-                return Just(self.cache.load())
+
+            guard let cached = cache.load() else {
+                return Empty<Venue, Never>(completeImmediately: true)
+                    .setFailureType(to: Error.self)
                     .eraseToAnyPublisher()
             }
             return Just(cached)
+                .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         }
     }

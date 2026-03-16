@@ -29,34 +29,9 @@
 		CE50F2652F6432D00020C643 /* LocationAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		18BE37B32F66E3960054B046 /* Exceptions for "LocationApp" folder in "LocationAppTests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				App/Data/LocalStorage/UserStorage.swift,
-				App/Data/Repository/AuthRepository.swift,
-				App/Data/Repository/AuthRepositoryProtocol.swift,
-				App/Data/Repository/MockAuthRepository.swift,
-				App/Domain/Models/User.swift,
-				App/Domain/UseCases/LoginUseCase.swift,
-				App/Domain/UseCases/SignupUseCase.swift,
-				App/Presentation/ViewModels/HomeViewModel.swift,
-				App/Presentation/ViewModels/LoginViewModel.swift,
-				App/Presentation/ViewModels/SignupViewModel.swift,
-				App/Presentation/Views/HomeView.swift,
-				App/Presentation/Views/LoginView.swift,
-				App/Presentation/Views/SignupView.swift,
-			);
-			target = CE50F25A2F6432D00020C643 /* LocationAppTests */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CE50F24D2F6432CD0020C643 /* LocationApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				18BE37B32F66E3960054B046 /* Exceptions for "LocationApp" folder in "LocationAppTests" target */,
-			);
 			path = LocationApp;
 			sourceTree = "<group>";
 		};
@@ -421,8 +396,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LocationApp/Preview Content\"";
+				DEVELOPMENT_TEAM = Y5JRK2KW44;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show it on the map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -433,7 +410,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = User.LocationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampleapp.test.poc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -449,8 +426,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LocationApp/Preview Content\"";
+				DEVELOPMENT_TEAM = Y5JRK2KW44;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show it on the map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,7 +440,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = User.LocationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampleapp.test.poc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

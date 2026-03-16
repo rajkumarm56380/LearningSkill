@@ -11,8 +11,10 @@ final class DependencyContainer {
         let api = VenueAPIService()
         let cache = VenueCacheService()
         let monitor = NetworkMonitor.shared
+
         let repository = VenueRepository(api: api, cache: cache, networkMonitor: monitor)
         let useCase = GetNearbyVenuesUseCase(repository: repository)
+
         let viewModel = VenueListViewModel(useCase: useCase)
         return VenueListView(viewModel: viewModel)
     }

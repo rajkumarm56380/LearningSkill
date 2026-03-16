@@ -2,7 +2,6 @@
 //  DBDemoUITests.swift
 //  DBDemoUITests
 //
-//  Created by user on 16/03/26.
 //
 
 import XCTest

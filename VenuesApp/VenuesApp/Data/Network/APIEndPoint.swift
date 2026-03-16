@@ -7,11 +7,13 @@
 import Foundation
 
 enum APIEndPoint: String {
-    case endpoint = "https://nominatim.openstreetmap.org/search?"
+    case endpoint = "https://serpapi.com/search.json?"
+    case apiKeyValue = "4559707b6dcced7bb53223464c9d50205c0af7bbe1b1b23110033b4223f3ca27"
+    case apiKey = "api_key"
 }
 
 enum APIParam: String {
-    case param = "&limit=19&format=json&addressdetails=1"
+    case param = "engine=google_local&q=Coffee&location=Bangalore+India&device=mobile"
 }
 
 enum APIError: Error {

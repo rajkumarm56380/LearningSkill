@@ -30,12 +30,26 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1882558C2F68380D00E8054A /* Exceptions for "VenuesAppTests" folder in "VenuesApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Mock/MockVenueUseCase.swift,
+			);
+			target = CE50F2142F6432850020C643 /* VenuesApp */;
+		};
+		1882558D2F68381B00E8054A /* Exceptions for "VenuesAppTests" folder in "VenuesAppTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Mock/MockVenueUseCase.swift,
+			);
+			target = CE50F2242F6432870020C643 /* VenuesAppTests */;
+		};
 		18BABFD62F65374200146AE9 /* Exceptions for "VenuesApp" folder in "VenuesAppTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Data/Mock/MockVenueService.swift,
+				Data/Network/APIEndPoint.swift,
 				Domain/Entities/Venue.swift,
-				Domain/UseCases/GetNearbyVenuesUseCase.swift,
 			);
 			target = CE50F2242F6432870020C643 /* VenuesAppTests */;
 		};
@@ -60,6 +74,10 @@
 		};
 		CE50F2282F6432870020C643 /* VenuesAppTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1882558C2F68380D00E8054A /* Exceptions for "VenuesAppTests" folder in "VenuesApp" target */,
+				1882558D2F68381B00E8054A /* Exceptions for "VenuesAppTests" folder in "VenuesAppTests" target */,
+			);
 			path = VenuesAppTests;
 			sourceTree = "<group>";
 		};
@@ -421,13 +439,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"VenuesApp/Preview Content\"";
 				DEVELOPMENT_TEAM = Y5JRK2KW44;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VenuesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,13 +469,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"VenuesApp/Preview Content\"";
 				DEVELOPMENT_TEAM = Y5JRK2KW44;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VenuesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

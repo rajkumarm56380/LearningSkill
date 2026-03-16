@@ -1,119 +1,362 @@
-[
-    {
-        "place_id": 232829219,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "relation",
-        "osm_id": 1819319,
-        "lat": "10.8217671",
-        "lon": "78.3828654",
-        "class": "boundary",
-        "type": "administrative",
-        "place_rank": 10,
-        "importance": 0.5129747481125866,
-        "addresstype": "state_district",
-        "name": "Karur",
-        "display_name": "Karur, Tamil Nadu, India",
-        "address": {
-            "state_district": "Karur",
-            "state": "Tamil Nadu",
-            "ISO3166-2-lvl4": "IN-TN",
-            "country": "India",
-            "country_code": "in"
-        },
-        "boundingbox": [
-            "10.5472215",
-            "11.0967984",
-            "77.7499223",
-            "78.5861492"
-        ]
+{
+    "search_metadata": {
+        "id": "69b7dbf3fd81c8c39075b965",
+        "status": "Success",
+        "json_endpoint": "https://serpapi.com/searches/JeFz8QnQ-3K6y0ufu27H6w/69b7dbf3fd81c8c39075b965.json",
+        "created_at": "2026-03-16 10:31:15 UTC",
+        "processed_at": "2026-03-16 10:31:15 UTC",
+        "google_local_url": "https://www.google.com/search?q=Coffee&uule=w+CAIQICIiQmFuZ2Fsb3JlIERpdmlzaW9uLEthcm5hdGFrYSxJbmRpYQ&hl=en&gl=us&udm=1",
+        "raw_html_file": "https://serpapi.com/searches/JeFz8QnQ-3K6y0ufu27H6w/69b7dbf3fd81c8c39075b965.html",
+        "total_time_taken": 1.79
     },
-    {
-        "place_id": 233300886,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "way",
-        "osm_id": 82623598,
-        "lat": "10.9596041",
-        "lon": "78.0807797",
-        "class": "place",
-        "type": "town",
-        "place_rank": 18,
-        "importance": 0.46850839685032175,
-        "addresstype": "city",
-        "name": "Karur",
-        "display_name": "Karur, Tamil Nadu, India",
-        "address": {
-            "city": "Karur",
-            "county": "Karur",
-            "state_district": "Karur",
-            "state": "Tamil Nadu",
-            "ISO3166-2-lvl4": "IN-TN",
-            "country": "India",
-            "country_code": "in"
-        },
-        "boundingbox": [
-            "10.9223462",
-            "11.0001121",
-            "78.0288420",
-            "78.1168914"
-        ]
+    "search_parameters": {
+        "engine": "google_local",
+        "q": "Coffee",
+        "location_requested": "Bangalore India",
+        "location_used": "Bangalore Division,Karnataka,India",
+        "google_domain": "google.com",
+        "hl": "en",
+        "gl": "us",
+        "device": "mobile"
     },
-    {
-        "place_id": 194411878,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "node",
-        "osm_id": 2280579419,
-        "lat": "38.7033614",
-        "lon": "39.8124109",
-        "class": "place",
-        "type": "village",
-        "place_rank": 19,
-        "importance": 0.3526461474269664,
-        "addresstype": "village",
-        "name": "Tepebağı",
-        "display_name": "Tepebağı, Kovancılar, Elâzığ, Doğu Anadolu Bölgesi, Türkiye",
-        "address": {
-            "village": "Tepebağı",
-            "town": "Kovancılar",
-            "province": "Elâzığ",
-            "ISO3166-2-lvl4": "TR-23",
-            "region": "Doğu Anadolu Bölgesi",
-            "country": "Türkiye",
-            "country_code": "tr"
-        },
-        "boundingbox": [
-            "38.6833614",
-            "38.7233614",
-            "39.7924109",
-            "39.8324109"
-        ]
+    "local_map": {
+        "image": "https://serpapi.com/searches/69b7dbf3fd81c8c39075b965/images/WiyErU8LRhSb6y8A07ZQLA.webp",
+        "gps_coordinates": {
+            "latitude": 13.017938075150177,
+            "longitude": 77.530517578125
+        }
     },
-    {
-        "place_id": 234392022,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "relation",
-        "osm_id": 10317428,
-        "lat": "10.9301522",
-        "lon": "78.0848545",
-        "class": "boundary",
-        "type": "administrative",
-        "place_rank": 12,
-        "importance": 0.19619210675062,
-        "addresstype": "county",
-        "name": "Karur",
-        "display_name": "Karur, Tamil Nadu, India",
-        "address": {
-            "county": "Karur",
-            "state_district": "Karur",
-            "state": "Tamil Nadu",
-            "ISO3166-2-lvl4": "IN-TN",
-            "country": "India",
-            "country_code": "in"
+    "local_results": [
+        {
+            "position": 1,
+            "title": "Chikmagaluru Cofee (hot and cold coffee)",
+            "type": "Coffee shop",
+            "rating": 4.4,
+            "reviews": 29,
+            "price": "₹1–200",
+            "description": "\"Super delicious authentic coffee.\"",
+            "lsig": "AB86z5UbkLkm1UxOoP8qgqk-Gh4v",
+            "images": [
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwercLwd70sGUTDZFxHUExj0IQfwsBkn7kqN9XVVoouF1oXW6_pvGgBUSlmIIRrk6bPot7reohHrZFR2atmq2HV8_A_4KLxoQX1NRFWl5whdmQdtuR3P8SxKWvsit5I_rGPAmp5yc=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqi_1W8Z_AxZMs2Mov5zvaF4eomZi2Okgxdbr2iP8BJYX85Wwcv7d0jBvyB76BEutYOQm5yL6gcFa_3NWZZNE6hlgYq69wR03o2BMjbmlWw4bsO_PDAoFaOobsxoSBD0RVODkBlZg=s192-w192-h144-n-k-no-l50",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqAIlpIoyZjL-4RcyeKhBOXZ0q2v3MxJZ_HhDqywKz_RfXoriarQdwrcmfm1kVCvJBmZK_rjG6ovHbxNF2KFDehuHOWXbEEYVLEkAW1_P_ePirgQcqcCfGlQtIDWIbCqrsiLZu8=s144-w144-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweo38nO3EEJrjOH4XUu0jJyzEOncQmmgSnruF5JMoYgOIEN26-YKK9W_TRCDujJEFVTwKL8LReZ-yK-hwYYpEg3-9azFNXJV0nRTotJkYZZWfQ10TySm7Cs7JsHCytcNnfWFP_Lw=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqKALbb4BZWIK77Egenck38jKF2DKM2ieuxx6vJ83DGKaHw7RSzQoRiziI98X5L9vGzYTNTc-uAwZfvKrwdynak27bwvrRA6KnOHjjaPkzwHSCLfFte4PVz9Y9lTkSOyAeLr54e=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweo_N-ArQwuM4iua8Hzyi_Zb0qbNN0u_wmPBEWhGuTbTFugNHzF0bpIR4RrIHX-ZhYDwJ9aCPhLUMRiO_Iys7MIBYzWvBtxCrdVOZRonn1cbIxEP8S6kGI8asZvuTomUfFzryxIK=s192-w192-h144-n-k-no",
+                "https://www.google.com/maps/vt/data=6FW6KjD49IPjytb0aTM6aik90Exdcq_iLYYQvnGlbXq3xeIIUTqa4Y-uFGdP9Koej40ec_-zF6OH5oZWuwmpcQ227tdOLNZNemqkwhOcOxWMmPcaeV9fP3tt3wtq-T6KT8FIhjnYXs2od0ncnvF6F4d-IAiK-UYAHzjDaHTOhpJcs2LxysCek5ZEFPCy5su2wJGLAofp7lgv93loEYvRNZ9-_UfvmYVU5O1WDYV6oA"
+            ],
+            "links": {
+                "directions": "https://maps.google.com/maps/dir//207,+54th+Cross+Rd,+4th+Block,+Rajajinagar,+Bengaluru,+Karnataka+560010,+India/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bae3dabec542f5f:0x533486688c5dbba0?entry=s&sa=X&ved=2ahUKEwjk4cO_m6STAxX9IbkGHS_FJqkQlDt6BAgKEAA&hl=en"
+            },
+            "place_id": "5995564787526646688",
+            "place_id_search": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&ludocid=5995564787526646688&q=Coffee",
+            "provider_id": "/g/11q3l6cdl5",
+            "gps_coordinates": {
+                "latitude": 12.9863656,
+                "longitude": 77.55640919999999
+            },
+            "address": "Bengaluru, Karnataka, India",
+            "hours": "Open · Closes 9 PM"
         },
-        "boundingbox": [
-            "10.7632015",
-            "11.0967984",
-            "77.9207361",
-            "78.2212400"
-        ]
+        {
+            "position": 2,
+            "title": "Karnataka Coffee Board Coffee Shop",
+            "type": "Coffee shop",
+            "rating": 4,
+            "reviews": 148,
+            "price": "₹1–200",
+            "description": "\"U can experience best taste of coffee\"",
+            "lsig": "AB86z5XqQwjTG91EPvs2Rjiguduf",
+            "images": [
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepTwlcif38MRV6hijuzNA1Clds1vvGYIVVTHexeToRd9gpQskXcuKRkgHOSHIAPnnMIeejw4MlPLywNFWEMKdxs7IWEKxZ9g6DkTwE12e6MjGBDe3dOb_xM3Lpiupk_QkdqCUg=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweppbGAgr0atce-dB2lPgdtYG2ZRtCVvg2wHovjpSFMfeE8O0jKMaMPxqkLw0KX8Qilql7GO-Mc-HvcJgkfGCMD0h3yMo5L13O10YKK9ybm0CaoVtQmEsaycL5OMPQvzMIxqPA0x=s192-w192-h144-n-k-no-l50",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqGqqx71hwxiE_ZmujcmOWbms5Vm5EBjXkMrCrU36a50vfPyIMFzxXOgm8AxfDSsCyLN_mF2U0pEScXDtoH6gm0bDW9IKF4SMngfvJXF3vbihwgBpkc7PINy9KLN2ARysSXq7MdPg=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepC-gKe4L4xPm5ScpD0j1Xj3FvGiraX4EYiDfvtRM-8juuzGsHnqDSNhmuSFZw6XVYDUgMDpMfg1h-32cmf8aBACXXcDxdXg0BcD8oYzsdsQXLvgGs8b2yhbzDv9-hegSlitQ9B=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerv46YF4BUSRyrGEqRbYwsIJZ2RoWqTpU2u9HzztZbXCmou4fX_V4FOYA05M-JckJsL2lk2vetCsNKqEZRy807xzPW63bSFpMLkQCkQLbEFTOz8z7vPzZxhkc0fGCbMmR381VfiuA=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwep5JD3sQ7uqpfBdODhuS2wf35LgXna_iUksdDSLdMn7vl_CyQKb4h1Ih6EFE2_C78yuWWeseILEpXogPpmJKYtT5lVdQxQtIcUnrRx6-oMIlYXrqixMZHRKMbHPOiQuGDKwupT8OA=s192-w192-h144-n-k-no-l50",
+                "https://www.google.com/maps/vt/data=52hEUBClOUze7HuKdUkA8dtBSfDQgYZI-0BzDXboqy3TyXrOagyLmElB4y58YMtb9NbSQ3lGSrDJkjK-9dQWHQwrBLfzggNAKnQ4dfb_eop2vmWWPKqoz3kQsdxs1j6jFGQxxKY2gcxaPMdShxCZP7gi2Z4gKgJSyiJG1lO10xufSrQTAQbIlC50IAuKOfdPZ2uTv_YgdF-taAi1z-oWXo9xTdzyWjQfptc7f_OmGQ"
+            ],
+            "links": {
+                "directions": "https://maps.google.com/maps/dir//18,+Avenue+Rd,+Cubbonpete,+Nagarathpete,+Bengaluru,+Karnataka+560009,+India/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bae160c712b5f6f:0x39857e8896586a81?entry=s&sa=X&ved=2ahUKEwjk4cO_m6STAxX9IbkGHS_FJqkQlDt6BAgLEAA&hl=en"
+            },
+            "place_id": "4144858157167438465",
+            "place_id_search": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&ludocid=4144858157167438465&q=Coffee",
+            "provider_id": "/g/11fy7b72c0",
+            "gps_coordinates": {
+                "latitude": 12.9724583,
+                "longitude": 77.5810662
+            },
+            "address": "Bengaluru, Karnataka, India",
+            "hours": "Open · Closes 9 PM"
+        },
+        {
+            "position": 3,
+            "title": "Coorg coffee shop",
+            "type": "Coffee shop",
+            "rating": 4.5,
+            "reviews": 22,
+            "price": "₹1–200",
+            "description": "\"Good coffee served here with onion samosa and banana cake\"",
+            "lsig": "AB86z5UkhUVv0yDU6xdRE1V-ZV3u",
+            "images": [
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweo-Ks_0Z_P_HUaoEaV9-aied8UyhxKwjeM6jhpyu0sBZvWRpgf9RpICg7j51JVLUSqUDt6oXtDuHTIAkq_KXb10MH9Xo_V_PBhQLc0hBNoQ2VboioqjyrG_vyOnQ8E5NnBoxW0=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerrYe3uyqlPCt0aNcI5jDDBiMsmNju2NOc0Hbj3-RXeH43UKLhjSgtSxeriD0MG-OJdGzNH_yKr0dRcTWRITF4s4qXUtLsr8B8hz2DU1izLe8Ugie1C3cTFXbAvZpifHUUItNM=s192-w192-h144-n-k-no-l50",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweq7CtGs6FkYbPXxLE_Q_KVofM63f83kG9bOImzSkNv6l0cos5CDr5_su6kFgIuOT4rWZXr-PaFIUacO912RSB9aVyHxitlfnk8d2Xeni4BUoEhTSvVXyyFy-okfKV8WCvK1KX9LPH-X3jQ=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqM_uc3R_g9KnxyTodxUbAhQ77RPvSfkL3Z6R6VkcI3ejWziG4kW8a3yXC51sth_4eLy7fW4t6hHHh28ZMDFtpnzmgNu4FH8LIxsJuzyyCRAGXoc6xiAGnj-lDj7VqwgjREHSGR=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweo79IZBRCh9W0t7i4qAFpuzKeInlQsxXTt-p7vSRSrCLnpi0fOT4drNll31Xzi4_VjWFZLJT3IL3wYxjxxuDZuMQQzabeNrtWJfll7ALJHdqoSMZqLYS3mtv7CyODpRtDIlSbsSvt6TGKLF=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerfUuAP9rLhXiK7cmyGemtpARuXOl8h4i_a9c9B_fx3YQAx5ZHJUytmIusmmL-t_3E1Z_UnRh5_oWpqRwE1gNQAvLQiwCty2POiGxOBNzxNGHPQvVdCpR1IttY8imj6j20SMZETEbo92ZaE=s144-w108-h144-n-k-no",
+                "https://www.google.com/maps/vt/data=iT36eQRigLHVhKbdJ5k0yYagtPu-UaEmws65Sud0h9URkfNFMrctXViGxBuSslgnXprvHUE3DDPHB9hCJyg1MJwOhrReInkMx6UCjmNpO-2EndhNyliN58MUyhr5SXk-4KPV98wNYq4hcvrF0ZbE87UMg7EgrMABnwzTd0NS6UaB_WdVYY57B9AH0EoWmViOS8lpWRmdnnYEdHLoi4MogZfRKc6X5WCDM3okFuSCDg"
+            ],
+            "links": {
+                "directions": "https://maps.google.com/maps/dir//237,+4th+Cross+Rd,+2+Block,+Annapoorneshwari+Nagar,+Sunkadakatte,+Bengaluru,+Karnataka+560091,+India/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bae3db755f33bfb:0x10871e08be8b6be8?entry=s&sa=X&ved=2ahUKEwjk4cO_m6STAxX9IbkGHS_FJqkQlDt6BAgcEAA&hl=en"
+            },
+            "place_id": "1190953649368165352",
+            "place_id_search": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&ludocid=1190953649368165352&q=Coffee",
+            "provider_id": "/g/11trw4sw34",
+            "gps_coordinates": {
+                "latitude": 12.980632,
+                "longitude": 77.50706029999999
+            },
+            "address": "Bengaluru, Karnataka, India",
+            "hours": "Open · Closes 9 PM"
+        },
+        {
+            "position": 4,
+            "title": "Vidya Coffee",
+            "type": "Cafe",
+            "rating": 4,
+            "reviews": 6,
+            "description": "\"Super awesome filter coffee, taste is just out of this world.\"",
+            "lsig": "AB86z5W45XftF7ogp4Lkk7DuGpgU",
+            "images": [
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqkyyT_T2nPHX3Ydrt4KVfeIesooQSasprz_W9ZLcuiHdJfWLABE-l20LsCj2jeWGHhNvTi0_eFwT48misN5pp7YpD9Lp3-QmbtRXea07jKW8nxuCTwsZRCEvTkI8RhNF7W3ASNwr8mx3Uu=s192-w192-h144-n-k-no",
+                "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=DO-MOw_wLcuotEhCv8Vl_g&cb_client=search.gws-prod.gps&yaw=327.97522&pitch=0&thumbfov=100&w=144&h=144",
+                "https://www.google.com/maps/vt/data=eIE_EYNaiWW7FPdHDRQ1BLhzkawou9xVrF56KjjDIWBcrbj4yqw4Vb7k8CXCp8YvcuTHvknzBMucALjuE71XnkfgAYTCyhZ6RR4rCLxVIzBeatO8XKUx0SjYwQw9byS4wis8fXSyd_lRzrMFkzKAGNYhyiiGljbf7y_Dlrkt_a40ZeEZdOWOFjgDnVJBy3fo2gMiFlXi2TiUCXJN7HGM3pTmKW48V2FZB_uAYwuYWQ"
+            ],
+            "links": {
+                "phone": "tel:08041722212",
+                "website": "https://www.vidyacoffee.com/",
+                "directions": "https://maps.google.com/maps/dir//2GVC%2BWGQ,+Vijaya+Bank+Extention,+Prashanth+Nagar,+T.+Dasarahalli,+Bengaluru,+Karnataka+560015,+India/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bae3d28d1f2fadf:0xfd1388be378cf272?entry=s&sa=X&ved=2ahUKEwjk4cO_m6STAxX9IbkGHS_FJqkQlDt6BAggEAA&hl=en"
+            },
+            "place_id": "18236069666710418034",
+            "place_id_search": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&ludocid=18236069666710418034&q=Coffee",
+            "provider_id": "/g/11qb69l2qm",
+            "gps_coordinates": {
+                "latitude": 13.0448413,
+                "longitude": 77.52135779999999
+            },
+            "address": "Bengaluru, Karnataka, India",
+            "hours": "Open · Closes 6:30 PM",
+            "phone": "08041722212"
+        },
+        {
+            "position": 5,
+            "title": "Coffee'S",
+            "type": "Coffee shop",
+            "rating": 3.9,
+            "reviews": 8,
+            "description": "\"You get Chats , coffee and tea..\nAnd trust me everything's good here...\"",
+            "lsig": "AB86z5V2MqPRNXAdaZ6YfrjDUumv",
+            "images": [
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqjx3iKo75pGfJm0tbA5hJoB3SRhTZiuxWGFP8yaPfbsbffcFRCEJaQtPNl860KFFC8v66g-lR1dNSqi9sO3FJuTp0QaH4CojsY7W3HEI4OrRWHlAKg06QCsDT2WobT_4WlYc4J=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweoTy4jR3wcHFIHae3_CibqmKpoJxwiR9o7Rv3QJJ9MstsAzw2jhvTCA8DQZsg9-BQBgWi3XHpIcKUVxznVg2hx7jdVhYoa4L16GcXK66Booxjk81nQOBGW6KSUDpZTixMSDsgLG=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweodHCdj9YJPicm9sNiT9krgJBg9uL8irpdN1F1HqRdoOXj69XzytNvDfWfGgZ4sHw9e8T3rhvvbf8Qbya2hrKUk5Vml4SCh3WdgbRrA14pJXPrlB6rD68PReUxOaDjqvHYcMvER=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweq01kivnN7kdVTxo0QehN-aUNSTiFdEObFR2VrmtqZnyjmNu-LlxjxodXR-WXJzBbMfy26wPELBKDmdaqrZyri468zrd8sCkgVSsT-tRosb67do7CNqxuNK9L8DpQtKuYx8EeG0jg=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepTk-aW66h0n5698xqxtTnh4Mc46wTOd0n272dxO3L9SWtS3ylJiqFGwGdT2ew0GlUMqw3MQA0tlW6NCXLg9f01tuUi2OjZAzW6HgYPAiUGq-W8QHvKG57T6-HQ86hFwy6SP_0OzQ=s192-w192-h144-n-k-no",
+                "https://www.google.com/maps/vt/data=aDYTQrVtWIDAEErBx_qgosukj2zFkzPkAUpyBr6wD4oNQYmvEmD3s1hFy83v1ZFEtKLIeTD1sN1HyVH86kQE6ywVR2XI_CBK66t1s17UuHWtJP9EBOmWTwV9mXJY-FQf_N7KAON8x8CVn7uMLrzeRdUo5s5bfVo6yqA6zxnXtbPhBe5q265LjVkkIDdgIRbQGtZEGVigqrW9UWJCNpSwLAVM-1gZYT7pslyiu4mVNg"
+            ],
+            "links": {
+                "directions": "https://maps.google.com/maps/dir//Sri+Ratna+Complex,+1%2F1A,+Magadi+Main+Rd,+Herohalli,+Yeswanthpur,+Bengaluru,+Karnataka+560091,+India/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bae3d94a4e06ce5:0x601895e7322f250c?entry=s&sa=X&ved=2ahUKEwjk4cO_m6STAxX9IbkGHS_FJqkQlDt6BAgeEAA&hl=en"
+            },
+            "place_id": "6924449247294072076",
+            "place_id_search": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&ludocid=6924449247294072076&q=Coffee",
+            "provider_id": "/g/11k9f3g2xs",
+            "gps_coordinates": {
+                "latitude": 12.985484,
+                "longitude": 77.479353
+            },
+            "address": "Bengaluru, Karnataka, India",
+            "hours": "Open · Closes 9 PM"
+        },
+        {
+            "position": 6,
+            "title": "Café Coffee Day - Kibbanahalli Cross",
+            "type": "Cafe",
+            "rating": 3.7,
+            "reviews": 514,
+            "price": "₹200–400",
+            "description": "\"Cold coffee very good, ample parking\"",
+            "lsig": "AB86z5XihqmyAfUBGBy1cwTk5pqx",
+            "images": [
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqfA-_-_z6_PG_LfadSG61lF7GcakdIgZXpjtTXw5s0w55GNiLE-fRurBGX1PVPpgl23t5jCMm1Actb98qzNnsNQz4ZLIO5QbjtsYt5gRWxsCg2wKD4D-zP11LyuO9dM_HK4-MO=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerwjGTYwRA5K_bI1zKi_XF6uKO1TZVBHEHQ7Hpn0c0Z8h4egqsSo2iu9-HKfhwnpTZU32dH-EpgXYTvlTtDFh7cfaVYvzcqaCBXuwjl4it5of4SuDICzYg-hVkdB8kVft_nflh4J9TFxI_l=s144-w108-h144-n-k-no-l50",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweol_S8gNPuxDVCicKiBo2EpWz_mMTz8gevKrz6jAtvLZn5cqGewWQy27DDpa6ee-IXxiv37bEcBNfJM3-fI9vdqizGoUwm3egTYIWfOX4d2pjCGgdoJqMC_nI5TaBX2KfrAhT6-=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepvysn_3nbgwUvi9RH8ElFNS-pwO_AhYm_Sn8IHSr_-RmSa3TrTICYp8DkGQOOZ3bE-L-LHoLw30OAqxEln9Dkcp7g38ZDndCC7HXRhjR6sVcKT3lqvLHPJ0Tf3y1EEGP3d11-12hO_vBx3=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweoq-Bss7Qw5o0sfRBQWDW1SxQOOoYxb0L1G1P_UFLwr-lIgqJ0gFrz0bTcrf97s1QMpdN1Qfm8cJ_OYMkuUlSo_KrbY75TpAziZ6srjQS0CCKDLm6AeErra9FOTWRvb09MrPbWQ=s192-w192-h144-n-k-no",
+                "https://www.google.com/maps/vt/data=XG64YV6QT85U4sZ9tjItEH1SsSX-5Jsc3FqWky4f7roKLlOGAF9GRfFdKr8CCB1p6Aroyjz-YYcozKUuG1kAxwsLvhWmwTmI6EaWe6Fa8OhBTRBIixqVGMTQPPlAfJesCKN87j4rhyMdOja1tx7ypAxILZNfpGKYfMauwWQSlB4X_2k0Ze9jLWgKXSXJHJsNdFulfQg-cJCTupJli3NsoTUWnZ3xR_hsFSfaSgGdtQ"
+            ],
+            "links": {
+                "phone": "tel:18001025093",
+                "website": "https://www.cafecoffeeday.com/",
+                "directions": "https://maps.google.com/maps/dir//Highway,+K+B+Cross,+Karnataka+572114,+India/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bb01b3a7ab79763:0xcb14c0e53565fa13?entry=s&sa=X&ved=2ahUKEwjk4cO_m6STAxX9IbkGHS_FJqkQlDt6BAghEAA&hl=en"
+            },
+            "place_id": "14633533179909503507",
+            "place_id_search": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&ludocid=14633533179909503507&q=Coffee",
+            "provider_id": "/g/1q66yhx45",
+            "gps_coordinates": {
+                "latitude": 13.3188196,
+                "longitude": 76.6925009
+            },
+            "address": "K B Cross, Karnataka, India",
+            "hours": "Open · Closes 11:30 PM",
+            "phone": "18001025093"
+        },
+        {
+            "position": 7,
+            "title": "Coffee day beverages",
+            "type": "Coffee shop",
+            "rating": 4.5,
+            "reviews": 44,
+            "price": "₹1–200",
+            "description": "\"Good coffee at economical prices.\"",
+            "lsig": "AB86z5X0kq5SfKxTs40hFSVQwSW9",
+            "images": [
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweoZoQXjvCeF3Jea0N2yu39vA3PJ00zbe-nhvfvn8uYLI8m1rorfmvfzvavXW3zc9J-GYz5maHjM-alBHpMFyHp6KnpHp8navVUWaVmzP9HFow_RDat_tl96MjM0FbW3ZVxq6QvTOokMI934=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwer5A2dShBKdHoBUVT1QGo5W8-lW_amua4q0fhblgOVyX9TGwPMcd0vz648N3xFT_7g0wGGxHTc481EVS7mRMLf7i81nF66uvGSVsPk60MGbcfMB_qjkqe2F8juvv1yFZaDLOe5L=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwep7WLVwIqOGLl8E0SdTEGl6de3CaEgIycoc9b_Z1iWFPzuj7ECCks3Gp9s9z4yBhN1Enq8LHO55C1fewveoU-cgbmzvhG1mCFpSfzCiA5LlUJTlVgJC6L2Hu6P8cM541w6cFEe_=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweommcl-dGSQM3N7XPU3L9rae64oaubpGkw3zc0OcRFf2WLDf9CQ20mcNhRgfgQS32SsotTz16qbtuAn4gQwj4if2FY7MMgVq55MSJM_5QYIHaPb4IQJlB-3ho6zkEIpSUSV66LWzg=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqtPLCJnHPN0Qmotqe9ilyXyZ7IfkKQlCc-J8VSjsbV9NxPewb0uZVh-K7m_o0hur6sQ8USnrbkTMUWjlpT4dusNFc9qU0C28IAb6G4GnPnhi3Ueue7c08aWXJw0-G60W3Iv0Ic9w=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepCSU3B4n83eyB-LUE-KJas3ptt-k58SERPEpKxQN7JoGEQPIqbuhqXlqLcXMOsUfY4lxvfyI5E0Gs54RoYMQK2G5VPEPForORcf-0HNNXYefj20liex9FWLYKv5WrImZqDPVXe=s192-w192-h144-n-k-no",
+                "https://www.google.com/maps/vt/data=hYxIZ-Cnp7feNhWeZZDxE4NxprQ3WlTnd6xRSLKW2FFj5EpR5pm5JXZODCNDOjemHn-7OBBaNMMdZ5_y40dOHMnBsGAmVGd1rX1D83dlay8mlKtU-Do9ZLkmIjEq0T_YI6CwP5TsiA1DjA0lWqD1eHjIvINMh7R2DuYwAC6dhY2Hr03vwSqL12fhdD2GdR83Vfjplhpu3-Hje0bX_sfE4_iQGrKq9_ohl4331HnUwA"
+            ],
+            "links": {
+                "phone": "tel:08660079073",
+                "directions": "https://maps.google.com/maps/dir//Karejevanahalli+toll,+PUNE+BANGLORE+HIGHWAY,+Sira,+Karnataka+572125,+India/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bb047f3c04ff6a5:0xaf37e36774c86692?entry=s&sa=X&ved=2ahUKEwjk4cO_m6STAxX9IbkGHS_FJqkQlDt6BAgjEAA&hl=en"
+            },
+            "place_id": "12625810113836902034",
+            "place_id_search": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&ludocid=12625810113836902034&q=Coffee",
+            "provider_id": "/g/11l_3g8d8q",
+            "gps_coordinates": {
+                "latitude": 13.613758599999999,
+                "longitude": 76.9528704
+            },
+            "address": "Sira, Karnataka, India",
+            "hours": "Open 24 hours",
+            "phone": "08660079073"
+        },
+        {
+            "position": 8,
+            "title": "Highway Tea Break Point",
+            "type": "Coffee shop",
+            "rating": 4.4,
+            "reviews": 36,
+            "description": "\"Good tea shop his shop open day and night.\"",
+            "lsig": "AB86z5VNCTZfyDD5It7WtqNDJikT",
+            "images": [
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerxKopWzyZW3InP8TEnx2UQ4RDHrXHdhUWOWeS97QsdvySabrP_gwcb1OkMHY6MNj0CzcqdhSsHJwDR8n7DZPEK-CtDC3s41wxcBsg6T7qv1dKdeCAh5eUDWEACFAjvASdI3jE=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqGnIWAZRy8AFQrgPurjEkwLK-MhtyBt7_aZjEYRwwx1xs1-WpCFTA-Y2tYVIVPlXtlRsTuDkVA9EKlDlnVABia9lmKGK46Uuolij0kSCqm9MAJ234ovFcwlHf7v26vnn---_sySr0utqsB=s144-w108-h144-n-k-no-l50",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweodekjc9cuyPPfSVt4MH2f5sKTg93ckXBJrK9XLoxMYC08LRjSSWN6Fbbh-u8nrH97QA9zN5LVAtidkBM34cYIpMQXMJ42JCObK93PNSWe_vbJYVIReXfZl1vjukhE7lIK-EJYJ37IKlYxi=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwep7frk6sOYyxWUl5l98qEfEYxo-Ei6GNe3Uyht3XL1sjzU2c1U2IpzFeka2pUc7Isl6grVChFXXJ2Ze07gos7JRbHCE2m3dzSDEjc_sH93uD73IwyPhdWiE-1XFB1mh2X5ds1XT=s144-w108-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqw04krfQ8hkQa_LZBTn_Z9cTlNmwrgByLy3olSwO9fpDRSePWCNpTq3kDjW6srsEc4FCkLEtq6VGTLlvF9gu-S0dTYkt9jRZ_NgqdKFmkwhU4oWXwxVxTs-lMXO4n5KzyPSuw6=s144-w108-h144-n-k-no-l50",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqIP9pT7Vx8Y0Ct-4DLi7lgqTMrIowm-tfzBm77a8cau76l5azSnEpJAa5eD9R18ga-VgOXC9QW3-zbLHs0t6mc3IqX4SRdXhuq5bYPG3PV2rRsRHhtNCJmoCDJeiMP_WnL9edI9w=s144-w108-h144-n-k-no",
+                "https://www.google.com/maps/vt/data=dpfJoiNPX1Fxb56lCEs9G0hmg1Wq9ee1qBRKlo9sCuHGaC6NaedQZHJxmbZe8YV5yn_qPscP3_oluwA0CYrcuie61facxsl2Wus059frX31RzhJcplShG60iTIw_vQaWHXaWicq4lkOk-Fevckv0nmUlbcPjWWQK4fLnXsxByYSDmI9SPeNSiMicTqLrcBpYVon0hfd-z8vBOzajtDnr6b0-vqexlr_0SPznnSQw5Q"
+            ],
+            "links": {
+                "directions": "https://maps.google.com/maps/dir//RQJ6%2BFPJ,+Kariyala,+Karnataka+577511,+India/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bb06100343135e1:0x3abeacfb8cfecab4?entry=s&sa=X&ved=2ahUKEwjk4cO_m6STAxX9IbkGHS_FJqkQlDt6BAgfEAA&hl=en"
+            },
+            "place_id": "4233010896177121972",
+            "place_id_search": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&ludocid=4233010896177121972&q=Coffee",
+            "provider_id": "/g/11myj06sn3",
+            "gps_coordinates": {
+                "latitude": 13.8312239,
+                "longitude": 76.7617683
+            },
+            "address": "Kariyala, Karnataka, India",
+            "hours": "Open 24 hours"
+        },
+        {
+            "position": 9,
+            "title": "Mokshith cafe",
+            "type": "Coffee shop",
+            "rating": 4.9,
+            "reviews": 30,
+            "description": "\"Nice service and nice coffee and tea here ☕ visit once\"",
+            "lsig": "AB86z5XDf8BGBbtUFMOi5niATZwl",
+            "images": [
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqyON4wRZ6DqDP8UooxTQadoggOW6vTNzreZUATBY0zmU6HBRgQwHRnP8ORnovLBtkQW7DrRM9jOabLVHfC7UbfKgbw6aqR27qw27QXVEl2rsOzYC7phUpoEiD6Sh_Na2HflZEz=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwersE4BpnvYp0TS_rBBYBoEzEkeN0NvmcIlOza1fI3beMizyjAa84PHsQbs_g25bmGCtFzwS7e5RwPQQGrOvrrP0vzWBOlLGMWuWNGK7Uyj9SAv2fuAF-T1-SlnJemc9PLlfvhTbSw=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweo_qfnA8ChTlK6pNypzM5DUZSuEPv9wcPS00ZpNEjrokETY2FYFrGhiA5znHw1DZmm4TqdGrGqkshdsd-b6CuXpl0Fy3ISAbB_MCptq0RUcSNDVOO7EhV8_biLjNr4Zwr8gy-w2JQ=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepdcYP_sICyvxxwAkJLHtzz5AO7AB_2bLMUMgXsL-hnhUZVrcPxoJ9F7brZ42A00LGkFEacuzBNWXf6Ty3qER9zyslORaokMBTAkumW3WiC3tQFRYwnkq6OwLBqhQovmJuCz29FLQ=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerdVOMZvV1cxIX2IYUuEOwPHKL8jTecJH7jBLwuDtb_-N0Sl0-cnutUY7xNSgYm3kmCHjClJsmBHxAtpwZg8oiuQ0sHMTiKf3DFRBX6z0LMuVjpQtjKtTt8ZTxOE-H8oCY7WlrQ=s192-w192-h144-n-k-no",
+                "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=weoNPMoov2MUdOOLT_dUlA&cb_client=search.gws-prod.gps&yaw=139.67052&pitch=0&thumbfov=100&w=144&h=144",
+                "https://www.google.com/maps/vt/data=U8X2ILBkZ1BG-aJuvOXE-7VIe6vqYkOrntjcBDbCrfZ1OErtwpWZiQeYRmMfHtk3-3CcmAPuiVzsU77nv3w4sqQG_T7LLRKm7PnFSCMa4uelgfTkcyJYIG8BPnKnw3itu6ZKZG0q5cZblSRFtUDWDkXfMUXtKayngQ3tKKy9pQPgViuT0qqPsb13xBlDOdYPSuXjdooKzRhEB2Q6kfNcNHg1kvO8DnxYHrMypbWQOw"
+            ],
+            "links": {
+                "directions": "https://maps.google.com/maps/dir//Q7XG%2BGGX,+Vidya+Nagar+Main+Rd,+Vidyanagara,+Hosadurga,+Karnataka+577527,+India/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bba85439c04df65:0x73ba161e49644c6f?entry=s&sa=X&ved=2ahUKEwjk4cO_m6STAxX9IbkGHS_FJqkQlDt6BAgdEAA&hl=en"
+            },
+            "place_id": "8339001979366034543",
+            "place_id_search": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&ludocid=8339001979366034543&q=Coffee",
+            "provider_id": "/g/11l6_y2bb_",
+            "gps_coordinates": {
+                "latitude": 13.798876799999999,
+                "longitude": 76.2763545
+            },
+            "address": "Hosadurga, Karnataka, India",
+            "hours": "Open · Closes 9 PM"
+        },
+        {
+            "position": 10,
+            "title": "Café Coffee Day",
+            "type": "Cafe",
+            "rating": 3.8,
+            "reviews": 2250,
+            "price": "₹200–400",
+            "description": "\"Very friendly staff here, clean and as always, the coffee was just perfect.\"",
+            "lsig": "AB86z5UFSzJN6UFoU1StYn_o_Pz7",
+            "images": [
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerEj0vI18pVcBrNpGRa2iykUEgNGETduE-cEGEeuvvUm2By90TpwQeltzKk1Jdakn8EWFd06ARHZHYdmjXZwg7wEtqzazsWYo63aVYi4gPIR3CHybIFBtTvrYD4qu6BV5If0iSQwA=s144-w108-h144-n-k-no-l50",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweoy8ZT8J78uXRWkS2a8Y1I_2TTVKH49X_nj0riOah4HOTPw5nTolUJA1ISFRMyD2MMHYiMe_JjTDpccKkamBJY6nIbeld48U1a6TWQd4Qrn9u5C3F0Ap_u3UnDkpooNzYlH89Ud=s144-w144-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweobT6LcIVK-fQ47xxREA_-xHqgCMu0yjkaicX-VM1oEvOLSbWPvLz-Bb5djHGBNJMbzUfiDIXUmlarF_LOMbYNRmS-St5SA3nalrLPNLRCVBd-ZaEibkbZNRDw4VVYOgDV6dhPm=s192-w192-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAwer9HHDOD7n6lkmp-LNpTb1Q7S7SMU2Vp3jWAZy50_7KU5lUXJECGwqxGdjrRP9Q8n9kpBCnqf-cug9hPNakLObFmH5nQoIMk6qB1q-5F56iRNOhrYqv-5iPOwcGwQ_5YAMATCU1j97p3JKr=s144-w144-h144-n-k-no",
+                "https://lh3.googleusercontent.com/gps-cs-s/AHVAweoMkvAqrxTk5S8jdiaBDWVNTUEbrLTtsdyptRg1v6HAzrNXsNItx94DODFVRTCed_ndJGbKtglka2JTOrvX4vacvQiu5kY58rgpuHi_hkYtsaG3r_kVNftyT1fOPwSc7YLKODy_tat7MoAG=s192-w192-h144-n-k-no",
+                "https://www.google.com/maps/vt/data=8-3N1uFHa2CghjD6dt5BmXbAAlmXVcb9LAfJkHNUGfpBXrLqf4-tFvMueox5qWDq4SbC5b0BmvyjAvT4eA9AkjOxC_nvPWqz9xZ8HRCY-j7-HHGemjJoDVwz8nTFozRJk2pMzS259RILCSHFIe4tgJbTSdgniuaQ_1XX-FqAU9b7PQxKMTnB3oz5QYGzDdaW1K4zcgxGnPdk0PBB4dsGLxmsJtxZVfpl9uDJtcnsyw"
+            ],
+            "links": {
+                "phone": "tel:18001025093",
+                "website": "https://sira.cafecoffeeday.com/",
+                "directions": "https://maps.google.com/maps/dir//IOC+Petrol+Bunk,+Nh+4+Bangalore+Highway,+Sira,+Karnataka+572137,+India/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bb05d23933eb1f3:0x6ff69108b68579fc?entry=s&sa=X&ved=2ahUKEwjk4cO_m6STAxX9IbkGHS_FJqkQlDt6BAgiEAA&hl=en"
+            },
+            "place_id": "8067795249088788988",
+            "place_id_search": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&ludocid=8067795249088788988&q=Coffee",
+            "provider_id": "/g/11cky74phc",
+            "gps_coordinates": {
+                "latitude": 13.763512899999998,
+                "longitude": 76.8649014
+            },
+            "address": "Sira, Karnataka, India",
+            "hours": "Open · Closes 12 AM",
+            "phone": "18001025093"
+        }
+    ],
+    "pagination": {
+        "current": 1,
+        "next": "https://www.google.com/search?q=Coffee&uule=w+CAIQICIiQmFuZ2Fsb3JlIERpdmlzaW9uLEthcm5hdGFrYSxJbmRpYQ&hl=en&gl=us&start=10&udm=1",
+        "other_pages": {
+            "2": "https://www.google.com/search?q=Coffee&uule=w+CAIQICIiQmFuZ2Fsb3JlIERpdmlzaW9uLEthcm5hdGFrYSxJbmRpYQ&hl=en&gl=us&start=10&udm=1",
+            "3": "https://www.google.com/search?q=Coffee&uule=w+CAIQICIiQmFuZ2Fsb3JlIERpdmlzaW9uLEthcm5hdGFrYSxJbmRpYQ&hl=en&gl=us&start=20&udm=1",
+            "4": "https://www.google.com/search?q=Coffee&uule=w+CAIQICIiQmFuZ2Fsb3JlIERpdmlzaW9uLEthcm5hdGFrYSxJbmRpYQ&hl=en&gl=us&start=30&udm=1",
+            "5": "https://www.google.com/search?q=Coffee&uule=w+CAIQICIiQmFuZ2Fsb3JlIERpdmlzaW9uLEthcm5hdGFrYSxJbmRpYQ&hl=en&gl=us&start=40&udm=1"
+        }
+    },
+    "serpapi_pagination": {
+        "current": 1,
+        "next_link": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&q=Coffee&start=10&uule=w+CAIQICIiQmFuZ2Fsb3JlIERpdmlzaW9uLEthcm5hdGFrYSxJbmRpYQ",
+        "next": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&q=Coffee&start=10&uule=w+CAIQICIiQmFuZ2Fsb3JlIERpdmlzaW9uLEthcm5hdGFrYSxJbmRpYQ",
+        "other_pages": {
+            "2": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&q=Coffee&start=10&uule=w+CAIQICIiQmFuZ2Fsb3JlIERpdmlzaW9uLEthcm5hdGFrYSxJbmRpYQ",
+            "3": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&q=Coffee&start=20&uule=w+CAIQICIiQmFuZ2Fsb3JlIERpdmlzaW9uLEthcm5hdGFrYSxJbmRpYQ",
+            "4": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&q=Coffee&start=30&uule=w+CAIQICIiQmFuZ2Fsb3JlIERpdmlzaW9uLEthcm5hdGFrYSxJbmRpYQ",
+            "5": "https://serpapi.com/search.json?device=mobile&engine=google_local&gl=us&google_domain=google.com&hl=en&location=Bangalore+India&q=Coffee&start=40&uule=w+CAIQICIiQmFuZ2Fsb3JlIERpdmlzaW9uLEthcm5hdGFrYSxJbmRpYQ"
+        }
     }
-]
+}

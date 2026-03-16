@@ -7,7 +7,7 @@
 import Combine
 
 protocol GetNearbyVenuesUseCaseProtocol {
-    func execute() -> AnyPublisher<[Venue], Never>
+    func execute() -> AnyPublisher<Venue, Error>
 }
 
 final class GetNearbyVenuesUseCase: GetNearbyVenuesUseCaseProtocol {
@@ -18,7 +18,9 @@ final class GetNearbyVenuesUseCase: GetNearbyVenuesUseCaseProtocol {
         self.repository = repository
     }
 
-    func execute() -> AnyPublisher<[Venue], Never> {
-        repository.getNearByVenues()
+    func execute() -> AnyPublisher<Venue, Error> {
+        repository
+            .getNearByVenues()
+            .eraseToAnyPublisher()
     }
 }
