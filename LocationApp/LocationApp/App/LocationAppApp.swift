@@ -11,8 +11,9 @@ struct LocationAppApp: App {
     var body: some Scene {
         WindowGroup {
             MapView(
-                viewModel: DependencyContainer.makeMapViewModel()
+                viewModel: DependencyContainer().makeMapViewModel()
             )
         }
     }
 }
+

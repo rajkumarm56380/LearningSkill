@@ -16,14 +16,18 @@ struct LocationDetailPopup: View {
             Spacer()
             VStack(spacing: 10) {
 
-                Text(location.name)
-                    .font(.headline)
-                Text(location.address)
-                    .font(.subheadline)
-                HStack{
-                    Text("Lat: \(location.coordinate.latitude)")
-                    Text("Lon: \(location.coordinate.longitude)")
+                VStack {
+                    Text("Location Details")
+                        .fontWeight(.bold)
+                        .accessibilityIdentifier("popup_title")
+
+                    Text(location.name)
+                        .accessibilityIdentifier("popup_name")
+
+                    Text(location.address ?? "NA")
+                        .accessibilityIdentifier("popup_address")
                 }
+                .accessibilityIdentifier("location_popup")
             }
             .padding()
             .frame(maxWidth: .infinity)

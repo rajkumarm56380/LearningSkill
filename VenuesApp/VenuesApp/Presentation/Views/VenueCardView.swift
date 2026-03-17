@@ -2,7 +2,6 @@
 //  VenueCardView.swift
 //  VenuesApp
 //
-//  Created by Apple on 16/03/26.
 //
 
 import SwiftUI

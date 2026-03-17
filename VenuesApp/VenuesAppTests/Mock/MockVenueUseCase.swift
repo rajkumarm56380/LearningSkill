@@ -55,26 +55,5 @@ class MockVenueUseCase: GetNearbyVenuesUseCaseProtocol {
                     .eraseToAnyPublisher()
             }
         }
-
-    /*var shouldReturnError = false
-
-        func execute() -> AnyPublisher<Venue, Error> {
-
-            if shouldReturnError {
-
-                return Fail(error: URLError(.badServerResponse))
-                    .eraseToAnyPublisher()
-
-            } else {
-
-                guard let mock = VenueMockData.loadVenues() else {
-                    return Empty<Venue, Error>(completeImmediately: true).eraseToAnyPublisher()
-                }
-
-                return Just(mock)
-                    .setFailureType(to: Error.self)
-                    .eraseToAnyPublisher()
-            }
-        }*/
 }
 

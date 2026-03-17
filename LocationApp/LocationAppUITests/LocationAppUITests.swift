@@ -2,42 +2,60 @@
 //  LocationAppUITests.swift
 //  LocationAppUITests
 //
-//  Created by user on 13/03/26.
 //
 
 import XCTest
 
 final class LocationAppUITests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var app: XCUIApplication!
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
+        override func setUp() {
+            super.setUp()
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
+            continueAfterFailure = false
+            app = XCUIApplication()
+            app.launch()
+            app.launchArguments = ["UI_TEST_MODE"]
+        }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        // MARK: 1. App Launch
+        func test_appLaunchesSuccessfully() {
+            XCTAssertTrue(app.otherElements["mapView"].exists)
+        }
 
-    @MainActor
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        // MARK: 2. Long Press Adds Pin
+        func test_longPress_addsPin() {
 
-    @MainActor
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
+            let map = app.otherElements["mapView"]
+
+            map.press(forDuration: 1.0)
+
+            let pin = app.images["map_pin"]
+            XCTAssertTrue(pin.waitForExistence(timeout: 2))
+        }
+
+
+        // MARK: 3. Multiple Pins
+        func test_multiplePins_added() {
+
+            let map = app.otherElements["mapView"]
+
+            map.tap()
+            map.tap()
+            map.tap()
+
+            let pins = app.images.matching(identifier: "map_pin")
+
+            XCTAssertTrue(pins.count >= 1)
+        }
+
+        // MARK: 4. Performance Test
+        func test_mapPerformance() {
+
             measure(metrics: [XCTApplicationLaunchMetric()]) {
                 XCUIApplication().launch()
             }
         }
-    }
 }

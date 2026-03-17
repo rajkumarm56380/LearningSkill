@@ -7,7 +7,7 @@
 import CoreLocation
 import Combine
 
-class GeocoderService {
+class GeocoderService: GeocoderServiceProtocol {
 
     func getAddress(from coordinate: CLLocationCoordinate2D) -> AnyPublisher<LocationModel, Never> {
 
@@ -33,6 +33,7 @@ class GeocoderService {
         locality: placeMark?.first?.locality ?? "")
         return locationDetail
     }
+
     func getLegacyFormattedAddress(from placemark: [CLPlacemark]?) -> String? {
         let name = placemark?.first?.name
         let subThoroughfare = placemark?.first?.subThoroughfare
@@ -41,7 +42,6 @@ class GeocoderService {
         let locality = placemark?.first?.locality
         let postalCode = placemark?.first?.postalCode
         let country = placemark?.first?.country
-
         let address: String = "\(name ?? ""), \(streetAddress), \(locality ?? ""), \(postalCode ?? ""), \(country ?? "")"
         return address
     }

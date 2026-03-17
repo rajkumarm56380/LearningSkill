@@ -12,29 +12,34 @@ protocol VenueRepositoryProtocol {
 
 final class VenueRepository: VenueRepositoryProtocol {
 
-    private let api: VenueAPIServiceProtocol
-    private let cache: VenueCacheServiceProtocol
+    private let apiService: VenueAPIServiceProtocol
+    private let cacheService: VenueCacheServiceProtocol
     private let networkMonitor: NetworkMonitor
+    private let mockService: MockVenueService
 
-    init(api: VenueAPIServiceProtocol, cache: VenueCacheServiceProtocol, networkMonitor: NetworkMonitor) {
-        self.api = api
-        self.cache = cache
+    init(apiService: VenueAPIServiceProtocol,
+         cacheService: VenueCacheServiceProtocol,
+         networkMonitor: NetworkMonitor,
+         mockService: MockVenueService) {
+        self.apiService = apiService
+        self.cacheService = cacheService
         self.networkMonitor = networkMonitor
+        self.mockService = mockService
     }
 
     func getNearByVenues() -> AnyPublisher<Venue, Error> {
         if networkMonitor.isConnected {
-            return api.fetchVenues()
+            return apiService.fetchVenues()
                 .handleEvents(receiveOutput: { [weak self] venues in
                     print("api.fetchVenues ===> \(venues.localResults.count)")
-                    self?.cache.save(venues)
+                    self?.cacheService.save(venues)
                 }, receiveCompletion: { _ in
                     print("in completion handler")
                 }, receiveCancel: {
                     print("received cancel")
                 })
                 .catch { [weak self] _ in
-                    guard let cached = self?.cache.load() else {
+                    guard let cached = self?.cacheService.load() else {
                         return Empty<Venue, Never>(completeImmediately: true).eraseToAnyPublisher()
                     }
                     return Just(cached)
@@ -44,7 +49,7 @@ final class VenueRepository: VenueRepositoryProtocol {
                 .eraseToAnyPublisher()
         } else {
 
-            guard let cached = cache.load() else {
+            guard let cached = cacheService.load() else {
                 return Empty<Venue, Never>(completeImmediately: true)
                     .setFailureType(to: Error.self)
                     .eraseToAnyPublisher()
