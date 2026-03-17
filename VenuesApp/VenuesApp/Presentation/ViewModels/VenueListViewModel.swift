@@ -22,7 +22,7 @@ final class VenueListViewModel: ObservableObject {
 
     func loadVenues() {
         isLoading = true
-        
+
         useCase.execute()
             .receive(on: DispatchQueue.main)
             .sink{  [weak self] completion in

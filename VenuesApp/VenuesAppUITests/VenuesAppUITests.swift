@@ -20,8 +20,12 @@ final class VenuesAppUITests: XCTestCase {
     }
 
     func testVenueListLoads() {
-        let firstCell = app.staticTexts["Venue Name"]
-        XCTAssertTrue(firstCell.waitForExistence(timeout: 5))
+        let app = XCUIApplication()
+        app.activate()
+        let element = app.scrollViews/*@START_MENU_TOKEN@*/.firstMatch/*[[".containing(.other, identifier: nil).firstMatch",".firstMatch"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        element.tap()
+        app.staticTexts["\"Super delicious authentic coffee.\""].firstMatch.tap()
+        XCTAssertTrue(app.waitForExistence(timeout: 5))
     }
 
     func testLoadingIndicator() {

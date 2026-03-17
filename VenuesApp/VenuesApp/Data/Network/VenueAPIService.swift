@@ -14,14 +14,13 @@ protocol VenueAPIServiceProtocol {
 final class VenueAPIService: VenueAPIServiceProtocol {
 
     func fetchVenues() -> AnyPublisher<Venue, Error> {
+
         guard let url = URL(string: "\(APIEndPoint.endpoint.rawValue)\(APIParam.param.rawValue)") else {
                 return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
             }
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue(APIEndPoint.apiKeyValue.rawValue, forHTTPHeaderField: APIEndPoint.apiKey.rawValue)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+
+        let request = createRequest(url: url)
+
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { data, response in
                 guard let httpResponse = response as? HTTPURLResponse,
@@ -39,5 +38,13 @@ final class VenueAPIService: VenueAPIServiceProtocol {
             .decode(type: Venue.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
+    }
+
+    private func createRequest(url: URL) -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue(APIEndPoint.apiKeyValue.rawValue, forHTTPHeaderField: APIEndPoint.apiKey.rawValue)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        return request
     }
 }

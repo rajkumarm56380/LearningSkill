@@ -13,13 +13,9 @@ struct VenueCardView: View {
 
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .top, spacing: 12) {
-                AsyncImage(url: URL(string: venue.images.first ?? MockImage.imageUrl.rawValue)) { image in
-                    image
-                        .resizable()
-                        .scaledToFill()
-                } placeholder: {
-                    ProgressView()
-                }
+                CachedAsyncImage(
+                    url: venue.images.first ?? MockImage.imageUrl.rawValue
+                )
                 .frame(width: 110, height: 110)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 VStack(alignment: .leading, spacing: 6) {
