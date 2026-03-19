@@ -7,93 +7,62 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		CEFE2F232F6AB31D00EC7A45 /* PBXContainerItemProxy */ = {
+		CE1CFC632F6C3055002DE4D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CEFE2F082F6AB31A00EC7A45 /* Project object */;
+			containerPortal = CE1CFC482F6C3053002DE4D3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CEFE2F0F2F6AB31A00EC7A45;
-			remoteInfo = DemoLocationApp;
+			remoteGlobalIDString = CE1CFC4F2F6C3053002DE4D3;
+			remoteInfo = DemoMapView;
 		};
-		CEFE2F2D2F6AB31D00EC7A45 /* PBXContainerItemProxy */ = {
+		CE1CFC6D2F6C3055002DE4D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CEFE2F082F6AB31A00EC7A45 /* Project object */;
+			containerPortal = CE1CFC482F6C3053002DE4D3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CEFE2F0F2F6AB31A00EC7A45;
-			remoteInfo = DemoLocationApp;
+			remoteGlobalIDString = CE1CFC4F2F6C3053002DE4D3;
+			remoteInfo = DemoMapView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CEFE2F102F6AB31A00EC7A45 /* DemoLocationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoLocationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEFE2F222F6AB31D00EC7A45 /* DemoLocationAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoLocationAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEFE2F2C2F6AB31D00EC7A45 /* DemoLocationAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoLocationAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1CFC502F6C3053002DE4D3 /* DemoMapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoMapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1CFC622F6C3055002DE4D3 /* DemoMapViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoMapViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1CFC6C2F6C3055002DE4D3 /* DemoMapViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoMapViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		18A8C8F52F6B144E0055B642 /* Exceptions for "DemoLocationAppTests" folder in "DemoLocationApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Mock/MockLocationService.swift,
-			);
-			target = CEFE2F0F2F6AB31A00EC7A45 /* DemoLocationApp */;
-		};
-		CEFE300B2F6AB71A00EC7A45 /* Exceptions for "DemoLocationApp" folder in "DemoLocationAppTests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Data/Repository/LocationRepository.swift,
-				Data/Services/GeocoderService.swift,
-				Data/Services/LocationService.swift,
-				Domain/Models/LocationModel.swift,
-				Domain/RepositoryProtocol/GeocoderServiceProtocol.swift,
-				Domain/RepositoryProtocol/LocationRepositoryProtocol.swift,
-				Domain/RepositoryProtocol/LocationServiceProtocol.swift,
-				Domain/UseCases/GetLocationDetailsUseCase.swift,
-				Presentation/ViewModels/MapViewModel.swift,
-			);
-			target = CEFE2F212F6AB31D00EC7A45 /* DemoLocationAppTests */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		CEFE2F122F6AB31A00EC7A45 /* DemoLocationApp */ = {
+		CE1CFC522F6C3053002DE4D3 /* DemoMapView */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				CEFE300B2F6AB71A00EC7A45 /* Exceptions for "DemoLocationApp" folder in "DemoLocationAppTests" target */,
-			);
-			path = DemoLocationApp;
+			path = DemoMapView;
 			sourceTree = "<group>";
 		};
-		CEFE2F252F6AB31D00EC7A45 /* DemoLocationAppTests */ = {
+		CE1CFC652F6C3055002DE4D3 /* DemoMapViewTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				18A8C8F52F6B144E0055B642 /* Exceptions for "DemoLocationAppTests" folder in "DemoLocationApp" target */,
-			);
-			path = DemoLocationAppTests;
+			path = DemoMapViewTests;
 			sourceTree = "<group>";
 		};
-		CEFE2F2F2F6AB31D00EC7A45 /* DemoLocationAppUITests */ = {
+		CE1CFC6F2F6C3055002DE4D3 /* DemoMapViewUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DemoLocationAppUITests;
+			path = DemoMapViewUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CEFE2F0D2F6AB31A00EC7A45 /* Frameworks */ = {
+		CE1CFC4D2F6C3053002DE4D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFE2F1F2F6AB31D00EC7A45 /* Frameworks */ = {
+		CE1CFC5F2F6C3055002DE4D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFE2F292F6AB31D00EC7A45 /* Frameworks */ = {
+		CE1CFC692F6C3055002DE4D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -103,22 +72,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CEFE2F072F6AB31A00EC7A45 = {
+		CE1CFC472F6C3053002DE4D3 = {
 			isa = PBXGroup;
 			children = (
-				CEFE2F122F6AB31A00EC7A45 /* DemoLocationApp */,
-				CEFE2F252F6AB31D00EC7A45 /* DemoLocationAppTests */,
-				CEFE2F2F2F6AB31D00EC7A45 /* DemoLocationAppUITests */,
-				CEFE2F112F6AB31A00EC7A45 /* Products */,
+				CE1CFC522F6C3053002DE4D3 /* DemoMapView */,
+				CE1CFC652F6C3055002DE4D3 /* DemoMapViewTests */,
+				CE1CFC6F2F6C3055002DE4D3 /* DemoMapViewUITests */,
+				CE1CFC512F6C3053002DE4D3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		CEFE2F112F6AB31A00EC7A45 /* Products */ = {
+		CE1CFC512F6C3053002DE4D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEFE2F102F6AB31A00EC7A45 /* DemoLocationApp.app */,
-				CEFE2F222F6AB31D00EC7A45 /* DemoLocationAppTests.xctest */,
-				CEFE2F2C2F6AB31D00EC7A45 /* DemoLocationAppUITests.xctest */,
+				CE1CFC502F6C3053002DE4D3 /* DemoMapView.app */,
+				CE1CFC622F6C3055002DE4D3 /* DemoMapViewTests.xctest */,
+				CE1CFC6C2F6C3055002DE4D3 /* DemoMapViewUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,134 +95,134 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CEFE2F0F2F6AB31A00EC7A45 /* DemoLocationApp */ = {
+		CE1CFC4F2F6C3053002DE4D3 /* DemoMapView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEFE2F362F6AB31D00EC7A45 /* Build configuration list for PBXNativeTarget "DemoLocationApp" */;
+			buildConfigurationList = CE1CFC762F6C3055002DE4D3 /* Build configuration list for PBXNativeTarget "DemoMapView" */;
 			buildPhases = (
-				CEFE2F0C2F6AB31A00EC7A45 /* Sources */,
-				CEFE2F0D2F6AB31A00EC7A45 /* Frameworks */,
-				CEFE2F0E2F6AB31A00EC7A45 /* Resources */,
+				CE1CFC4C2F6C3053002DE4D3 /* Sources */,
+				CE1CFC4D2F6C3053002DE4D3 /* Frameworks */,
+				CE1CFC4E2F6C3053002DE4D3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				CEFE2F122F6AB31A00EC7A45 /* DemoLocationApp */,
+				CE1CFC522F6C3053002DE4D3 /* DemoMapView */,
 			);
-			name = DemoLocationApp;
+			name = DemoMapView;
 			packageProductDependencies = (
 			);
-			productName = DemoLocationApp;
-			productReference = CEFE2F102F6AB31A00EC7A45 /* DemoLocationApp.app */;
+			productName = DemoMapView;
+			productReference = CE1CFC502F6C3053002DE4D3 /* DemoMapView.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CEFE2F212F6AB31D00EC7A45 /* DemoLocationAppTests */ = {
+		CE1CFC612F6C3055002DE4D3 /* DemoMapViewTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEFE2F392F6AB31D00EC7A45 /* Build configuration list for PBXNativeTarget "DemoLocationAppTests" */;
+			buildConfigurationList = CE1CFC792F6C3055002DE4D3 /* Build configuration list for PBXNativeTarget "DemoMapViewTests" */;
 			buildPhases = (
-				CEFE2F1E2F6AB31D00EC7A45 /* Sources */,
-				CEFE2F1F2F6AB31D00EC7A45 /* Frameworks */,
-				CEFE2F202F6AB31D00EC7A45 /* Resources */,
+				CE1CFC5E2F6C3055002DE4D3 /* Sources */,
+				CE1CFC5F2F6C3055002DE4D3 /* Frameworks */,
+				CE1CFC602F6C3055002DE4D3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CEFE2F242F6AB31D00EC7A45 /* PBXTargetDependency */,
+				CE1CFC642F6C3055002DE4D3 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				CEFE2F252F6AB31D00EC7A45 /* DemoLocationAppTests */,
+				CE1CFC652F6C3055002DE4D3 /* DemoMapViewTests */,
 			);
-			name = DemoLocationAppTests;
+			name = DemoMapViewTests;
 			packageProductDependencies = (
 			);
-			productName = DemoLocationAppTests;
-			productReference = CEFE2F222F6AB31D00EC7A45 /* DemoLocationAppTests.xctest */;
+			productName = DemoMapViewTests;
+			productReference = CE1CFC622F6C3055002DE4D3 /* DemoMapViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CEFE2F2B2F6AB31D00EC7A45 /* DemoLocationAppUITests */ = {
+		CE1CFC6B2F6C3055002DE4D3 /* DemoMapViewUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEFE2F3C2F6AB31D00EC7A45 /* Build configuration list for PBXNativeTarget "DemoLocationAppUITests" */;
+			buildConfigurationList = CE1CFC7C2F6C3055002DE4D3 /* Build configuration list for PBXNativeTarget "DemoMapViewUITests" */;
 			buildPhases = (
-				CEFE2F282F6AB31D00EC7A45 /* Sources */,
-				CEFE2F292F6AB31D00EC7A45 /* Frameworks */,
-				CEFE2F2A2F6AB31D00EC7A45 /* Resources */,
+				CE1CFC682F6C3055002DE4D3 /* Sources */,
+				CE1CFC692F6C3055002DE4D3 /* Frameworks */,
+				CE1CFC6A2F6C3055002DE4D3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CEFE2F2E2F6AB31D00EC7A45 /* PBXTargetDependency */,
+				CE1CFC6E2F6C3055002DE4D3 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				CEFE2F2F2F6AB31D00EC7A45 /* DemoLocationAppUITests */,
+				CE1CFC6F2F6C3055002DE4D3 /* DemoMapViewUITests */,
 			);
-			name = DemoLocationAppUITests;
+			name = DemoMapViewUITests;
 			packageProductDependencies = (
 			);
-			productName = DemoLocationAppUITests;
-			productReference = CEFE2F2C2F6AB31D00EC7A45 /* DemoLocationAppUITests.xctest */;
+			productName = DemoMapViewUITests;
+			productReference = CE1CFC6C2F6C3055002DE4D3 /* DemoMapViewUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CEFE2F082F6AB31A00EC7A45 /* Project object */ = {
+		CE1CFC482F6C3053002DE4D3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					CEFE2F0F2F6AB31A00EC7A45 = {
+					CE1CFC4F2F6C3053002DE4D3 = {
 						CreatedOnToolsVersion = 16.2;
 					};
-					CEFE2F212F6AB31D00EC7A45 = {
+					CE1CFC612F6C3055002DE4D3 = {
 						CreatedOnToolsVersion = 16.2;
-						TestTargetID = CEFE2F0F2F6AB31A00EC7A45;
+						TestTargetID = CE1CFC4F2F6C3053002DE4D3;
 					};
-					CEFE2F2B2F6AB31D00EC7A45 = {
+					CE1CFC6B2F6C3055002DE4D3 = {
 						CreatedOnToolsVersion = 16.2;
-						TestTargetID = CEFE2F0F2F6AB31A00EC7A45;
+						TestTargetID = CE1CFC4F2F6C3053002DE4D3;
 					};
 				};
 			};
-			buildConfigurationList = CEFE2F0B2F6AB31A00EC7A45 /* Build configuration list for PBXProject "DemoLocationApp" */;
+			buildConfigurationList = CE1CFC4B2F6C3053002DE4D3 /* Build configuration list for PBXProject "DemoMapView" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = CEFE2F072F6AB31A00EC7A45;
+			mainGroup = CE1CFC472F6C3053002DE4D3;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = CEFE2F112F6AB31A00EC7A45 /* Products */;
+			productRefGroup = CE1CFC512F6C3053002DE4D3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEFE2F0F2F6AB31A00EC7A45 /* DemoLocationApp */,
-				CEFE2F212F6AB31D00EC7A45 /* DemoLocationAppTests */,
-				CEFE2F2B2F6AB31D00EC7A45 /* DemoLocationAppUITests */,
+				CE1CFC4F2F6C3053002DE4D3 /* DemoMapView */,
+				CE1CFC612F6C3055002DE4D3 /* DemoMapViewTests */,
+				CE1CFC6B2F6C3055002DE4D3 /* DemoMapViewUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CEFE2F0E2F6AB31A00EC7A45 /* Resources */ = {
+		CE1CFC4E2F6C3053002DE4D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFE2F202F6AB31D00EC7A45 /* Resources */ = {
+		CE1CFC602F6C3055002DE4D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFE2F2A2F6AB31D00EC7A45 /* Resources */ = {
+		CE1CFC6A2F6C3055002DE4D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -263,21 +232,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CEFE2F0C2F6AB31A00EC7A45 /* Sources */ = {
+		CE1CFC4C2F6C3053002DE4D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFE2F1E2F6AB31D00EC7A45 /* Sources */ = {
+		CE1CFC5E2F6C3055002DE4D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFE2F282F6AB31D00EC7A45 /* Sources */ = {
+		CE1CFC682F6C3055002DE4D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -287,20 +256,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CEFE2F242F6AB31D00EC7A45 /* PBXTargetDependency */ = {
+		CE1CFC642F6C3055002DE4D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CEFE2F0F2F6AB31A00EC7A45 /* DemoLocationApp */;
-			targetProxy = CEFE2F232F6AB31D00EC7A45 /* PBXContainerItemProxy */;
+			target = CE1CFC4F2F6C3053002DE4D3 /* DemoMapView */;
+			targetProxy = CE1CFC632F6C3055002DE4D3 /* PBXContainerItemProxy */;
 		};
-		CEFE2F2E2F6AB31D00EC7A45 /* PBXTargetDependency */ = {
+		CE1CFC6E2F6C3055002DE4D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CEFE2F0F2F6AB31A00EC7A45 /* DemoLocationApp */;
-			targetProxy = CEFE2F2D2F6AB31D00EC7A45 /* PBXContainerItemProxy */;
+			target = CE1CFC4F2F6C3053002DE4D3 /* DemoMapView */;
+			targetProxy = CE1CFC6D2F6C3055002DE4D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		CEFE2F342F6AB31D00EC7A45 /* Debug */ = {
+		CE1CFC742F6C3055002DE4D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -363,7 +332,7 @@
 			};
 			name = Debug;
 		};
-		CEFE2F352F6AB31D00EC7A45 /* Release */ = {
+		CE1CFC752F6C3055002DE4D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -419,14 +388,14 @@
 			};
 			name = Release;
 		};
-		CEFE2F372F6AB31D00EC7A45 /* Debug */ = {
+		CE1CFC772F6C3055002DE4D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DemoLocationApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DemoMapView/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show it on the map";
@@ -435,13 +404,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = user.DemoLocationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = user.DemoMapView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -449,14 +417,14 @@
 			};
 			name = Debug;
 		};
-		CEFE2F382F6AB31D00EC7A45 /* Release */ = {
+		CE1CFC782F6C3055002DE4D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DemoLocationApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DemoMapView/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show it on the map";
@@ -465,13 +433,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = user.DemoLocationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = user.DemoMapView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -479,7 +446,7 @@
 			};
 			name = Release;
 		};
-		CEFE2F3A2F6AB31D00EC7A45 /* Debug */ = {
+		CE1CFC7A2F6C3055002DE4D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,16 +455,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = user.DemoLocationAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = user.DemoMapViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoLocationApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemoLocationApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoMapView.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemoMapView";
 			};
 			name = Debug;
 		};
-		CEFE2F3B2F6AB31D00EC7A45 /* Release */ = {
+		CE1CFC7B2F6C3055002DE4D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,87 +473,87 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = user.DemoLocationAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = user.DemoMapViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoLocationApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemoLocationApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoMapView.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemoMapView";
 			};
 			name = Release;
 		};
-		CEFE2F3D2F6AB31D00EC7A45 /* Debug */ = {
+		CE1CFC7D2F6C3055002DE4D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = user.DemoLocationAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = user.DemoMapViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DemoLocationApp;
+				TEST_TARGET_NAME = DemoMapView;
 			};
 			name = Debug;
 		};
-		CEFE2F3E2F6AB31D00EC7A45 /* Release */ = {
+		CE1CFC7E2F6C3055002DE4D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = user.DemoLocationAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = user.DemoMapViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DemoLocationApp;
+				TEST_TARGET_NAME = DemoMapView;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CEFE2F0B2F6AB31A00EC7A45 /* Build configuration list for PBXProject "DemoLocationApp" */ = {
+		CE1CFC4B2F6C3053002DE4D3 /* Build configuration list for PBXProject "DemoMapView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CEFE2F342F6AB31D00EC7A45 /* Debug */,
-				CEFE2F352F6AB31D00EC7A45 /* Release */,
+				CE1CFC742F6C3055002DE4D3 /* Debug */,
+				CE1CFC752F6C3055002DE4D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEFE2F362F6AB31D00EC7A45 /* Build configuration list for PBXNativeTarget "DemoLocationApp" */ = {
+		CE1CFC762F6C3055002DE4D3 /* Build configuration list for PBXNativeTarget "DemoMapView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CEFE2F372F6AB31D00EC7A45 /* Debug */,
-				CEFE2F382F6AB31D00EC7A45 /* Release */,
+				CE1CFC772F6C3055002DE4D3 /* Debug */,
+				CE1CFC782F6C3055002DE4D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEFE2F392F6AB31D00EC7A45 /* Build configuration list for PBXNativeTarget "DemoLocationAppTests" */ = {
+		CE1CFC792F6C3055002DE4D3 /* Build configuration list for PBXNativeTarget "DemoMapViewTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CEFE2F3A2F6AB31D00EC7A45 /* Debug */,
-				CEFE2F3B2F6AB31D00EC7A45 /* Release */,
+				CE1CFC7A2F6C3055002DE4D3 /* Debug */,
+				CE1CFC7B2F6C3055002DE4D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEFE2F3C2F6AB31D00EC7A45 /* Build configuration list for PBXNativeTarget "DemoLocationAppUITests" */ = {
+		CE1CFC7C2F6C3055002DE4D3 /* Build configuration list for PBXNativeTarget "DemoMapViewUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CEFE2F3D2F6AB31D00EC7A45 /* Debug */,
-				CEFE2F3E2F6AB31D00EC7A45 /* Release */,
+				CE1CFC7D2F6C3055002DE4D3 /* Debug */,
+				CE1CFC7E2F6C3055002DE4D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CEFE2F082F6AB31A00EC7A45 /* Project object */;
+	rootObject = CE1CFC482F6C3053002DE4D3 /* Project object */;
 }

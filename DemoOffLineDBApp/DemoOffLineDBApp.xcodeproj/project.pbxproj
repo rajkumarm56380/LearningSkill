@@ -7,93 +7,62 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		CEFE2F232F6AB31D00EC7A45 /* PBXContainerItemProxy */ = {
+		CE1CFCD52F6C5A94002DE4D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CEFE2F082F6AB31A00EC7A45 /* Project object */;
+			containerPortal = CE1CFCBA2F6C5A91002DE4D3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CEFE2F0F2F6AB31A00EC7A45;
-			remoteInfo = DemoLocationApp;
+			remoteGlobalIDString = CE1CFCC12F6C5A91002DE4D3;
+			remoteInfo = DemoOffLineDBApp;
 		};
-		CEFE2F2D2F6AB31D00EC7A45 /* PBXContainerItemProxy */ = {
+		CE1CFCDF2F6C5A94002DE4D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CEFE2F082F6AB31A00EC7A45 /* Project object */;
+			containerPortal = CE1CFCBA2F6C5A91002DE4D3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CEFE2F0F2F6AB31A00EC7A45;
-			remoteInfo = DemoLocationApp;
+			remoteGlobalIDString = CE1CFCC12F6C5A91002DE4D3;
+			remoteInfo = DemoOffLineDBApp;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CEFE2F102F6AB31A00EC7A45 /* DemoLocationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoLocationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEFE2F222F6AB31D00EC7A45 /* DemoLocationAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoLocationAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEFE2F2C2F6AB31D00EC7A45 /* DemoLocationAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoLocationAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1CFCC22F6C5A91002DE4D3 /* DemoOffLineDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoOffLineDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1CFCD42F6C5A94002DE4D3 /* DemoOffLineDBAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoOffLineDBAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1CFCDE2F6C5A94002DE4D3 /* DemoOffLineDBAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoOffLineDBAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		18A8C8F52F6B144E0055B642 /* Exceptions for "DemoLocationAppTests" folder in "DemoLocationApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Mock/MockLocationService.swift,
-			);
-			target = CEFE2F0F2F6AB31A00EC7A45 /* DemoLocationApp */;
-		};
-		CEFE300B2F6AB71A00EC7A45 /* Exceptions for "DemoLocationApp" folder in "DemoLocationAppTests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Data/Repository/LocationRepository.swift,
-				Data/Services/GeocoderService.swift,
-				Data/Services/LocationService.swift,
-				Domain/Models/LocationModel.swift,
-				Domain/RepositoryProtocol/GeocoderServiceProtocol.swift,
-				Domain/RepositoryProtocol/LocationRepositoryProtocol.swift,
-				Domain/RepositoryProtocol/LocationServiceProtocol.swift,
-				Domain/UseCases/GetLocationDetailsUseCase.swift,
-				Presentation/ViewModels/MapViewModel.swift,
-			);
-			target = CEFE2F212F6AB31D00EC7A45 /* DemoLocationAppTests */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		CEFE2F122F6AB31A00EC7A45 /* DemoLocationApp */ = {
+		CE1CFCC42F6C5A91002DE4D3 /* DemoOffLineDBApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				CEFE300B2F6AB71A00EC7A45 /* Exceptions for "DemoLocationApp" folder in "DemoLocationAppTests" target */,
-			);
-			path = DemoLocationApp;
+			path = DemoOffLineDBApp;
 			sourceTree = "<group>";
 		};
-		CEFE2F252F6AB31D00EC7A45 /* DemoLocationAppTests */ = {
+		CE1CFCD72F6C5A94002DE4D3 /* DemoOffLineDBAppTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				18A8C8F52F6B144E0055B642 /* Exceptions for "DemoLocationAppTests" folder in "DemoLocationApp" target */,
-			);
-			path = DemoLocationAppTests;
+			path = DemoOffLineDBAppTests;
 			sourceTree = "<group>";
 		};
-		CEFE2F2F2F6AB31D00EC7A45 /* DemoLocationAppUITests */ = {
+		CE1CFCE12F6C5A94002DE4D3 /* DemoOffLineDBAppUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DemoLocationAppUITests;
+			path = DemoOffLineDBAppUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CEFE2F0D2F6AB31A00EC7A45 /* Frameworks */ = {
+		CE1CFCBF2F6C5A91002DE4D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFE2F1F2F6AB31D00EC7A45 /* Frameworks */ = {
+		CE1CFCD12F6C5A94002DE4D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFE2F292F6AB31D00EC7A45 /* Frameworks */ = {
+		CE1CFCDB2F6C5A94002DE4D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -103,22 +72,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CEFE2F072F6AB31A00EC7A45 = {
+		CE1CFCB92F6C5A91002DE4D3 = {
 			isa = PBXGroup;
 			children = (
-				CEFE2F122F6AB31A00EC7A45 /* DemoLocationApp */,
-				CEFE2F252F6AB31D00EC7A45 /* DemoLocationAppTests */,
-				CEFE2F2F2F6AB31D00EC7A45 /* DemoLocationAppUITests */,
-				CEFE2F112F6AB31A00EC7A45 /* Products */,
+				CE1CFCC42F6C5A91002DE4D3 /* DemoOffLineDBApp */,
+				CE1CFCD72F6C5A94002DE4D3 /* DemoOffLineDBAppTests */,
+				CE1CFCE12F6C5A94002DE4D3 /* DemoOffLineDBAppUITests */,
+				CE1CFCC32F6C5A91002DE4D3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		CEFE2F112F6AB31A00EC7A45 /* Products */ = {
+		CE1CFCC32F6C5A91002DE4D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEFE2F102F6AB31A00EC7A45 /* DemoLocationApp.app */,
-				CEFE2F222F6AB31D00EC7A45 /* DemoLocationAppTests.xctest */,
-				CEFE2F2C2F6AB31D00EC7A45 /* DemoLocationAppUITests.xctest */,
+				CE1CFCC22F6C5A91002DE4D3 /* DemoOffLineDBApp.app */,
+				CE1CFCD42F6C5A94002DE4D3 /* DemoOffLineDBAppTests.xctest */,
+				CE1CFCDE2F6C5A94002DE4D3 /* DemoOffLineDBAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,134 +95,134 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CEFE2F0F2F6AB31A00EC7A45 /* DemoLocationApp */ = {
+		CE1CFCC12F6C5A91002DE4D3 /* DemoOffLineDBApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEFE2F362F6AB31D00EC7A45 /* Build configuration list for PBXNativeTarget "DemoLocationApp" */;
+			buildConfigurationList = CE1CFCE82F6C5A94002DE4D3 /* Build configuration list for PBXNativeTarget "DemoOffLineDBApp" */;
 			buildPhases = (
-				CEFE2F0C2F6AB31A00EC7A45 /* Sources */,
-				CEFE2F0D2F6AB31A00EC7A45 /* Frameworks */,
-				CEFE2F0E2F6AB31A00EC7A45 /* Resources */,
+				CE1CFCBE2F6C5A91002DE4D3 /* Sources */,
+				CE1CFCBF2F6C5A91002DE4D3 /* Frameworks */,
+				CE1CFCC02F6C5A91002DE4D3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				CEFE2F122F6AB31A00EC7A45 /* DemoLocationApp */,
+				CE1CFCC42F6C5A91002DE4D3 /* DemoOffLineDBApp */,
 			);
-			name = DemoLocationApp;
+			name = DemoOffLineDBApp;
 			packageProductDependencies = (
 			);
-			productName = DemoLocationApp;
-			productReference = CEFE2F102F6AB31A00EC7A45 /* DemoLocationApp.app */;
+			productName = DemoOffLineDBApp;
+			productReference = CE1CFCC22F6C5A91002DE4D3 /* DemoOffLineDBApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CEFE2F212F6AB31D00EC7A45 /* DemoLocationAppTests */ = {
+		CE1CFCD32F6C5A94002DE4D3 /* DemoOffLineDBAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEFE2F392F6AB31D00EC7A45 /* Build configuration list for PBXNativeTarget "DemoLocationAppTests" */;
+			buildConfigurationList = CE1CFCEB2F6C5A94002DE4D3 /* Build configuration list for PBXNativeTarget "DemoOffLineDBAppTests" */;
 			buildPhases = (
-				CEFE2F1E2F6AB31D00EC7A45 /* Sources */,
-				CEFE2F1F2F6AB31D00EC7A45 /* Frameworks */,
-				CEFE2F202F6AB31D00EC7A45 /* Resources */,
+				CE1CFCD02F6C5A94002DE4D3 /* Sources */,
+				CE1CFCD12F6C5A94002DE4D3 /* Frameworks */,
+				CE1CFCD22F6C5A94002DE4D3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CEFE2F242F6AB31D00EC7A45 /* PBXTargetDependency */,
+				CE1CFCD62F6C5A94002DE4D3 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				CEFE2F252F6AB31D00EC7A45 /* DemoLocationAppTests */,
+				CE1CFCD72F6C5A94002DE4D3 /* DemoOffLineDBAppTests */,
 			);
-			name = DemoLocationAppTests;
+			name = DemoOffLineDBAppTests;
 			packageProductDependencies = (
 			);
-			productName = DemoLocationAppTests;
-			productReference = CEFE2F222F6AB31D00EC7A45 /* DemoLocationAppTests.xctest */;
+			productName = DemoOffLineDBAppTests;
+			productReference = CE1CFCD42F6C5A94002DE4D3 /* DemoOffLineDBAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CEFE2F2B2F6AB31D00EC7A45 /* DemoLocationAppUITests */ = {
+		CE1CFCDD2F6C5A94002DE4D3 /* DemoOffLineDBAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEFE2F3C2F6AB31D00EC7A45 /* Build configuration list for PBXNativeTarget "DemoLocationAppUITests" */;
+			buildConfigurationList = CE1CFCEE2F6C5A94002DE4D3 /* Build configuration list for PBXNativeTarget "DemoOffLineDBAppUITests" */;
 			buildPhases = (
-				CEFE2F282F6AB31D00EC7A45 /* Sources */,
-				CEFE2F292F6AB31D00EC7A45 /* Frameworks */,
-				CEFE2F2A2F6AB31D00EC7A45 /* Resources */,
+				CE1CFCDA2F6C5A94002DE4D3 /* Sources */,
+				CE1CFCDB2F6C5A94002DE4D3 /* Frameworks */,
+				CE1CFCDC2F6C5A94002DE4D3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CEFE2F2E2F6AB31D00EC7A45 /* PBXTargetDependency */,
+				CE1CFCE02F6C5A94002DE4D3 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				CEFE2F2F2F6AB31D00EC7A45 /* DemoLocationAppUITests */,
+				CE1CFCE12F6C5A94002DE4D3 /* DemoOffLineDBAppUITests */,
 			);
-			name = DemoLocationAppUITests;
+			name = DemoOffLineDBAppUITests;
 			packageProductDependencies = (
 			);
-			productName = DemoLocationAppUITests;
-			productReference = CEFE2F2C2F6AB31D00EC7A45 /* DemoLocationAppUITests.xctest */;
+			productName = DemoOffLineDBAppUITests;
+			productReference = CE1CFCDE2F6C5A94002DE4D3 /* DemoOffLineDBAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CEFE2F082F6AB31A00EC7A45 /* Project object */ = {
+		CE1CFCBA2F6C5A91002DE4D3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					CEFE2F0F2F6AB31A00EC7A45 = {
+					CE1CFCC12F6C5A91002DE4D3 = {
 						CreatedOnToolsVersion = 16.2;
 					};
-					CEFE2F212F6AB31D00EC7A45 = {
+					CE1CFCD32F6C5A94002DE4D3 = {
 						CreatedOnToolsVersion = 16.2;
-						TestTargetID = CEFE2F0F2F6AB31A00EC7A45;
+						TestTargetID = CE1CFCC12F6C5A91002DE4D3;
 					};
-					CEFE2F2B2F6AB31D00EC7A45 = {
+					CE1CFCDD2F6C5A94002DE4D3 = {
 						CreatedOnToolsVersion = 16.2;
-						TestTargetID = CEFE2F0F2F6AB31A00EC7A45;
+						TestTargetID = CE1CFCC12F6C5A91002DE4D3;
 					};
 				};
 			};
-			buildConfigurationList = CEFE2F0B2F6AB31A00EC7A45 /* Build configuration list for PBXProject "DemoLocationApp" */;
+			buildConfigurationList = CE1CFCBD2F6C5A91002DE4D3 /* Build configuration list for PBXProject "DemoOffLineDBApp" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = CEFE2F072F6AB31A00EC7A45;
+			mainGroup = CE1CFCB92F6C5A91002DE4D3;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = CEFE2F112F6AB31A00EC7A45 /* Products */;
+			productRefGroup = CE1CFCC32F6C5A91002DE4D3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEFE2F0F2F6AB31A00EC7A45 /* DemoLocationApp */,
-				CEFE2F212F6AB31D00EC7A45 /* DemoLocationAppTests */,
-				CEFE2F2B2F6AB31D00EC7A45 /* DemoLocationAppUITests */,
+				CE1CFCC12F6C5A91002DE4D3 /* DemoOffLineDBApp */,
+				CE1CFCD32F6C5A94002DE4D3 /* DemoOffLineDBAppTests */,
+				CE1CFCDD2F6C5A94002DE4D3 /* DemoOffLineDBAppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CEFE2F0E2F6AB31A00EC7A45 /* Resources */ = {
+		CE1CFCC02F6C5A91002DE4D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFE2F202F6AB31D00EC7A45 /* Resources */ = {
+		CE1CFCD22F6C5A94002DE4D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFE2F2A2F6AB31D00EC7A45 /* Resources */ = {
+		CE1CFCDC2F6C5A94002DE4D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -263,21 +232,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CEFE2F0C2F6AB31A00EC7A45 /* Sources */ = {
+		CE1CFCBE2F6C5A91002DE4D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFE2F1E2F6AB31D00EC7A45 /* Sources */ = {
+		CE1CFCD02F6C5A94002DE4D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFE2F282F6AB31D00EC7A45 /* Sources */ = {
+		CE1CFCDA2F6C5A94002DE4D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -287,20 +256,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CEFE2F242F6AB31D00EC7A45 /* PBXTargetDependency */ = {
+		CE1CFCD62F6C5A94002DE4D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CEFE2F0F2F6AB31A00EC7A45 /* DemoLocationApp */;
-			targetProxy = CEFE2F232F6AB31D00EC7A45 /* PBXContainerItemProxy */;
+			target = CE1CFCC12F6C5A91002DE4D3 /* DemoOffLineDBApp */;
+			targetProxy = CE1CFCD52F6C5A94002DE4D3 /* PBXContainerItemProxy */;
 		};
-		CEFE2F2E2F6AB31D00EC7A45 /* PBXTargetDependency */ = {
+		CE1CFCE02F6C5A94002DE4D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CEFE2F0F2F6AB31A00EC7A45 /* DemoLocationApp */;
-			targetProxy = CEFE2F2D2F6AB31D00EC7A45 /* PBXContainerItemProxy */;
+			target = CE1CFCC12F6C5A91002DE4D3 /* DemoOffLineDBApp */;
+			targetProxy = CE1CFCDF2F6C5A94002DE4D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		CEFE2F342F6AB31D00EC7A45 /* Debug */ = {
+		CE1CFCE62F6C5A94002DE4D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -363,7 +332,7 @@
 			};
 			name = Debug;
 		};
-		CEFE2F352F6AB31D00EC7A45 /* Release */ = {
+		CE1CFCE72F6C5A94002DE4D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -419,29 +388,27 @@
 			};
 			name = Release;
 		};
-		CEFE2F372F6AB31D00EC7A45 /* Debug */ = {
+		CE1CFCE92F6C5A94002DE4D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DemoLocationApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DemoOffLineDBApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show it on the map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = user.DemoLocationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = user.DemoOffLineDBApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -449,29 +416,27 @@
 			};
 			name = Debug;
 		};
-		CEFE2F382F6AB31D00EC7A45 /* Release */ = {
+		CE1CFCEA2F6C5A94002DE4D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DemoLocationApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DemoOffLineDBApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show it on the map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = user.DemoLocationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = user.DemoOffLineDBApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -479,7 +444,7 @@
 			};
 			name = Release;
 		};
-		CEFE2F3A2F6AB31D00EC7A45 /* Debug */ = {
+		CE1CFCEC2F6C5A94002DE4D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,16 +453,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = user.DemoLocationAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = user.DemoOffLineDBAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoLocationApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemoLocationApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoOffLineDBApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemoOffLineDBApp";
 			};
 			name = Debug;
 		};
-		CEFE2F3B2F6AB31D00EC7A45 /* Release */ = {
+		CE1CFCED2F6C5A94002DE4D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,87 +471,87 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = user.DemoLocationAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = user.DemoOffLineDBAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoLocationApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemoLocationApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoOffLineDBApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemoOffLineDBApp";
 			};
 			name = Release;
 		};
-		CEFE2F3D2F6AB31D00EC7A45 /* Debug */ = {
+		CE1CFCEF2F6C5A94002DE4D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = user.DemoLocationAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = user.DemoOffLineDBAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DemoLocationApp;
+				TEST_TARGET_NAME = DemoOffLineDBApp;
 			};
 			name = Debug;
 		};
-		CEFE2F3E2F6AB31D00EC7A45 /* Release */ = {
+		CE1CFCF02F6C5A94002DE4D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = user.DemoLocationAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = user.DemoOffLineDBAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DemoLocationApp;
+				TEST_TARGET_NAME = DemoOffLineDBApp;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CEFE2F0B2F6AB31A00EC7A45 /* Build configuration list for PBXProject "DemoLocationApp" */ = {
+		CE1CFCBD2F6C5A91002DE4D3 /* Build configuration list for PBXProject "DemoOffLineDBApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CEFE2F342F6AB31D00EC7A45 /* Debug */,
-				CEFE2F352F6AB31D00EC7A45 /* Release */,
+				CE1CFCE62F6C5A94002DE4D3 /* Debug */,
+				CE1CFCE72F6C5A94002DE4D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEFE2F362F6AB31D00EC7A45 /* Build configuration list for PBXNativeTarget "DemoLocationApp" */ = {
+		CE1CFCE82F6C5A94002DE4D3 /* Build configuration list for PBXNativeTarget "DemoOffLineDBApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CEFE2F372F6AB31D00EC7A45 /* Debug */,
-				CEFE2F382F6AB31D00EC7A45 /* Release */,
+				CE1CFCE92F6C5A94002DE4D3 /* Debug */,
+				CE1CFCEA2F6C5A94002DE4D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEFE2F392F6AB31D00EC7A45 /* Build configuration list for PBXNativeTarget "DemoLocationAppTests" */ = {
+		CE1CFCEB2F6C5A94002DE4D3 /* Build configuration list for PBXNativeTarget "DemoOffLineDBAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CEFE2F3A2F6AB31D00EC7A45 /* Debug */,
-				CEFE2F3B2F6AB31D00EC7A45 /* Release */,
+				CE1CFCEC2F6C5A94002DE4D3 /* Debug */,
+				CE1CFCED2F6C5A94002DE4D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEFE2F3C2F6AB31D00EC7A45 /* Build configuration list for PBXNativeTarget "DemoLocationAppUITests" */ = {
+		CE1CFCEE2F6C5A94002DE4D3 /* Build configuration list for PBXNativeTarget "DemoOffLineDBAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CEFE2F3D2F6AB31D00EC7A45 /* Debug */,
-				CEFE2F3E2F6AB31D00EC7A45 /* Release */,
+				CE1CFCEF2F6C5A94002DE4D3 /* Debug */,
+				CE1CFCF02F6C5A94002DE4D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CEFE2F082F6AB31A00EC7A45 /* Project object */;
+	rootObject = CE1CFCBA2F6C5A91002DE4D3 /* Project object */;
 }

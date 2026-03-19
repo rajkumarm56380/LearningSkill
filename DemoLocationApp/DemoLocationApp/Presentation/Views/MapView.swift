@@ -6,14 +6,29 @@
 
 import SwiftUI
 import MapKit
+import SwiftUI
+import MapKit
 
-struct MapView: View {
+
+struct MapViewolg: View {
 
     @StateObject var viewModel: MapViewModel
 
     var body: some View {
 
         ZStack {
+            
+            Map(position: $viewModel.mapPosition) {
+                        Annotation("Union Square",
+                                   coordinate: CLLocationCoordinate2D(latitude: 37.7879, longitude: -122.4074)) {
+                            Image(systemName: "mappin.circle.fill")
+                                .foregroundColor(.red)
+                                .font(.title)
+                        }
+                    }
+                    .mapStyle(.standard)
+                    .ignoresSafeArea()
+
             MapReader { proxy in
                 Map(position: $viewModel.mapPosition) {
 
