@@ -46,8 +46,5 @@ final class DependencyContainer {
     static func makeHomeViewModel(user: User?) -> HomeViewModel {
         HomeViewModel(user: user)
     }
-
-    static func getUser(email: String) -> User? {
-        storage.fetchUsers(email: email).first
-    }
+    
 }

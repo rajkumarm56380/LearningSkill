@@ -15,6 +15,7 @@ class LoginViewModel: ObservableObject {
 
     @Published var isLoading = false
     @Published var isLoggedIn = false
+    @Published var shouldNavigateToHome = false
     @Published var errorMessage: String?
     @Published var loggedUser: User?
 
@@ -32,6 +33,8 @@ class LoginViewModel: ObservableObject {
 
     func login() {
 
+        guard validateFields() else { return }
+
         isLoading = true
 
         loginUseCase.execute(email: email, password: password)
@@ -47,8 +50,24 @@ class LoginViewModel: ObservableObject {
                     self.loggedUser = user
                     self.isLoggedIn = true
                     self.sessionManager.login(user: user)
+                    self.shouldNavigateToHome = true
                 }
             }
             .store(in: &cancellables)
+    }
+
+    private func validateFields() -> Bool {
+
+        if password.isEmpty || email.isEmpty || password.isEmpty {
+            errorMessage = "All fields required"
+            return false
+        }
+
+        if password.count < 4 {
+            errorMessage = "Password must be at least 4 characters"
+            return false
+        }
+
+        return true
     }
 }

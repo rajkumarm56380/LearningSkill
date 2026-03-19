@@ -46,11 +46,12 @@ final class SessionManager: ObservableObject {
     }
 
     private func loadUser() {
-
+        
         guard let data = UserDefaults.standard.data(forKey: "users"),
               let users = try? JSONDecoder().decode([User].self, from: data)
         else { return }
-
+        
         currentUser = users.first
     }
+
 }

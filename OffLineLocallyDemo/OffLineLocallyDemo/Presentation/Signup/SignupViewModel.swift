@@ -17,6 +17,7 @@ final class SignupViewModel: ObservableObject {
 
     @Published var isLoading = false
     @Published var signupSuccess = false
+    @Published var shouldNavigateToLogin = false
     @Published var errorMessage: String?
     @Published var loggedUser: User?
 
@@ -49,17 +50,20 @@ final class SignupViewModel: ObservableObject {
         signupUseCase.execute(user: user)
             .receive(on: DispatchQueue.main)
             .sink { completion in
-
                 self.isLoading = false
                 self.sessionManager.isLoggedIn = false
                 if case .failure(let error) = completion {
                     self.errorMessage = error.localizedDescription
-                }
+            }
 
             } receiveValue: { success in
                 self.signupSuccess = success
                 self.loggedUser = user
+
                 self.sessionManager.login(user: user)
+                if success {
+                    self.shouldNavigateToLogin = true
+                }
             }
             .store(in: &cancellables)
     }

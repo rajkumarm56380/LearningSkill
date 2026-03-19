@@ -9,28 +9,30 @@ import SwiftUI
 struct SignupView: View {
 
     @StateObject var viewModel: SignupViewModel
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var router: Router
 
     var body: some View {
-        NavigationStack {
             VStack(spacing: 20) {
-                
-                Text("Create Account")
-                    .font(.largeTitle)
-                
+
                 TextField("Name", text: $viewModel.name)
-                    .textFieldStyle(.roundedBorder)
+                    .customStyle()
                 
                 TextField("Email", text: $viewModel.email)
-                    .textFieldStyle(.roundedBorder)
-                
+                    .customStyle()
+
                 SecureField("Password", text: $viewModel.password)
-                    .textFieldStyle(.roundedBorder)
-                
+                    .customStyle()
+
                 Button("Sign Up") {
                     viewModel.signup()
                 }
                 .buttonStyle(.borderedProminent)
-                
+
+                Button("Login") {
+                    router.pop()
+                }.buttonStyle(.borderedProminent)
+
                 if viewModel.isLoading {
                     ProgressView()
                 }
@@ -44,20 +46,16 @@ struct SignupView: View {
                     Text(error)
                         .foregroundColor(.red)
                 }
-                
+
             }
-        }
-        .navigationDestination(isPresented: $viewModel.signupSuccess) {
-            HomeView(
-                viewModel: DependencyContainer
-                    .makeHomeViewModel(user: viewModel.loggedUser)
-            )
-        }.navigationTitle("SignUp Screen")
-        .navigationBarBackButtonHidden(true)
-        .padding()
+            .padding()
+            .navigationTitle("SignUp Screen")
+            .appNavigationStyle()
+            .onChange(of: viewModel.signupSuccess) {
+                if viewModel.signupSuccess {
+                    router.pop()
+                }
+            }
     }
 }
 
-#Preview {
-    SignupView(viewModel:  DependencyContainer.makeSignupViewModel())
-}

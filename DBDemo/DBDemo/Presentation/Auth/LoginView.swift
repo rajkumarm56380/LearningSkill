@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject var vm = AuthViewModel(container: DependencyContainer.shared)
+    @StateObject var vm = AuthViewModel()
 
     var body: some View {
         NavigationStack {

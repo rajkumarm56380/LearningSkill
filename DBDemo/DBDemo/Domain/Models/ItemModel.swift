@@ -7,6 +7,6 @@
 import Foundation
 
 struct ItemModel: Identifiable {
-    let id = UUID()
+    var id: UUID
     var title: String
 }

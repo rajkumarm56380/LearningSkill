@@ -24,7 +24,7 @@ struct DBDemoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            RootView()
         }
         .modelContainer(sharedModelContainer)
     }

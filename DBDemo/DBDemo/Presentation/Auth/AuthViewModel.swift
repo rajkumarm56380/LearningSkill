@@ -14,6 +14,7 @@ final class AuthViewModel: ObservableObject {
     @Published var isLoggedIn = false
     @Published var error: String?
 
+    
     private let loginUseCase: LoginUseCase
     private let signupUseCase: SignupUseCase
 
@@ -35,6 +36,7 @@ final class AuthViewModel: ObservableObject {
         do {
             try signupUseCase.execute(email: email, password: password)
             isLoggedIn = true
+            SessionManager.shared.isLoggedIn = true
         } catch {
             self.error = "Signup Failed"
         }

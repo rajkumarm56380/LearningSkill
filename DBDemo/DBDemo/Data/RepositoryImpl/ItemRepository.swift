@@ -12,7 +12,7 @@ final class ItemRepository: ItemRepositoryProtocol {
     init(stack: SwiftDataStack) { self.stack = stack }
 
     func fetchItems() -> [ItemModel] {
-        stack.fetch(ItemEntity.self).map { ItemModel(id: $0.id, title: $0.title) }
+        stack.fetch(ItemEntity.self).map { ItemModel(id: $0.id,title: $0.title) }
     }
 
     func addItem(_ item: ItemModel) {

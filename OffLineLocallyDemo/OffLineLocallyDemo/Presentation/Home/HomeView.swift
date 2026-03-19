@@ -8,9 +8,9 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
-    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var session: SessionManager
-
+    @EnvironmentObject var router: Router
+    
     var body: some View {
 
         VStack(spacing: 20) {
@@ -22,14 +22,14 @@ struct HomeView: View {
             }
 
             Button("Logout") {
-                dismiss()
                 viewModel.logout()
                 session.logout()
+                router.popToRoot()
             }
             .buttonStyle(.bordered)
         }
-        .navigationBarTitle("Home Screen", displayMode: .large)
-        .navigationBarBackButtonHidden(true)
+        .navigationTitle("Home Screen")
+        .appNavigationStyle()
         .padding()
     }
 }

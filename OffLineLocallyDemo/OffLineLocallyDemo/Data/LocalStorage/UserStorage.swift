@@ -6,7 +6,8 @@
 import Foundation
 protocol UserStorageProtocol {
     func saveUser(_ user: User)
-    func fetchUsers(email: String) -> [User]
+    func fetchUsers() -> [User]
+    func isUserExist(email: String) -> Bool
 }
 
 final class UserStorage: UserStorageProtocol {
@@ -14,17 +15,18 @@ final class UserStorage: UserStorageProtocol {
     private let key = "users"
 
     func saveUser(_ user: User) {
-        var users = fetchUsers(email: user.email)
+        var users = fetchUsers()
         if let index = users.firstIndex(of: user) {
             users[index] = user
+        } else {
+            users.append(user)
         }
-        users.append(user)
 
         let data = try? JSONEncoder().encode(users)
         UserDefaults.standard.set(data, forKey: key)
     }
 
-    func fetchUsers(email: String) -> [User] {
+    func fetchUsers() -> [User] {
 
         guard let data = UserDefaults.standard.data(forKey: key),
               let users = try? JSONDecoder().decode([User].self, from: data)
@@ -34,7 +36,9 @@ final class UserStorage: UserStorageProtocol {
         return users
     }
 
-    func isLoggedUser() -> Bool {
-        return fetchUsers(email: "").isEmpty ? false : true
+    func isUserExist(email: String) -> Bool {
+        return (fetchUsers().first(where: {
+            $0.email.lowercased() == email.lowercased()
+        }) != nil)
     }
 }
