@@ -1,6 +1,6 @@
 //
 //  SignupViewModel.swift
-//  LocationApp
+//  OffLineLocallyDemo
 //
 //
 

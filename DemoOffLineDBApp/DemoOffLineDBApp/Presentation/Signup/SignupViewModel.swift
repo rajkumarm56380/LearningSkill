@@ -1,56 +1,68 @@
 //
-//  LoginViewModel.swift
-//  OffLineLocallyDemo
+//  SignupViewModel.swift
+//  DemoOffLineDBApp
 //
 //
 
-import Combine
 import Foundation
+import SwiftUI
+import Combine
 
 @MainActor
-class LoginViewModel: ObservableObject {
+final class SignupViewModel: ObservableObject {
 
+    @Published var name = ""
     @Published var email = ""
     @Published var password = ""
 
     @Published var isLoading = false
-    @Published var isLoggedIn = false
-    @Published var shouldNavigateToHome = false
+    @Published var signupSuccess = false
+    @Published var shouldNavigateToLogin = false
     @Published var errorMessage: String?
     @Published var loggedUser: User?
 
     private let sessionManager: SessionManager
-    private let loginUseCase: LoginUseCase
+    private let signupUseCase: SignupUseCase
     private var cancellables = Set<AnyCancellable>()
 
     init(
-        loginUseCase: LoginUseCase,
+        signupUseCase: SignupUseCase,
         sessionManager: SessionManager
     ) {
-        self.loginUseCase = loginUseCase
+        self.signupUseCase = signupUseCase
         self.sessionManager = sessionManager
     }
 
-    func login() {
+    func signup() {
 
         guard validateFields() else { return }
 
         isLoading = true
 
-        loginUseCase.execute(email: email, password: password)
+        let user = User(
+            id: UUID(),
+            name: name,
+            email: email,
+            password: password,
+            isLoggedIn: true
+        )
+
+        signupUseCase.execute(user: user)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 self.isLoading = false
+                self.sessionManager.isLoggedIn = false
                 if case .failure(let error) = completion {
                     self.errorMessage = error.localizedDescription
-                }
+            }
 
-            } receiveValue: { user in
-                if let user = user {
-                    self.loggedUser = user
-                    self.isLoggedIn = true
-                    self.sessionManager.login(user: user)
-                    self.shouldNavigateToHome = true
+            } receiveValue: { success in
+                self.signupSuccess = success
+                self.loggedUser = user
+
+                self.sessionManager.login(user: user)
+                if success {
+                    self.shouldNavigateToLogin = true
                 }
             }
             .store(in: &cancellables)
@@ -58,7 +70,7 @@ class LoginViewModel: ObservableObject {
 
     private func validateFields() -> Bool {
 
-        if password.isEmpty || email.isEmpty || password.isEmpty {
+        if name.isEmpty || email.isEmpty || password.isEmpty {
             errorMessage = "All fields required"
             return false
         }
@@ -71,3 +83,4 @@ class LoginViewModel: ObservableObject {
         return true
     }
 }
+

@@ -1,6 +1,6 @@
 //
 //  SignupView.swift
-//  OffLineLocallyDemo
+//  DemoOffLineDBApp
 //
 //
 
@@ -17,7 +17,7 @@ struct SignupView: View {
 
                 TextField("Name", text: $viewModel.name)
                     .customStyle()
-                
+
                 TextField("Email", text: $viewModel.email)
                     .customStyle()
 
@@ -36,12 +36,12 @@ struct SignupView: View {
                 if viewModel.isLoading {
                     ProgressView()
                 }
-                
+
                 if viewModel.signupSuccess {
                     Text("Signup Successful")
                         .foregroundColor(.green)
                 }
-                
+
                 if let error = viewModel.errorMessage {
                     Text(error)
                         .foregroundColor(.red)

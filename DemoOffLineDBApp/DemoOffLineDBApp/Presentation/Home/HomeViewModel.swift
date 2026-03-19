@@ -1,6 +1,6 @@
 //
 //  HomeViewModel.swift
-//  OffLineLocallyDemo
+//  DemoOffLineDBApp
 //
 //
 
@@ -37,3 +37,4 @@ final class HomeViewModel: ObservableObject {
         welcomeMessage = "Welcome Guest"
     }
 }
+

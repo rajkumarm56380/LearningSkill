@@ -1,6 +1,7 @@
 //
 //  UserStorage.swift
-//  OffLineLocallyDemo
+//  DemoOffLineDBApp
+//
 //
 
 import Foundation
@@ -42,3 +43,4 @@ final class UserStorage: UserStorageProtocol {
         }) != nil)
     }
 }
+

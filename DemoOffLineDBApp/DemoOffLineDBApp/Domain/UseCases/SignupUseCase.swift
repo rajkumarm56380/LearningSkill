@@ -1,6 +1,6 @@
 //
 //  SignupUseCase.swift
-//  OffLineLocallyDemo
+//  DemoOffLineDBApp
 //
 //
 
@@ -19,3 +19,4 @@ final class SignupUseCase {
         repo.signup(user: user)
     }
 }
+

@@ -1,6 +1,6 @@
 //
 //  LoginViewModel.swift
-//  OffLineLocallyDemo
+//  DemoOffLineDBApp
 //
 //
 
@@ -71,3 +71,4 @@ class LoginViewModel: ObservableObject {
         return true
     }
 }
+

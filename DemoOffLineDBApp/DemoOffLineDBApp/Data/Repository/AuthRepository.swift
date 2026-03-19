@@ -1,6 +1,6 @@
 //
 //  AuthRepository.swift
-//  OffLineLocallyDemo
+//  DemoOffLineDBApp
 //
 //
 
@@ -40,7 +40,7 @@ final class AuthRepository: AuthRepositoryProtocol {
             return Fail(error: AuthError.userNotFound)
                 .eraseToAnyPublisher()
         }
-        
+
         //  Find matching user
         guard let user = storage.fetchUsers().first(where: {
             $0.email.lowercased() == email.lowercased() &&
@@ -55,3 +55,4 @@ final class AuthRepository: AuthRepositoryProtocol {
             .eraseToAnyPublisher()
     }
 }
+

@@ -1,6 +1,6 @@
 //
 //  MockAuthRepository.swift
-//  LocationApp
+//  OffLineLocallyDemo
 //
 //
 

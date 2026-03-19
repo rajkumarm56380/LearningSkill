@@ -1,6 +1,6 @@
 //
 //  DependencyContainer.swift
-//  OffLineLocallyDemo
+//  DemoOffLineDBApp
 //
 //
 
@@ -42,9 +42,9 @@ final class DependencyContainer {
             sessionManager: sessionManager
         )
     }
-    
+
     static func makeHomeViewModel(user: User?) -> HomeViewModel {
         HomeViewModel(user: user)
     }
-    
+
 }

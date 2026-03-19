@@ -1,6 +1,6 @@
 //
 //  HomeView.swift
-//  OffLineLocallyDemo
+//  DemoOffLineDBApp
 //
 //
 
@@ -10,7 +10,7 @@ struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
     @EnvironmentObject var session: SessionManager
     @EnvironmentObject var router: Router
-    
+
     var body: some View {
 
         VStack(spacing: 20) {

@@ -1,15 +1,14 @@
 //
-//  DemoOffLineDBAppApp.swift
+//  DemoOffLineDBApp.swift
 //  DemoOffLineDBApp
 //
-//  Created by user on 19/03/26.
 //
 
 import SwiftUI
 import SwiftData
 
 @main
-struct DemoOffLineDBAppApp: App {
+struct DemoOffLineDBApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -23,10 +22,14 @@ struct DemoOffLineDBAppApp: App {
         }
     }()
 
+    @StateObject private var sessionManager = SessionManager()
+    @StateObject private var router = Router()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environmentObject(sessionManager)
+                .environmentObject(router)
         }
-        .modelContainer(sharedModelContainer)
     }
 }

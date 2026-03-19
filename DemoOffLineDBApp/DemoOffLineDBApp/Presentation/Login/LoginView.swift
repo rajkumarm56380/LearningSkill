@@ -1,6 +1,6 @@
 //
 //  LoginView.swift
-//  OffLineLocallyDemo
+//  DemoOffLineDBApp
 //
 //
 
@@ -55,4 +55,3 @@ struct LoginView: View {
             }
     }
 }
-
