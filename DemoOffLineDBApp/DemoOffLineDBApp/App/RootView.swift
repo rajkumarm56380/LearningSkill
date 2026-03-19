@@ -2,7 +2,6 @@
 //  RootView.swift
 //  DemoOffLineDBApp
 //
-//  Created by Apple on 19/03/26.
 //
 
 import SwiftUI

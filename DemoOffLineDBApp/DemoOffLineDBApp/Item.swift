@@ -2,7 +2,6 @@
 //  Item.swift
 //  DemoOffLineDBApp
 //
-//  Created by user on 19/03/26.
 //
 
 import Foundation

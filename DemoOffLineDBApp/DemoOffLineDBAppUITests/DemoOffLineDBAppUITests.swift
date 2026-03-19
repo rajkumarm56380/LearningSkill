@@ -2,7 +2,6 @@
 //  DemoOffLineDBAppUITests.swift
 //  DemoOffLineDBAppUITests
 //
-//  Created by user on 19/03/26.
 //
 
 import XCTest
