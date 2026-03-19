@@ -143,4 +143,40 @@ final class MapViewModelTests: XCTestCase {
 
         wait(for: [expectation], timeout: 2)
     }
+
+    func test_addPin_shouldAppendLocation() {
+
+        let coordinate = CLLocationCoordinate2D(latitude: 12.9716, longitude: 77.5946)
+
+        viewModel.addPin(coordinate)
+
+        XCTAssertEqual(viewModel.locations.count, 1)
+        XCTAssertEqual(viewModel.selectedLocation?.coordinate.latitude, coordinate.latitude)
+    }
+
+    func test_addPin_shouldNotAddDuplicate() {
+
+        let coord = CLLocationCoordinate2D(latitude: 12.9716, longitude: 77.5946)
+
+        viewModel.addPin(coord)
+        viewModel.addPin(coord)
+
+        XCTAssertEqual(viewModel.locations.count, 1)
+    }
+
+    func test_address_shouldUpdate_afterAPIResponse() {
+
+        let coord = CLLocationCoordinate2D(latitude: 12.9716, longitude: 77.5946)
+
+        viewModel.addPin(coord)
+
+        let expectation = XCTestExpectation(description: "Address updated")
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            XCTAssertNotEqual(self.viewModel.locations.first?.address, "Loading...")
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 2)
+    }
 }

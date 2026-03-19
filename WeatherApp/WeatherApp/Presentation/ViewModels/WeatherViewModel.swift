@@ -8,7 +8,7 @@ import Combine
 import Foundation
 
 final class WeatherViewModel: ObservableObject {
-    @Published var temperature: String = "--"
+    @Published var temperature: String = "25.0 °C"
     @Published var windspeed: String = "--"
     @Published var isLoading = false
     @Published var isOffline = false

@@ -11,12 +11,12 @@ final class WeatherRepository: WeatherRepositoryProtocol {
 
     private let locationService: LocationService
     private let apiService: WeatherAPIServiceProtocol
-    private let mockService: MockWeatherServiceProtocol
+    private let mockService: MockWeatherService
     private let networkMonitor: NetworkMonitor
 
     init(locationService: LocationService,
             apiService: WeatherAPIServiceProtocol,
-            mockService: MockWeatherServiceProtocol,
+            mockService: MockWeatherService,
             networkMonitor: NetworkMonitor = .shared) {
            self.locationService = locationService
            self.apiService = apiService

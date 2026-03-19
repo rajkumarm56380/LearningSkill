@@ -30,6 +30,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		18A8C8F52F6B144E0055B642 /* Exceptions for "DemoLocationAppTests" folder in "DemoLocationApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Mock/MockLocationService.swift,
+			);
+			target = CEFE2F0F2F6AB31A00EC7A45 /* DemoLocationApp */;
+		};
 		CEFE300B2F6AB71A00EC7A45 /* Exceptions for "DemoLocationApp" folder in "DemoLocationAppTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -39,6 +46,7 @@
 				Domain/Models/LocationModel.swift,
 				Domain/RepositoryProtocol/GeocoderServiceProtocol.swift,
 				Domain/RepositoryProtocol/LocationRepositoryProtocol.swift,
+				Domain/RepositoryProtocol/LocationServiceProtocol.swift,
 				Domain/UseCases/GetLocationDetailsUseCase.swift,
 				Presentation/ViewModels/MapViewModel.swift,
 			);
@@ -57,6 +65,9 @@
 		};
 		CEFE2F252F6AB31D00EC7A45 /* DemoLocationAppTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				18A8C8F52F6B144E0055B642 /* Exceptions for "DemoLocationAppTests" folder in "DemoLocationApp" target */,
+			);
 			path = DemoLocationAppTests;
 			sourceTree = "<group>";
 		};

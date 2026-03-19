@@ -12,7 +12,12 @@ import MapKit
 class MapViewModel: ObservableObject {
 
     // MARK: - Map State
-    @Published var mapPosition: MapCameraPosition = .automatic
+    @Published var mapPosition: MapCameraPosition = .region(
+        MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: 12.9716, longitude: 77.5946),
+            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        )
+    )
 
     // MARK: - UI State
     @Published var locations: [LocationModel] = []
@@ -163,10 +168,21 @@ class MapViewModel: ObservableObject {
     // MARK: - Helper
     private func isDuplicate(_ coordinate: CLLocationCoordinate2D) -> Bool {
 
-        locations.contains {
-            abs($0.coordinate.latitude - coordinate.latitude) < 0.0001 &&
-            abs($0.coordinate.longitude - coordinate.longitude) < 0.0001
-        }
+        let newLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+
+            return locations.contains { existing in
+                let existingLocation = CLLocation(
+                    latitude: existing.coordinate.latitude,
+                    longitude: existing.coordinate.longitude
+                )
+
+                return newLocation.distance(from: existingLocation) < 50 // meters
+            }
+        // close (~11 meters)
+//        locations.contains {
+//            abs($0.coordinate.latitude - coordinate.latitude) < 0.0001 &&
+//            abs($0.coordinate.longitude - coordinate.longitude) < 0.0001
+//        }
     }
 }
 

@@ -30,6 +30,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		189EAEA42F6BD24400E74D97 /* Exceptions for "WeatherAppTests" folder in "WeatherApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Mock/MockWeatherRepository.swift,
+			);
+			target = CE50F1DE2F6432470020C643 /* WeatherApp */;
+		};
 		18BABF702F643E7C00146AE9 /* Exceptions for "WeatherApp" folder in "WeatherApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -40,7 +47,11 @@
 		18BABF772F64474600146AE9 /* Exceptions for "WeatherApp" folder in "WeatherAppTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Data/Services/NetworkMonitor.swift,
 				Domain/Models/Weather.swift,
+				Domain/Repositories/WeatherRepositoryProtocol.swift,
+				Domain/UseCases/FetchWeatherUseCase.swift,
+				Presentation/ViewModels/WeatherViewModel.swift,
 			);
 			target = CE50F1EE2F6432480020C643 /* WeatherAppTests */;
 		};
@@ -58,6 +69,9 @@
 		};
 		CE50F1F22F6432480020C643 /* WeatherAppTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				189EAEA42F6BD24400E74D97 /* Exceptions for "WeatherAppTests" folder in "WeatherApp" target */,
+			);
 			path = WeatherAppTests;
 			sourceTree = "<group>";
 		};
@@ -414,7 +428,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WeatherApp/WeatherApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherApp/Preview Content\"";
@@ -424,7 +438,6 @@
 				INFOPLIST_FILE = WeatherApp/Resources/Info.plist;
 				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to fetch weather information.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to fetch weather information.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -448,7 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WeatherApp/WeatherApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherApp/Preview Content\"";
@@ -458,7 +471,6 @@
 				INFOPLIST_FILE = WeatherApp/Resources/Info.plist;
 				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to fetch weather information.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to fetch weather information.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

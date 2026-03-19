@@ -10,36 +10,32 @@ import Combine
 
 final class FetchWeatherUseCaseTests: XCTestCase {
 
-    private var useCase: FetchWeatherUseCase!
-    private let locationService = LocationService()
-    private let apiService = WeatherAPIService()
-    private let mockService = MockWeatherService()
+    private var useCase: FetchWeatherUseCaseProtocol!
+    private var mockRepository: MockWeatherRepository!
     private var cancellables = Set<AnyCancellable>()
 
     override func setUp() {
-        let repository = WeatherRepository(
-                        locationService: locationService,
-                        apiService: apiService,
-                        mockService: mockService
-                    )
-        useCase = FetchWeatherUseCase(repository: repository)
+
+        mockRepository = MockWeatherRepository()
+        mockRepository.temperature = 15.8
+
+        useCase = FetchWeatherUseCase(repository: mockRepository)
     }
 
     func testUseCaseReturnsWeather() {
-        let expectation = XCTestExpectation(
-            description: "UseCase returns weather"
-        )
+
+        let expectation = XCTestExpectation(description: "UseCase returns weather")
 
         useCase.execute()
-            .sink { _ in }
-        receiveValue: { weather in
+            .sink(receiveCompletion: { _ in }) { weather in
 
-            XCTAssertEqual(weather.temperature, 28.5)
-            XCTAssertEqual(weather.windspeed, 8.2)
+                XCTAssertEqual(weather.temperature, 15.8)
+                XCTAssertEqual(weather.windspeed, 5.5)
 
-            expectation.fulfill()
-        }
-        .store(in: &cancellables)
-        wait(for: [expectation], timeout: 5)
+                expectation.fulfill()
+            }
+            .store(in: &cancellables)
+
+        wait(for: [expectation], timeout: 2)
     }
 }

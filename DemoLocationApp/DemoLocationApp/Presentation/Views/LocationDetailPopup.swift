@@ -27,14 +27,14 @@ struct LocationDetailPopup: View {
                     Text(location.address ?? "NA")
                         .accessibilityIdentifier("popup_address")
                 }
-                .accessibilityIdentifier("location_popup")
+
             }
             .padding()
             .frame(maxWidth: .infinity)
             .background(Color.white)
             .cornerRadius(12)
             .shadow(radius: 5)
-
+            .accessibilityIdentifier("location_popup")
         }
         .padding()
     }

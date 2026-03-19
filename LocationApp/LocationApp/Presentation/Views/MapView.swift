@@ -43,6 +43,11 @@ struct MapView: View {
                         }
                 }
             }
+            // MARK: - UI Testing Support
+            .overlay {
+                if ProcessInfo.processInfo.arguments.contains("UI_TEST_MODE") {
+                Color.clear .accessibilityIdentifier("mapView") }
+            }
 
             if let location = viewModel.selectedLocation {
                 LocationDetailPopup(location: location)

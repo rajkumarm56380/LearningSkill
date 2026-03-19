@@ -7,10 +7,14 @@
 import CoreLocation
 import Combine
 
-class LocationService: NSObject, CLLocationManagerDelegate {
+class LocationService: NSObject, CLLocationManagerDelegate, LocationServiceProtocol {
 
     private let manager = CLLocationManager()
-    let locationPublisher = PassthroughSubject<CLLocationCoordinate2D, Never>()
+    private let subject = PassthroughSubject<CLLocationCoordinate2D, Never>()
+
+    var locationPublisher: AnyPublisher<CLLocationCoordinate2D, Never> {
+        subject.eraseToAnyPublisher()
+    }
 
     override init() {
         super.init()
@@ -25,6 +29,6 @@ class LocationService: NSObject, CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let coordinate = locations.first?.coordinate else { return }
-        locationPublisher.send(coordinate)
+        subject.send(coordinate)
     }
 }

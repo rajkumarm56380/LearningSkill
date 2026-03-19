@@ -4,17 +4,27 @@
 //
 //
 
+import Foundation
 import Combine
 
-final class FetchWeatherUseCase {
+protocol FetchWeatherUseCaseProtocol {
+    func execute() -> AnyPublisher<Weather, Error>
+}
+
+final class FetchWeatherUseCase: FetchWeatherUseCaseProtocol {
 
     private let repository: WeatherRepositoryProtocol
 
+    // Dependency Injection
     init(repository: WeatherRepositoryProtocol) {
         self.repository = repository
     }
 
+    // Execute business logic
     func execute() -> AnyPublisher<Weather, Error> {
-        repository.fetchWeather()
+
+        return repository
+            .fetchWeather()
+            .eraseToAnyPublisher()
     }
 }
