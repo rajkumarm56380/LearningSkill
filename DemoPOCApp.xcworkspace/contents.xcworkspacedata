@@ -388,4 +388,139 @@
          </FileRef>
       </Group>
    </Group>
+   <Group
+      location = "group:WeatherApp"
+      name = "WeatherApp">
+      <Group
+         location = "group:WeatherApp"
+         name = "WeatherApp">
+         <Group
+            location = "group:App"
+            name = "App">
+            <FileRef
+               location = "group:DIContainer.swift">
+            </FileRef>
+            <FileRef
+               location = "group:WeatherApp.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Resources"
+            name = "Resources">
+            <FileRef
+               location = "group:Assets.xcassets">
+            </FileRef>
+            <FileRef
+               location = "group:Info.plist">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Preview Content"
+            name = "Preview Content">
+            <FileRef
+               location = "group:Preview Assets.xcassets">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Data"
+            name = "Data">
+            <Group
+               location = "group:Respository"
+               name = "Respository">
+               <FileRef
+                  location = "group:WeatherRepository.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:Services"
+               name = "Services">
+               <FileRef
+                  location = "group:MockWeatherService.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:WeatherAPIService.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:NetworkMonitor.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:LocationService.swift">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:Domain"
+            name = "Domain">
+            <Group
+               location = "group:Repositories"
+               name = "Repositories">
+               <FileRef
+                  location = "group:WeatherRepositoryProtocol.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:Models"
+               name = "Models">
+               <FileRef
+                  location = "group:Weather.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:UseCases"
+               name = "UseCases">
+               <FileRef
+                  location = "group:FetchWeatherUseCase.swift">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:Presentation"
+            name = "Presentation">
+            <Group
+               location = "group:ViewModels"
+               name = "ViewModels">
+               <FileRef
+                  location = "group:WeatherViewModel.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:Views"
+               name = "Views">
+               <FileRef
+                  location = "group:WeatherView.swift">
+               </FileRef>
+            </Group>
+         </Group>
+      </Group>
+      <Group
+         location = "group:WeatherAppTests"
+         name = "WeatherAppTests">
+         <Group
+            location = "group:Mock"
+            name = "Mock">
+            <FileRef
+               location = "group:MockWeatherRepository.swift">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:FetchWeatherUseCaseTests.swift.swift">
+         </FileRef>
+         <FileRef
+            location = "group:WeatherViewModelTests.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:WeatherApp.xcodeproj">
+      </FileRef>
+      <Group
+         location = "group:WeatherAppUITests"
+         name = "WeatherAppUITests">
+         <FileRef
+            location = "group:WeatherAppUITests.swift">
+         </FileRef>
+         <FileRef
+            location = "group:WeatherAppUITestsLaunchTests.swift">
+         </FileRef>
+      </Group>
+   </Group>
 </Workspace>
