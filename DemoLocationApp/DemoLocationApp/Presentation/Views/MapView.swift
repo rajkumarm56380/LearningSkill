@@ -6,11 +6,8 @@
 
 import SwiftUI
 import MapKit
-import SwiftUI
-import MapKit
 
-
-struct MapViewolg: View {
+struct MapView: View {
 
     @StateObject var viewModel: MapViewModel
 
