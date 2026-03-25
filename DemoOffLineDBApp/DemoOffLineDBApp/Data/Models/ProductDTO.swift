@@ -12,13 +12,16 @@ struct ProductResponse: Decodable {
 }
 
 struct ProductDTO: Decodable {
+
     let id: Int
     let title: String
     let price: Double
+    let quantity: Int
+    let total, discountPercentage, discountedTotal: Double
+    let thumbnail: String
     var isFavorite: Bool
-    var quantity: Int
 
     func toDomain() -> Product {
-        Product(id: id, title: "Prouct \(id)", price: price, isFavorite: false, quantity: 1)
+        Product(id: id, title: title, price: price, quantity: quantity, total: total, discountPercentage: discountPercentage, discountedTotal: discountedTotal, thumbnail: thumbnail, isFavorite: isFavorite)
     }
 }

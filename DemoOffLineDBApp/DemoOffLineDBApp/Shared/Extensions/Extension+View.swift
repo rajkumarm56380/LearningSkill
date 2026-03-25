@@ -10,23 +10,34 @@ import SwiftUI
 extension View {
     func appNavigationStyle() -> some View {
         self
-            .toolbarBackground(Color.blue, for: .navigationBar)
+            .toolbarBackground(.purple, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarColorScheme(.dark, for: .navigationBar)
             .navigationBarBackButtonHidden(true)
 
     }
 
     func applyButtonStyle() -> some View {
         self.foregroundColor(.white)
-            .font(.system(size: 24, weight: .bold, design: .default))
-            .frame(maxWidth: .infinity, maxHeight: 60)
+            .fontWeight(.semibold)
+            .font(.title)
+            .frame(maxWidth: .infinity,maxHeight: 45)
+            .padding()
             .foregroundColor(Color.white)
-            .background(Color.blue)
-            .cornerRadius(10)
+            .background(AppConstants.appColour)
+            .cornerRadius(40)
     }
     
     func customStyle() -> some View {
            modifier(CustomStyleView())
+    }
+
+    func loading(_ isLoading: Bool) -> some View {
+        self.overlay {
+            if isLoading {
+                LoadingView()
+            }
+        }
     }
 }
 

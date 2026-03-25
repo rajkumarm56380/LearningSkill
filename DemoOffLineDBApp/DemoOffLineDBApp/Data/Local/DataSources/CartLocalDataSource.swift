@@ -15,20 +15,18 @@ final class CartLocalDataSource {
         self.context = context
     }
 
-    func save(_ dtos: [ProductDTO]) {
-        try? context.delete(model: ProductEntity.self)
+    func save(_ dtos: [FoodRecipeDTO]) {
+        try? context.delete(model: FoodRecipeEntity.self)
         dtos.forEach {
-            context.insert(CartEntity(id: $0.id,
-                                      title: "Product \($0.id)",
-                                      price: $0.price))
+            context.insert(FoodRecipeEntity(id: $0.id, name: $0.name, ingredients: $0.ingredients, instructions: $0.instructions, prepTimeMinutes: $0.prepTimeMinutes, cookTimeMinutes: $0.cookTimeMinutes, servings: $0.servings, difficulty: $0.difficulty, cuisine: $0.cuisine, caloriesPerServing: $0.caloriesPerServing, tags: $0.tags, userId: $0.userId, image: $0.image, rating: $0.rating, reviewCount: $0.reviewCount, mealType: $0.mealType))
         }
         try? context.save()
     }
 
-    func fetch() -> [Product] {
-        let entities = (try? context.fetch(FetchDescriptor<ProductEntity>())) ?? []
+    func fetch() -> [Recipe] {
+        let entities = (try? context.fetch(FetchDescriptor<FoodRecipeEntity>())) ?? []
         return entities.map {
-            Product(id: $0.id, title: $0.title, price: $0.price, isFavorite: $0.isFavorite, quantity: $0.quantity)
+            Recipe(id: $0.id, name: $0.name, ingredients: $0.ingredients, instructions: $0.instructions, prepTimeMinutes: $0.prepTimeMinutes, cookTimeMinutes: $0.cookTimeMinutes, servings: $0.servings, difficulty: $0.difficulty, cuisine: $0.cuisine, caloriesPerServing: $0.caloriesPerServing, tags: $0.tags, userId: $0.userId, image: $0.image, rating: $0.rating, reviewCount: $0.reviewCount, mealType: $0.mealType)
         }
     }
 }

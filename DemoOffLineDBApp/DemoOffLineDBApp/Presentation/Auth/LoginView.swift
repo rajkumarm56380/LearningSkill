@@ -11,63 +11,49 @@ struct LoginView: View {
     @EnvironmentObject var router: AppRouter
     @EnvironmentObject var session: SessionManager
 
-       var body: some View {
-           VStack {
-               VStack {
-                   TextField("Email", text: $viewModel.email)
-                       .customStyle()
-                       .textFieldStyle(.roundedBorder)
-                   SecureField("Password", text: $viewModel.password)
-                       .customStyle()
-                       .textFieldStyle(.roundedBorder)
-               }.padding()
-               /*Button("Login") {
-                   viewModel.login()
-               }.buttonStyle(.borderedProminent)
+    var body: some View {
+        ZStack {
+            VStack(spacing: 20) {
 
-               Button("Sign Up") {
-                   router.push(.signup)
-               }.buttonStyle(.borderedProminent)*/
+                Spacer()
 
-               Button(action: {
-                   print("Log In")
-                   viewModel.login()
-               }) {
-                   Text("Log In")
-                    .applyButtonStyle()
-               }
+                Text("Welcome!")
+                    .font(.largeTitle.bold())
 
-               Button(action: {
-                   print("Sign In")
-                   router.push(.signup)
-               }) {
-                   Text("Sign Up")
-                    .applyButtonStyle()
-               }
+                Text("Sign in to your account")
+                    .font(.title3)
 
-               if viewModel.isLoading {
-                   ProgressView()
-               }
+                AuthTextFieldView(title: "Email", text: $viewModel.email)
+                .keyboardType(.emailAddress)
+                AuthTextFieldView(title: "Password",
+                                  text: $viewModel.password,
+                                  isSecure: true)
 
-               if viewModel.loggedUser?.isLoggedIn ?? false {
-                   Text("Signup Successful")
-                       .foregroundColor(.green)
-               }
+                //ErrorTextView(message: viewModel.errorMessage)
 
-               if let error = viewModel.errorMessage {
-                   Text(error)
-                       .foregroundColor(.red)
-                       .textInputAutocapitalization(.never)
-                       .textCase(.lowercase)
-               }
+                PrimaryButtonView(
+                    title: "Log In",
+                    action: viewModel.login,
+                    isLoading: viewModel.isLoading
+                )
 
-           }.navigationBarBackButtonHidden(true)
-            .appNavigationStyle()
-            .onChange(of: viewModel.loggedUser) {
-                if let user = viewModel.loggedUser {
-                    router.push(.productList)
+                HStack {
+                    Text("Don't have an account?")
+                    Button("Sign up") {
+                        router.push(.signup)
+                    }
+                    .foregroundColor(.blue)
+                    .fontWeight(.semibold)
                 }
+                .padding(.top, 10)
+
+                Spacer()
             }
-           .padding()
-       }
+
+        .loading(viewModel.isLoading)
+        .padding(.vertical)
+        .toast(message: $viewModel.errorMessage)
+        .ignoresSafeArea(.keyboard, edges: .bottom)
+        }
+    }
 }

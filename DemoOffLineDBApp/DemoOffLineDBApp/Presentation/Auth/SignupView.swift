@@ -13,61 +13,47 @@ struct SignupView: View {
     @EnvironmentObject var router: AppRouter
 
     var body: some View {
-        VStack(spacing: 20) {
+        
+        ScrollView {
+            VStack(spacing: 20) {
 
-            TextField("Name", text: $viewModel.name)
-                .customStyle()
+                Text("Create Account")
+                    .font(.largeTitle.bold())
+                    .padding(.top)
 
-            TextField("Email", text: $viewModel.email)
-                .customStyle()
+                AuthTextFieldView(title: "Name", text: $viewModel.name)
+                AuthTextFieldView(title: "Email", text: $viewModel.email)
+                .keyboardType(.emailAddress)
+                AuthTextFieldView(title: "Password",
+                                  text: $viewModel.password,
+                                  isSecure: true)
+                AuthTextFieldView(title: "Confirm Password",
+                                  text: $viewModel.confirmPassword,
+                                  isSecure: true)
 
-            SecureField("Password", text: $viewModel.password)
-                .customStyle()
+                //ErrorTextView(message: viewModel.errorMessage)
 
-            SecureField("Confirm Password", text: $viewModel.confirmPassword)
-                .customStyle()
+                PrimaryButtonView(
+                    title: "Sign Up",
+                    action: viewModel.signup,
+                    isLoading: viewModel.isLoading
+                )
 
-            Button(action: {
-                print("Log In")
-                router.pop()
-            }) {
-                Text("Log In")
-                    .applyButtonStyle()
+                HStack {
+                    Text("Already have an account?")
+                    Button("Log in") {
+                        router.pop()
+                    }
+                    .foregroundColor(.blue)
+                    .fontWeight(.semibold)
+                }
+                .padding(.top, 10)
             }
-
-            // Signup Button
-            Button(action: {
-                print("Sign Up")
-                viewModel.signup()
-            }) {
-                Text("Sign Up")
-                    .applyButtonStyle()
-            }
-
-            if viewModel.isLoading {
-                ProgressView()
-            }
-
-            if viewModel.signupSuccess {
-                Text("Signup Successful")
-                    .foregroundColor(.green)
-            }
-
-            if let error = viewModel.errorMessage {
-                Text(error)
-                    .foregroundColor(.red)
-            }
-
-        }
-        .padding()
-        .navigationTitle("SignUp Screen")
-        .navigationBarBackButtonHidden(true)
-        .appNavigationStyle()
-        .onChange(of: viewModel.signupSuccess) {
-            if viewModel.signupSuccess {
-                router.pop()
-            }
-        }
+         .padding()
+        .loading(viewModel.isLoading)
+        .toast(message: $viewModel.errorMessage)
+        .ignoresSafeArea(.keyboard, edges: .bottom)
+       }
     }
 }
 

@@ -15,7 +15,7 @@ final class ProductRepositoryImpl: ProductRepositoryProtocol {
         self.sync = sync
     }
 
-    func fetch() -> AnyPublisher<[Product], Error> {
+    func fetch() -> AnyPublisher<[Recipe], APIError> {
         sync.fetchProducts()
     }
 }

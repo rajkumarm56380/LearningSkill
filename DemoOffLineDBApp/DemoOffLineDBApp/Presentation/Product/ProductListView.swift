@@ -11,21 +11,30 @@ struct ProductListView: View {
     @ObservedObject var viewModel: ProductListViewModel
     @EnvironmentObject var router: AppRouter
 
+    let columns = [
+            GridItem(.flexible()),
+            GridItem(.flexible())
+        ]
+
     var body: some View {
         NavigationStack {
-            VStack {
-                List(viewModel.products) { product in
-                    Button {
-                        router.push(.productDetail(product))
-                    } label: {
-                        Text(product.title)
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 16) {
+                    ForEach(viewModel.recipes) { recipe in
+                        Button {
+                            router.push(.recipeDetail(recipe))
+                        } label: {
+                            RecipeCardView(recipe: recipe)
+                        }
                     }
                 }
+                .padding()
             }
-            .navigationTitle("Product List")
-            .onAppear { viewModel.load() }
+            .onAppear {
+                viewModel.load()
+            }
+            .navigationTitle("Food Recipes")
             .navigationBarBackButtonHidden(true)
-            .appNavigationStyle()
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink(destination: SettingsView()) { 
@@ -33,6 +42,8 @@ struct ProductListView: View {
                     }
                 }
             }
+            
+            .appNavigationStyle()
         }
     }
 }

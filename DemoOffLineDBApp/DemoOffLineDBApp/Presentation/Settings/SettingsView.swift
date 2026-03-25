@@ -12,19 +12,11 @@ struct SettingsView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Settings View Content")
-            Button(action: {
-                print("Logout")
-                router.push(.login)
-                session.logout()
-            }) {
-                Text("Logout")
-                 .applyButtonStyle()
-            }
+            
         }.padding()
         .navigationTitle("Settings")
+        .navigationBarBackButtonHidden(false)
         .appNavigationStyle()
-
     }
 }
 

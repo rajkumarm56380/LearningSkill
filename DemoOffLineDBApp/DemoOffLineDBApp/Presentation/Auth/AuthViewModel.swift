@@ -23,6 +23,7 @@ final class AuthViewModel: ObservableObject {
     private let router: AppRouter
     private let session: SessionManager
     private let repo: AuthRepositoryProtocol
+
     init(repo: AuthRepositoryProtocol,
          session: SessionManager,
          router: AppRouter) {
@@ -46,10 +47,8 @@ final class AuthViewModel: ObservableObject {
         Task {
             do {
                 let createdUser = try await repo.signup(user: user)
-
                 self.signupSuccess = true
                 self.loggedUser = createdUser
-
             } catch {
                 self.errorMessage = error.localizedDescription
             }
@@ -59,93 +58,45 @@ final class AuthViewModel: ObservableObject {
     }
 
     func login() {
-        guard validateFields() else { return }
+        guard loginFieldsValidate() else { return }
 
         isLoading = true
 
         Task {
             do {
                 let user = try await repo.login(email: email, password: password)
-
                 self.loggedUser = user
                 self.session.user = user
-                
             } catch {
                 self.errorMessage = error.localizedDescription
             }
-
             self.isLoading = false
         }
     }
-    /*
-    func login() {
-        guard validateFields() else { return }
 
-        isLoading = true
+    private func loginFieldsValidate() -> Bool {
 
-        Task {
-            do {
-                try await repo.login(email: email, password: password)
-                    .receive(on: DispatchQueue.main)
-                    .sink { completion in
-                        self.isLoading = false
-                        if case .failure(let error) = completion {
-                            self.errorMessage = error.localizedDescription
-                        }
-
-                    } receiveValue: { user in
-                        if !user.email.isEmpty {
-                            self.loggedUser = user
-                            self.router.push(.productList)
-                            self.session.user = user
-                            self.router.reset(to: .productList)
-                            self.router.pop()
-                        }
-
-                    }
-                    .store(in: &cancellables)
-            } catch {
-                self.errorMessage = error.localizedDescription
-            }
+        if password.isEmpty || email.isEmpty {
+            errorMessage = "All fields required!"
+            isLoading = false
+            return false
         }
+
+        if password.isEmpty {
+            errorMessage = "Password is missing!"
+            isLoading = false
+            return false
+        }
+
+        if password.count < 5 {
+            errorMessage = "Password must be at least 5 characters"
+            isLoading = false
+            return false
+        }
+
+        return true
     }
 
-    func signup() {
-        guard validateFields() else { return }
-
-        isLoading = true
-
-        let user = User(
-                    id: UUID(),
-                    name: name,
-                    email: email,
-                    password: password
-                )
-
-        Task {
-            do {
-                try await repo.signup(user: user)
-                    .receive(on: DispatchQueue.main)
-                    .sink { completion in
-                        self.isLoading = false
-                        if case .failure(let error) = completion {
-                            self.errorMessage = error.localizedDescription
-                    }
-
-                    } receiveValue: { user in
-                        self.signupSuccess = true
-                        self.loggedUser = user
-                        self.router.pop()
-                    }
-                    .store(in: &cancellables)
-
-            } catch {
-                isLoading = false
-                self.errorMessage = error.localizedDescription
-            }
-        }
-    }
-    */
     private func validateFields() -> Bool {
 
         if password.isEmpty || email.isEmpty || password.isEmpty || confirmPassword.isEmpty || name.isEmpty {

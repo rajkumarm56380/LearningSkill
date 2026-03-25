@@ -14,6 +14,6 @@ final class SwiftDataStack {
     lazy var context: ModelContext = container.mainContext
 
     init() {
-        container = try! ModelContainer(for: CartEntity.self)
+        container = try! ModelContainer(for: FoodRecipeEntity.self)
     }
 }

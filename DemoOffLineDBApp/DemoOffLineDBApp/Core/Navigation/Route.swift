@@ -10,6 +10,6 @@ enum Route: Hashable {
     case login
     case signup
     case productList
-    case productDetail(Product)
+    case recipeDetail(Recipe)
     case settings
 }

@@ -25,8 +25,8 @@ struct RootView: View {
             }
             .navigationDestination(for: Route.self) { route in
                 switch route {
-                case .productDetail(let product):
-                    ProductDetailView(product: product)
+                case .recipeDetail(let recipe):
+                    RecipeDetailView(recipe: recipe)
                 case .productList:
                     ProductListView(viewModel: container.makeCartVM())
                 case .login:

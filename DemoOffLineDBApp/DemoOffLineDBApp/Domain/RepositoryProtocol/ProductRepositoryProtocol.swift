@@ -7,5 +7,5 @@
 import Combine
 
 protocol ProductRepositoryProtocol {
-    func fetch() -> AnyPublisher<[Product], Error>
+    func fetch() -> AnyPublisher<[Recipe], APIError>
 }
