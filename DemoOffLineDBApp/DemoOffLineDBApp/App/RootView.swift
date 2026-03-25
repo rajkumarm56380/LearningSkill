@@ -7,8 +7,10 @@
 import SwiftUI
 
 struct RootView: View {
+
+    let container: DependencyContainer
     @EnvironmentObject var session: SessionManager
-    @EnvironmentObject var router: Router
+    @EnvironmentObject var router: AppRouter
 
     var body: some View {
 
@@ -16,36 +18,25 @@ struct RootView: View {
 
             Group {
                 if session.isLoggedIn {
-                    HomeView(
-                        viewModel: DependencyContainer
-                            .makeHomeViewModel(user: session.currentUser)
-                    )
+                    ProductListView(viewModel: container.makeCartVM())
                 } else {
-                    LoginView(
-                        viewModel: DependencyContainer.makeLoginViewModel()
-                    )
+                    LoginView(viewModel: container.makeAuthVM())
                 }
             }
-            .toolbar(.visible, for: .navigationBar)
-            //  REQUIRED for Router navigation
-            .navigationDestination(for: AppRoute.self) { route in
-
+            .navigationDestination(for: Route.self) { route in
                 switch route {
-
+                case .productDetail(let product):
+                    ProductDetailView(product: product)
+                case .productList:
+                    ProductListView(viewModel: container.makeCartVM())
+                case .login:
+                    LoginView(viewModel: container.makeAuthVM())
                 case .signup:
-                    SignupView(
-                        viewModel: DependencyContainer.makeSignupViewModel()
-                    )
-
-                case .home(let user):
-                    HomeView(
-                        viewModel: DependencyContainer.makeHomeViewModel(user: user)
-                    )
+                    SignupView(viewModel: container.makeAuthVM())
+                case .settings:
+                    SettingsView()
                 }
             }
         }
     }
-}
-#Preview {
-    RootView()
 }

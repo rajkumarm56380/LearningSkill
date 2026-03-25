@@ -17,7 +17,6 @@ final class SignupViewModel: ObservableObject {
 
     @Published var isLoading = false
     @Published var signupSuccess = false
-    @Published var shouldNavigateToLogin = false
     @Published var errorMessage: String?
     @Published var loggedUser: User?
 
@@ -59,11 +58,7 @@ final class SignupViewModel: ObservableObject {
             } receiveValue: { success in
                 self.signupSuccess = success
                 self.loggedUser = user
-
                 self.sessionManager.login(user: user)
-                if success {
-                    self.shouldNavigateToLogin = true
-                }
             }
             .store(in: &cancellables)
     }

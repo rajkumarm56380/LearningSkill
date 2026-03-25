@@ -51,6 +51,7 @@ struct SignupView: View {
             .padding()
             .navigationTitle("SignUp Screen")
             .appNavigationStyle()
+            .applyBackgroundColor()
             .onChange(of: viewModel.signupSuccess) {
                 if viewModel.signupSuccess {
                     router.pop()

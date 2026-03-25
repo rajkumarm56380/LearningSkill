@@ -4,24 +4,12 @@
 //
 //
 
-
 import SwiftUI
 
-final class Router: ObservableObject {
-
-    @Published var path = NavigationPath()
-
-    func push(_ route: AppRoute) {
-        path.append(route)
-    }
-
-    func pop() {
-        if !path.isEmpty {
-            path.removeLast()
-        }
-    }
-
-    func popToRoot() {
-        path = NavigationPath()
-    }
+enum Route: Hashable {
+    case login
+    case signup
+    case productList
+    case productDetail(Product)
+    case settings
 }

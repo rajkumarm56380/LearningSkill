@@ -4,55 +4,93 @@
 //
 //
 
-import SwiftUI
+import FirebaseAuth
 import Combine
+
 
 final class SessionManager: ObservableObject {
 
-    @Published var isLoggedIn: Bool = false
-    @Published var currentUser: User?
+    @Published var user: User?
 
-    private let loginKey = "isLoggedIn"
-
-    init() {
-        checkLoginStatus()
+    var isLoggedIn: Bool {
+        user != nil
     }
 
-    // Check login when app launches
-    func checkLoginStatus() {
+    private let repo: AuthRepositoryProtocol
+    private let service: AuthServiceProtocol
 
-        let loggedIn = UserDefaults.standard.bool(forKey: loginKey)
-        self.isLoggedIn = loggedIn
+    init(repo: AuthRepositoryProtocol,
+         service: AuthServiceProtocol) {
+        self.repo = repo
+        self.service = service
+        self.user = repo.getCurrentUser() // ✅ offline restore
+        observeAuth()
+    }
 
-        if loggedIn {
-            loadUser()
+    private func observeAuth() {
+        Task {
+            for await user in service.observeAuthState() {
+                await MainActor.run {
+                    self.user = user
+                }
+            }
         }
     }
 
-    func login(user: User) {
-
-        currentUser = user
-        isLoggedIn = true
-
-        UserDefaults.standard.set(true, forKey: loginKey)
+    func login(email: String, password: String) {
+        Task {
+            do {
+                let user = try await repo.login(email: email, password: password)
+                await MainActor.run {
+                    self.user = user
+                }
+            } catch {
+                print(error)
+            }
+        }
     }
 
     func logout() {
-
-        currentUser = nil
-        isLoggedIn = false
-
-        UserDefaults.standard.set(false, forKey: loginKey)
+        Task {
+            try? await repo.logout()
+            await MainActor.run {
+                self.user = nil
+            }
+        }
     }
-
-    private func loadUser() {
-
-        guard let data = UserDefaults.standard.data(forKey: "users"),
-              let users = try? JSONDecoder().decode([User].self, from: data)
-        else { return }
-
-        currentUser = users.first
-    }
-
 }
 
+/*
+final class SessionManager: ObservableObject {
+
+    @Published var state: AuthState = .loading
+    @Published var user: User?
+    
+    var isLoggedIn: Bool {
+        user != nil
+    }
+
+    private var cancellables = Set<AnyCancellable>()
+
+    init(authService: FirebaseAuthService) {
+        observe(authService)
+    }
+
+    private func observe(_ authService: FirebaseAuthService) {
+        authService.observeAuthState()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] user in
+                guard let self = self else { return }
+
+                if let user = user {
+                    self.state = .authenticated(user)
+                    self.user = user
+                } else {
+                    self.state = .unauthenticated
+                }
+            }
+            .store(in: &cancellables)
+    }
+}
+
+*/
