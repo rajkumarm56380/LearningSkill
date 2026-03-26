@@ -28,13 +28,6 @@ struct LoginView: View {
                               text: $viewModel.password,
                               isSecure: true)
 
-            if let error = viewModel.errorMessage {
-                Text(error)
-                    .foregroundColor(.red)
-                    .textInputAutocapitalization(.never)
-                    .textCase(.lowercase)
-            }
-
             PrimaryButtonView(
                 title: "Log In",
                 action: viewModel.login
@@ -51,8 +44,15 @@ struct LoginView: View {
                 .fontWeight(.semibold)
             }
             .padding(.top, 10)
-            Spacer()
+             Spacer()
 
+            if let error = viewModel.errorMessage {
+                Text(error)
+                    .foregroundColor(.red)
+                    .textInputAutocapitalization(.never)
+                    .textCase(.lowercase)
+            }
+            
             if viewModel.isLoading {
                 ProgressView()
             }

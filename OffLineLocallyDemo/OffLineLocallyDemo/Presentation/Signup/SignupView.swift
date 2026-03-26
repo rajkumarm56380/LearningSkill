@@ -45,10 +45,6 @@ struct SignupView: View {
                     .fontWeight(.semibold)
                 }
                 .padding(.top, 10)
-
-                if viewModel.isLoading {
-                    ProgressView()
-                }
                 
                 if viewModel.signupSuccess {
                     Text("Signup Successful")
@@ -59,7 +55,10 @@ struct SignupView: View {
                     Text(error)
                         .foregroundColor(.red)
                 }
-
+                
+                if viewModel.isLoading {
+                    ProgressView()
+                }
             }
             .padding()
             .onChange(of: viewModel.signupSuccess) {
