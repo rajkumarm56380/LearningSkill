@@ -49,9 +49,10 @@ final class FirebaseAuthService: AuthServiceProtocol {
             let handle = Auth.auth().addStateDidChangeListener { _, user in
                 if let user = user {
                     continuation.yield(
+
                         User(
                             id: UUID(uuidString: user.uid) ?? UUID(),
-                            name: user.displayName ?? "",
+                            name: Auth.auth().currentUser?.displayName ?? "",
                             email: user.email ?? "",
                             password: "",
                             isLoggedIn: true

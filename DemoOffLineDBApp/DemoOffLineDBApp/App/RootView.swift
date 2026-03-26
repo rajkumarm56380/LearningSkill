@@ -16,40 +16,29 @@ struct RootView: View {
     var body: some View {
 
         NavigationStack(path: $router.path) {
-
             Group {
-                if showSplash {
-                    SplashView()
+                if session.isLoggedIn {
+                    FoodListsView(viewModel: container.foodListsVM)
                 } else {
-                    if session.isLoggedIn {
-                        FoodListsView(viewModel: container.foodListsVM)
-                    } else {
-                        LoginView(viewModel: container.makeAuthVM())
-                    }
+                    LoginView(viewModel: container.makeAuthVM())
                 }
             }
             .navigationDestination(for: Route.self) { route in
                 switch route {
-                case .recipeDetail(let recipe):
-                    RecipeDetailView(recipe: recipe)
-                case .foodLists:
-                    FoodListsView(viewModel: container.foodListsVM)
                 case .login:
                     LoginView(viewModel: container.makeAuthVM())
                 case .signup:
                     SignupView(viewModel: container.makeAuthVM())
+                case .foodLists:
+                    FoodListsView(viewModel: container.foodListsVM)
                 case .settings:
                     SettingsView()
+                case .recipeDetail(let recipe):
+                    RecipeDetailView(recipe: recipe)
+                default:
+                        EmptyView()
                 }
-            }.onAppear {
-                startSplash()
             }
-        }
-    }
-
-    private func startSplash() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            showSplash = false
         }
     }
 }

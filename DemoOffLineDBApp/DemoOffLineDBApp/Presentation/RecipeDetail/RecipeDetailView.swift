@@ -77,14 +77,15 @@ struct RecipeDetailView: View {
                 }
             }
             .padding()
+            .foregroundColor(.black)
         }
-        .navigationTitle("Food Detail")
+        .navigationTitle("Food Detail").foregroundColor(.white)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
-                    router.pop()
+                    router.popLast()
                 } label: {
                     HStack {
                         Image(systemName: "chevron.backward")

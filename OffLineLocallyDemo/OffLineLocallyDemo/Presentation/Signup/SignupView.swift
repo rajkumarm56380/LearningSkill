@@ -15,23 +15,36 @@ struct SignupView: View {
     var body: some View {
             VStack(spacing: 20) {
 
-                TextField("Name", text: $viewModel.name)
-                    .customStyle()
-                
-                TextField("Email", text: $viewModel.email)
-                    .customStyle()
+                Text("Create Account")
+                    .font(.largeTitle.bold())
+                    .padding(.top)
 
-                SecureField("Password", text: $viewModel.password)
-                    .customStyle()
+                AuthTextFieldView(title: "Name", text: $viewModel.name)
 
-                Button("Sign Up") {
-                    viewModel.signup()
+                AuthTextFieldView(title: "Email", text: $viewModel.email)
+
+                AuthTextFieldView(title: "Password",
+                                  text: $viewModel.password,
+                                  isSecure: true)
+
+                AuthTextFieldView(title: "Confirm Password",
+                                  text: $viewModel.confirmPassword,
+                                  isSecure: true)
+
+                PrimaryButtonView(
+                    title: "Sign Up",
+                    action: viewModel.signup
+                )
+
+                HStack {
+                    Text("Already have an account?")
+                    Button("Log in") {
+                        router.pop()
+                    }
+                    .foregroundColor(.blue)
+                    .fontWeight(.semibold)
                 }
-                .buttonStyle(.borderedProminent)
-
-                Button("Login") {
-                    router.pop()
-                }.buttonStyle(.borderedProminent)
+                .padding(.top, 10)
 
                 if viewModel.isLoading {
                     ProgressView()
@@ -49,9 +62,6 @@ struct SignupView: View {
 
             }
             .padding()
-            .navigationTitle("SignUp Screen")
-            .appNavigationStyle()
-            .applyBackgroundColor()
             .onChange(of: viewModel.signupSuccess) {
                 if viewModel.signupSuccess {
                     router.pop()

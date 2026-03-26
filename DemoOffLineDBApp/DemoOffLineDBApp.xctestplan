@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "835FA449-A637-4927-9B97-9321B3CCA4F0",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:DemoOffLineDBApp.xcodeproj",
+      "identifier" : "CE1CFCC12F6C5A91002DE4D3",
+      "name" : "DemoOffLineDBApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:DemoOffLineDBApp.xcodeproj",
+        "identifier" : "CE1CFCD32F6C5A94002DE4D3",
+        "name" : "DemoOffLineDBAppTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:DemoOffLineDBApp.xcodeproj",
+        "identifier" : "CE1CFCDD2F6C5A94002DE4D3",
+        "name" : "DemoOffLineDBAppUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

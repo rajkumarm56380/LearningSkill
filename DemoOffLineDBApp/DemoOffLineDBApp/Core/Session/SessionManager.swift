@@ -59,38 +59,3 @@ final class SessionManager: ObservableObject {
         }
     }
 }
-
-/*
-final class SessionManager: ObservableObject {
-
-    @Published var state: AuthState = .loading
-    @Published var user: User?
-    
-    var isLoggedIn: Bool {
-        user != nil
-    }
-
-    private var cancellables = Set<AnyCancellable>()
-
-    init(authService: FirebaseAuthService) {
-        observe(authService)
-    }
-
-    private func observe(_ authService: FirebaseAuthService) {
-        authService.observeAuthState()
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] user in
-                guard let self = self else { return }
-
-                if let user = user {
-                    self.state = .authenticated(user)
-                    self.user = user
-                } else {
-                    self.state = .unauthenticated
-                }
-            }
-            .store(in: &cancellables)
-    }
-}
-
-*/

@@ -18,6 +18,7 @@ final class LocalAuthDataSource {
     func saveUser(_ user: User) {
         let local = LocalUser(
             id: user.id.uuidString,
+            name:user.name,
             email: user.email,
             isLoggedIn: true
         )

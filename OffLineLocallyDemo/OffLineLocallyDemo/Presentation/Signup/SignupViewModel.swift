@@ -14,7 +14,8 @@ final class SignupViewModel: ObservableObject {
     @Published var name = ""
     @Published var email = ""
     @Published var password = ""
-
+    @Published var confirmPassword = ""
+    
     @Published var isLoading = false
     @Published var signupSuccess = false
     @Published var errorMessage: String?
@@ -65,16 +66,23 @@ final class SignupViewModel: ObservableObject {
 
     private func validateFields() -> Bool {
 
-        if name.isEmpty || email.isEmpty || password.isEmpty {
+        if password.isEmpty || email.isEmpty || confirmPassword.isEmpty || name.isEmpty {
             errorMessage = "All fields required"
+            isLoading = false
             return false
         }
 
-        if password.count < 4 {
-            errorMessage = "Password must be at least 4 characters"
+        if password.count < 6 {
+            errorMessage = "Password must be at least 6 characters"
+            isLoading = false
             return false
         }
 
+        if password != confirmPassword {
+            errorMessage = "Password not matching"
+            isLoading = false
+            return false
+        }
         return true
     }
 }

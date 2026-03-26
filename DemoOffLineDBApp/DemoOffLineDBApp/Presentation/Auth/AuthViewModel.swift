@@ -47,6 +47,7 @@ final class AuthViewModel: ObservableObject {
             do {
                 let createdUser = try await repo.signup(user: user)
                 self.loggedUser = createdUser
+                self.router.reset(to: .foodLists)
             } catch {
                 self.errorMessage = error.localizedDescription
             }
@@ -64,6 +65,7 @@ final class AuthViewModel: ObservableObject {
                 let user = try await repo.login(email: email, password: password)
                 self.loggedUser = user
                 self.session.user = user
+                self.router.reset(to: .foodLists)
             } catch {
                 self.errorMessage = error.localizedDescription
             }
@@ -96,14 +98,14 @@ final class AuthViewModel: ObservableObject {
 
     private func validateAllFields() -> Bool {
 
-        if password.isEmpty || email.isEmpty || password.isEmpty || confirmPassword.isEmpty || name.isEmpty {
+        if password.isEmpty || email.isEmpty || confirmPassword.isEmpty || name.isEmpty {
             errorMessage = "All fields required"
             isLoading = false
             return false
         }
 
-        if password.count < 4 {
-            errorMessage = "Password must be at least 4 characters"
+        if password.count < 6 {
+            errorMessage = "Password must be at least 6 characters"
             isLoading = false
             return false
         }

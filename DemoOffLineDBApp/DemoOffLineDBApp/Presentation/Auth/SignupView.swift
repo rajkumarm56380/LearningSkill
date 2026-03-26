@@ -10,8 +10,7 @@ struct SignupView: View {
 
     @StateObject var viewModel: AuthViewModel
     @EnvironmentObject var router: AppRouter
-    @Environment(\.dismiss) var dismiss
-    
+
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
@@ -40,7 +39,7 @@ struct SignupView: View {
                 HStack {
                     Text("Already have an account?")
                     Button("Log in") {
-                        router.pop()
+                        router.popLast()
                     }
                     .foregroundColor(.blue)
                     .fontWeight(.semibold)
@@ -52,7 +51,7 @@ struct SignupView: View {
          .toolbar {
              ToolbarItem(placement: .navigationBarLeading) {
                  Button {
-                     dismiss()
+                     router.popLast()
                  } label: {
                      HStack {
                          Image(systemName: "chevron.backward")

@@ -8,28 +8,23 @@ import SwiftUI
 
 final class AppRouter: ObservableObject {
 
-    @Published var path = NavigationPath()
+    @Published var path: [Route] = []
 
     func push(_ route: Route) {
+        print("PUSH:", route)
         path.append(route)
     }
 
-    func pop() {
-        if !path.isEmpty {
-            path.removeLast()
-        }
-    }
-
-    func popToRoot() {
-        path = NavigationPath()
+    func popLast() {
+        _ = path.popLast()
     }
 
     func reset(to route: Route) {
-        path = NavigationPath()
-        path.append(route)       
+        print("RESET TO:", route) // DEBUG
+        path = [route]
     }
 
     func reset() {
-        path = NavigationPath()
+        path.removeAll()
     }
 }

@@ -23,12 +23,14 @@ struct SettingsView: View {
                             .frame(width: 80, height: 80)
                             .foregroundColor(.purple)
 
-                        //Text(session.user?.name ?? "Guest User")
-                          //  .font(.headline)
-
+                        Text(session.user?.name ?? "Guest User")
+                            .font(.headline)
+                            .foregroundColor(.black)
+                        
                         Text(session.user?.email ?? "Guest User")
                             .font(.headline)
-
+                            .foregroundColor(.black)
+                        
                         Text("Welcome to Food App 🍽️")
                             .font(.subheadline)
                             .foregroundColor(.gray)
@@ -58,13 +60,13 @@ struct SettingsView: View {
             .background(Color(.systemGray6))
         }
         .background(Color(.systemGray6).ignoresSafeArea())
-        .navigationTitle("Settings")
+        .navigationTitle("Settings").foregroundColor(.white)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
-                    router.pop()
+                    router.popLast()
                 } label: {
                     HStack {
                         Image(systemName: "chevron.backward")
@@ -79,6 +81,6 @@ struct SettingsView: View {
     private func logout() {
         session.logout()
         router.reset()
-        router.push(.login)
+        router.reset(to: .login)
     }
 }

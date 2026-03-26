@@ -58,13 +58,13 @@ class LoginViewModel: ObservableObject {
 
     private func validateFields() -> Bool {
 
-        if password.isEmpty || email.isEmpty || password.isEmpty {
+        if password.isEmpty || email.isEmpty {
             errorMessage = "All fields required"
             return false
         }
 
-        if password.count < 4 {
-            errorMessage = "Password must be at least 4 characters"
+        if password.count < 6 {
+            errorMessage = "Password must be at least 6 characters"
             return false
         }
 

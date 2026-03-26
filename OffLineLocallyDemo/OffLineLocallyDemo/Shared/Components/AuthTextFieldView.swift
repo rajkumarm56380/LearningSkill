@@ -1,6 +1,6 @@
 //
 //  AuthTextFieldView.swift
-//  DemoOffLineDBApp
+//  OffLineLocallyDemo
 //
 //
 

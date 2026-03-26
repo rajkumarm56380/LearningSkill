@@ -33,7 +33,7 @@ struct RecipeCardView: View {
                 Text("(\(recipe.reviewCount))")
                     .font(.caption)
                     .foregroundColor(.gray)
-            }
+            }.foregroundColor(.black)
             HStack {
                 Text("Recipe Type:")
                     .font(.caption)
@@ -42,7 +42,7 @@ struct RecipeCardView: View {
                     .padding(6)
                     .background(Color.green.opacity(0.2))
                     .cornerRadius(8)
-            }
+            }.foregroundColor(.black)
 
             VStack {
                 Label("\(recipe.prepTimeMinutes + recipe.cookTimeMinutes) min", systemImage: "clock")

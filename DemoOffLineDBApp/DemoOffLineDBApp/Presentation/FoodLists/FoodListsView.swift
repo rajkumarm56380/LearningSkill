@@ -17,7 +17,6 @@ struct FoodListsView: View {
     ]
 
     var body: some View {
-        NavigationStack {
             ZStack {
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 16) {
@@ -34,7 +33,7 @@ struct FoodListsView: View {
                 }
             }
             .background(Color(.systemGray6))
-            .navigationTitle("Food Lists")
+            .navigationTitle("Food Lists").foregroundColor(.white)
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .toolbar {
@@ -47,10 +46,9 @@ struct FoodListsView: View {
                 }
             }
             .appNavigationStyle()
-        }
-        .loading(viewModel.isLoading)
-        .task {
-            viewModel.load()
-        }
+            .loading(viewModel.isLoading)
+            .task {
+                viewModel.load()
+            }
     }
 }
