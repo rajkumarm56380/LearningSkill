@@ -1,5 +1,5 @@
 //
-//  CartLocalDataSource.swift
+//  FoodRecipeLocalDataSource.swift
 //  DemoOffLineDBApp
 //
 //
@@ -7,7 +7,7 @@
 import Foundation
 import SwiftData
 
-final class CartLocalDataSource {
+final class FoodRecipeLocalDataSource {
 
     private let context: ModelContext
 

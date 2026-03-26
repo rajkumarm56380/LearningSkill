@@ -51,7 +51,7 @@ final class AuthRepository: AuthRepositoryProtocol {
             return user
 
         } else {
-            // 🔥 OFFLINE LOGIN
+            // OFFLINE LOGIN
             guard let localUser = local.fetchLoggedInUser() else {
                 throw AuthError.unknown("No offline session found")
             }

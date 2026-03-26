@@ -25,8 +25,8 @@ final class AppRouter: ObservableObject {
     }
 
     func reset(to route: Route) {
-        path = NavigationPath()   // clear stack
-        path.append(route)        // set new root destination
+        path = NavigationPath()
+        path.append(route)       
     }
 
     func reset() {

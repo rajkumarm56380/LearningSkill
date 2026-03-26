@@ -9,20 +9,14 @@ import SwiftUI
 struct PrimaryButtonView: View {
     let title: String
     let action: () -> Void
-    var isLoading: Bool = false
 
     var body: some View {
         Button(action: action) {
             ZStack {
-                if isLoading {
-                    ProgressView()
-                        .tint(.white)
-                } else {
-                    Text(title)
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                }
+                Text(title)
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
             }
             .frame(maxWidth: .infinity)
             .frame(height: 55)

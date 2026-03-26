@@ -23,7 +23,7 @@ final class SessionManager: ObservableObject {
          service: AuthServiceProtocol) {
         self.repo = repo
         self.service = service
-        self.user = repo.getCurrentUser() // ✅ offline restore
+        self.user = repo.getCurrentUser() 
         observeAuth()
     }
 

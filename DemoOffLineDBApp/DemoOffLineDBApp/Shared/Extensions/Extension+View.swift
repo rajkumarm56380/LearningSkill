@@ -12,9 +12,8 @@ extension View {
         self
             .toolbarBackground(.purple, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarColorScheme(.dark, for: .navigationBar)
-            .navigationBarBackButtonHidden(true)
-
+            .toolbarColorScheme(.light, for: .navigationBar)
+            .tint(.black)
     }
 
     func applyButtonStyle() -> some View {

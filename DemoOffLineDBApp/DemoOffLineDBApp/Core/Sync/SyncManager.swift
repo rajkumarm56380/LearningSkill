@@ -9,10 +9,10 @@ import Combine
 final class SyncManager {
 
     private let network: NetworkMonitor
-    private let api: CartAPIService
-    private let local: CartLocalDataSource
+    private let api: FoodListsAPIService
+    private let local: FoodRecipeLocalDataSource
 
-    init(network: NetworkMonitor, api: CartAPIService, local: CartLocalDataSource) {
+    init(network: NetworkMonitor, api: FoodListsAPIService, local: FoodRecipeLocalDataSource) {
         self.network = network
         self.api = api
         self.local = local

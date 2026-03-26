@@ -1,5 +1,5 @@
 //
-//  ProductRepositoryImpl.swift
+//  FoodListsRepositoryImpl.swift
 //  DemoOffLineDBApp
 //
 //
@@ -7,7 +7,7 @@
 import Foundation
 import Combine
 
-final class ProductRepositoryImpl: ProductRepositoryProtocol {
+final class FoodListsRepositoryImpl: FoodListsRepositoryProtocol {
 
     private let sync: SyncManager
 

@@ -2,7 +2,6 @@
 //  View+Loading.swift
 //  DemoOffLineDBApp
 //
-//  Created by Apple on 25/03/26.
 //
 
 import SwiftUI

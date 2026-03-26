@@ -1,11 +1,11 @@
 //
-//  ProductRepositoryProtocol.swift
+//  FoodListsRepositoryProtocol.swift
 //  DemoOffLineDBApp
 //
 //
 
 import Combine
 
-protocol ProductRepositoryProtocol {
+protocol FoodListsRepositoryProtocol {
     func fetch() -> AnyPublisher<[Recipe], APIError>
 }

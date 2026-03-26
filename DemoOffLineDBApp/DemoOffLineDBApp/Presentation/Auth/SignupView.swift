@@ -9,11 +9,10 @@ import SwiftUI
 struct SignupView: View {
 
     @StateObject var viewModel: AuthViewModel
-    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var router: AppRouter
-
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        
         ScrollView {
             VStack(spacing: 20) {
 
@@ -35,8 +34,7 @@ struct SignupView: View {
 
                 PrimaryButtonView(
                     title: "Sign Up",
-                    action: viewModel.signup,
-                    isLoading: viewModel.isLoading
+                    action: viewModel.signup
                 )
 
                 HStack {
@@ -50,10 +48,21 @@ struct SignupView: View {
                 .padding(.top, 10)
             }
          .padding()
-        .loading(viewModel.isLoading)
+         .navigationBarBackButtonHidden(true)
+         .toolbar {
+             ToolbarItem(placement: .navigationBarLeading) {
+                 Button {
+                     dismiss()
+                 } label: {
+                     HStack {
+                         Image(systemName: "chevron.backward")
+                     }
+                 }
+             }
+         }
+       }.loading(viewModel.isLoading)
         .toast(message: $viewModel.errorMessage)
         .ignoresSafeArea(.keyboard, edges: .bottom)
-       }
     }
 }
 

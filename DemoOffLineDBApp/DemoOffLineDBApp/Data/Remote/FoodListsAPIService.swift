@@ -1,5 +1,5 @@
 //
-//  CartAPIService.swift
+//  FoodListsAPIService.swift
 //  DemoOffLineDBApp
 //
 //
@@ -7,8 +7,8 @@
 import Combine
 import Foundation
 
-final class CartAPIService: APIClientProtocol {
-    
+final class FoodListsAPIService: APIClientProtocol {
+
     func fetchFoodRecipes() -> AnyPublisher<[FoodRecipeDTO], APIError> {
         guard let url = URL(string: "https://dummyjson.com/recipes") else {
             return Fail(error: APIError.invalidURL).eraseToAnyPublisher()

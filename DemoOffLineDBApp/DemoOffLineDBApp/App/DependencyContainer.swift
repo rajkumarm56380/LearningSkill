@@ -11,7 +11,7 @@ import Combine
 final class DependencyContainer: ObservableObject {
 
     // MARK: - Core
-    private let api = CartAPIService()
+    private let api = FoodListsAPIService()
     private let db = SwiftDataStack()
     private let network = NetworkMonitor()
 
@@ -32,13 +32,17 @@ final class DependencyContainer: ObservableObject {
     }()
 
     // MARK: - Data Layer
-    lazy var local = CartLocalDataSource(context: db.context)
+    lazy var local = FoodRecipeLocalDataSource(context: db.context)
     lazy var sync = SyncManager(network: network, api: api, local: local)
-    lazy var productRepo = ProductRepositoryImpl(sync: sync)
+    lazy var foodListsRepo = FoodListsRepositoryImpl(sync: sync)
+
 
     // MARK: - ViewModels
-    func makeCartVM() -> ProductListViewModel {
-        ProductListViewModel(repo: productRepo)
+    //private let repo: FoodListsRepositoryImpl =
+    lazy var foodListsVM = FoodListsViewModel(repo: foodListsRepo)
+
+    func makeFoodListsVM() -> FoodListsViewModel {
+        foodListsVM
     }
 
     func makeAuthVM() -> AuthViewModel {
@@ -49,69 +53,3 @@ final class DependencyContainer: ObservableObject {
         )
     }
 }
-
-/*
-final class AppDIContainer {
-
-    lazy var apiClient = APIClient()
-    lazy var swiftDataStack = SwiftDataStack()
-    lazy var authService = AuthService()
-
-    // Repositories
-    lazy var cartRepository: CartRepository =
-        CartRepositoryImpl(api: apiClient,
-                           local: swiftDataStack)
-
-    lazy var authRepository: AuthRepository =
-        AuthRepositoryImpl(authService: authService)
-
-    // UseCases
-    lazy var fetchCartsUseCase = FetchCartsUseCase(repo: cartRepository)
-    lazy var crudCartUseCase = CRUDCartUseCase(repo: cartRepository)
-    lazy var authUseCase = AuthUseCase(repo: authRepository)
-}
-
-
-@MainActor
-final class DependencyContainer {
-
-    // MARK: Shared Services
-    static let sessionManager = SessionManager()
-
-    // MARK: - Storage
-    static var storage = UserStorage()
-
-    // MARK: - Repository
-    private static let authRepository = AuthRepository(storage: storage)
-
-    // MARK: - UseCases
-    static func makeLoginUseCase() -> LoginUseCase {
-        LoginUseCase(repo: authRepository)
-    }
-
-    static func makeSignupUseCase() -> SignupUseCase {
-        SignupUseCase(repo: authRepository)
-    }
-
-    // MARK: - ViewModels
-
-    static func makeLoginViewModel() -> LoginViewModel {
-        LoginViewModel(
-            loginUseCase: makeLoginUseCase(),
-            sessionManager: sessionManager
-        )
-    }
-
-    static func makeSignupViewModel() -> SignupViewModel {
-        SignupViewModel(
-            signupUseCase: makeSignupUseCase(),
-            sessionManager: sessionManager
-        )
-    }
-
-    static func makeHomeViewModel(user: User?) -> HomeViewModel {
-        HomeViewModel(user: user)
-    }
-
-}
-*/

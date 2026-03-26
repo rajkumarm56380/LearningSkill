@@ -1,5 +1,5 @@
 //
-//  ProductDetailView.swift
+//  RecipeDetailView.swift
 //  DemoOffLineDBApp
 //
 //
@@ -9,69 +9,89 @@ import SwiftUI
 struct RecipeDetailView: View {
     let recipe: Recipe
     @State private var isFavourite: Bool = false
+    @EnvironmentObject var router: AppRouter
+
     var body: some View {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
-                    CachedAsyncImage(
-                        url: recipe.image
-                    )
-                    .clipped()
-                    .scaledToFill()
-                    .frame(height: 250)
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                    // Title and Favourite Button
-                    HStack {
-                        Text("Classic Margherita Pizza")
-                            .font(.title)
-                            .fontWeight(.bold)
-
-                        Spacer()
-
-                        Button(action: {
-                            isFavourite.toggle()
-                        }) {
-                            Image(systemName: isFavourite ? "heart.fill" : "heart")
-                                .foregroundColor(isFavourite ? .red : .gray)
-                                .font(.title2)
-                        }
-                    }
-
-                    // Recipe Info
-                    HStack(spacing: 20) {
-                        Label("4.6 ★ (98)", systemImage: "star.fill")
-                            .foregroundColor(.yellow)
-                        Label("35 min", systemImage: "clock")
-                        Label("Italian", systemImage: "fork.knife")
-                    }
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-
-                    Divider()
-
-                    // Description
-                    Text("A classic Italian pizza topped with fresh mozzarella, basil, and tomato sauce. Perfectly baked for a crispy crust and rich flavor.")
-                        .font(.body)
-                        .padding(.bottom, 20)
-
-                    // Ingredients Section
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Ingredients")
-                            .font(.headline)
-                        Text("• Pizza dough\n• Tomato sauce\n• Fresh mozzarella\n• Basil leaves\n• Olive oil")
-                    }
-
-                    Divider()
-
-                    // Instructions Section
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Instructions")
-                            .font(.headline)
-                        Text("1. Preheat oven to 220°C.\n2. Spread tomato sauce on dough.\n3. Add mozzarella and basil.\n4. Drizzle olive oil.\n5. Bake for 12–15 minutes.")
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                CachedAsyncImage(
+                    url: recipe.image
+                )
+                .clipped()
+                .scaledToFill()
+                .frame(height: 250)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                HStack {
+                    Text(recipe.name)
+                        .font(.title)
+                        .fontWeight(.bold)
+                    
+                    Spacer()
+                    
+                    /*Button(action: {
+                     isFavourite.toggle()
+                     }) {
+                     Image(systemName: isFavourite ? "heart.fill" : "heart")
+                     .foregroundColor(isFavourite ? .red : .gray)
+                     .font(.title2)
+                     }*/
+                }
+                
+                // Recipe Info
+                HStack(spacing: 20) {
+                    Label("\(recipe.rating) ★ (\(recipe.reviewCount))", systemImage: "star.fill")
+                        .foregroundColor(.yellow)
+                    Label("\(recipe.prepTimeMinutes + recipe.cookTimeMinutes) min", systemImage: "clock")
+                    Label(recipe.cuisine, systemImage: "fork.knife")
+                }
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                
+                Divider()
+                
+                // Description
+                /*Text("A classic Italian pizza topped with fresh mozzarella, basil, and tomato sauce. Perfectly baked for a crispy crust and rich flavor.")
+                 .font(.body)
+                 .padding(.bottom, 20)*/
+                
+                // Ingredients Section
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Ingredients")
+                        .font(.headline)
+                    ForEach(recipe.ingredients, id: \.self) { ingredient in
+                        Text("• \(ingredient)")
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     }
                 }
-                .padding()
+                
+                Divider()
+                
+                // Instructions Section
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Instructions")
+                        .font(.headline)
+                    ForEach(Array(recipe.instructions.enumerated()), id: \.offset) { index, step in
+                        Text("\(index + 1). \(step)")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                }
             }
-            .navigationTitle("Food Detail")
-            .navigationBarTitleDisplayMode(.inline)
+            .padding()
         }
+        .navigationTitle("Food Detail")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    router.pop()
+                } label: {
+                    HStack {
+                        Image(systemName: "chevron.backward")
+                    }
+                }
+            }
+        }
+        .appNavigationStyle()
+    }
 }

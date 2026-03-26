@@ -33,8 +33,7 @@ struct LoginView: View {
 
                 PrimaryButtonView(
                     title: "Log In",
-                    action: viewModel.login,
-                    isLoading: viewModel.isLoading
+                    action: viewModel.login
                 )
 
                 HStack {
@@ -46,14 +45,14 @@ struct LoginView: View {
                     .fontWeight(.semibold)
                 }
                 .padding(.top, 10)
-
                 Spacer()
             }
+        .navigationBarBackButtonHidden(true)
 
-        .loading(viewModel.isLoading)
         .padding(.vertical)
+
+        }.loading(viewModel.isLoading)
         .toast(message: $viewModel.errorMessage)
         .ignoresSafeArea(.keyboard, edges: .bottom)
-        }
     }
 }

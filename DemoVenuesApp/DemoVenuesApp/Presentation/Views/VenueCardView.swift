@@ -17,7 +17,9 @@ struct VenueCardView: View {
                     url: venue.images.first ?? MockImage.imageUrl.rawValue
                 )
                 .frame(width: 110, height: 110)
+                .clipped()
                 .clipShape(RoundedRectangle(cornerRadius: 16))
+
                 VStack(alignment: .leading, spacing: 6) {
 
                     Text(venue.title)

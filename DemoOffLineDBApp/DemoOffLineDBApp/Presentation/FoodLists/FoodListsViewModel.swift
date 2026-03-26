@@ -1,5 +1,5 @@
 //
-//  CartViewModel.swift
+//  FoodListsViewModel.swift
 //  DemoOffLineDBApp
 //
 //
@@ -8,31 +8,37 @@ import Combine
 import Foundation
 
 @MainActor
-final class ProductListViewModel: ObservableObject {
+final class FoodListsViewModel: ObservableObject {
 
     @Published var recipes: [Recipe] = []
     @Published var isLoading = false
     @Published var errorMessage: String?
 
-    private let repo: ProductRepositoryProtocol
+    private let repo: FoodListsRepositoryProtocol
     private var cancellables = Set<AnyCancellable>()
+    private var hasLoaded = false
 
-    init(repo: ProductRepositoryProtocol) {
+    init(repo: FoodListsRepositoryProtocol) {
         self.repo = repo
     }
 
     func load() {
+
+        guard !hasLoaded else { return }
+           hasLoaded = true
+
+        guard !isLoading else { return }
+
+        isLoading = true
+
         repo.fetch()
             .receive(on: DispatchQueue.main)
-            .sink(
-                receiveCompletion: { completion in
-                    if case .failure(let error) = completion {
-                        self.errorMessage = error.localizedDescription
-                    }
-                },
-                receiveValue: { [weak self] data in
-                    self?.recipes = data
-                })
+            .sink { [weak self] _ in
+                self?.isLoading = false
+            } receiveValue: { [weak self] data in
+                self?.recipes = data
+                self?.isLoading = false
+            }
             .store(in: &cancellables)
     }
 

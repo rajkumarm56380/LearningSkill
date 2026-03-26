@@ -16,7 +16,6 @@ final class AuthViewModel: ObservableObject {
     @Published var confirmPassword = ""
     @Published var errorMessage: String?
     @Published var isLoading: Bool = false
-    @Published var signupSuccess: Bool = false
     @Published var loggedUser: User?
     
     private var cancellables = Set<AnyCancellable>()
@@ -33,7 +32,7 @@ final class AuthViewModel: ObservableObject {
     }
 
     func signup() {
-        guard validateFields() else { return }
+        guard validateAllFields() else { return }
 
         isLoading = true
 
@@ -47,12 +46,10 @@ final class AuthViewModel: ObservableObject {
         Task {
             do {
                 let createdUser = try await repo.signup(user: user)
-                self.signupSuccess = true
                 self.loggedUser = createdUser
             } catch {
                 self.errorMessage = error.localizedDescription
             }
-
             self.isLoading = false
         }
     }
@@ -97,7 +94,7 @@ final class AuthViewModel: ObservableObject {
         return true
     }
 
-    private func validateFields() -> Bool {
+    private func validateAllFields() -> Bool {
 
         if password.isEmpty || email.isEmpty || password.isEmpty || confirmPassword.isEmpty || name.isEmpty {
             errorMessage = "All fields required"
@@ -119,7 +116,4 @@ final class AuthViewModel: ObservableObject {
         return true
     }
 
-    func goToSignup() {
-        router.push(.signup)
-    }
 }

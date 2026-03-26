@@ -18,7 +18,10 @@ struct CachedAsyncImage: View {
                     .resizable()
                     .scaledToFill()
             } else {
-                ProgressView()
+                ZStack {
+                    Color.gray.opacity(0.2)
+                    ProgressView()
+                }
             }
         }
         .onAppear {
