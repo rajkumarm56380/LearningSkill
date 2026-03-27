@@ -17,6 +17,11 @@ struct LoginView: View {
 
                 Spacer()
 
+                Image("FoodLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 120, height: 120)
+
                 Text("Welcome!")
                     .font(.largeTitle.bold())
 

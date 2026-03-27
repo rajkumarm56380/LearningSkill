@@ -222,8 +222,8 @@
             filePath = "DemoOffLineDBApp/Data/Repository/AuthRepositoryImpl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "login(email:password:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -231,32 +231,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0C9F847D-8BC3-46C1-AB63-18AF907DA579"
+            uuid = "2913FBCF-B71B-4DCF-9B53-C5C8F6C868A4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DemoOffLineDBApp/Core/Firebase/FirebaseAuthService.swift"
+            filePath = "DemoOffLineDBApp/Data/Repository/AuthRepositoryImpl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
             endingLineNumber = "53"
-            landmarkName = "observeAuthState()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AAA0879F-C14F-4D62-AC38-488BE96BDC53"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DemoOffLineDBApp/Core/Firebase/FirebaseAuthService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "observeAuthState()"
+            landmarkName = "signup(user:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

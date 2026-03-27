@@ -15,6 +15,11 @@ struct SignupView: View {
         ScrollView {
             VStack(spacing: 20) {
 
+                Image("FoodLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 120, height: 120)
+
                 Text("Create Account")
                     .font(.largeTitle.bold())
                     .padding(.top)

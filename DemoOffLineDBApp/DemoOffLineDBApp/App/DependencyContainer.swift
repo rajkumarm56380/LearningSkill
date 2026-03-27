@@ -13,7 +13,7 @@ final class DependencyContainer: ObservableObject {
     // MARK: - Core
     private let api = FoodListsAPIService()
     private let db = SwiftDataStack()
-    private let network = NetworkMonitor()
+    private let network = NetworkMonitor.shared
 
     // MARK: - Router
     let router = AppRouter()
