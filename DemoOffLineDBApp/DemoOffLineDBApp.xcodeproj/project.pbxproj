@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16DC4D275A9905FB694FB7BE /* Pods_DemoOffLineDBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B51ECBF033711837D89B88 /* Pods_DemoOffLineDBAppTests.framework */; };
-		188C97902F765F9600DDC987 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 188C978F2F765F9600DDC987 /* SDWebImageSwiftUI */; };
-		2EB1ABC3D821425F53DCD87E /* Pods_DemoOffLineDBApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D460294C19AF3A62DA119CF /* Pods_DemoOffLineDBApp.framework */; };
-		3B0E9F3D5377BDBE81871A2B /* Pods_DemoOffLineDBApp_DemoOffLineDBAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E98434C29CD5807059AD70F /* Pods_DemoOffLineDBApp_DemoOffLineDBAppUITests.framework */; };
+		18BCAA2B2F76F1D400E7F8E8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 18BCAA2A2F76F1D400E7F8E8 /* FirebaseAuth */; };
+		18BCAA2D2F76F1D400E7F8E8 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 18BCAA2C2F76F1D400E7F8E8 /* FirebaseCore */; };
+		18BCAA302F76F1E200E7F8E8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 18BCAA2F2F76F1E200E7F8E8 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,18 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1824BA1B07B082EDA0C23CCF /* Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests/Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		1E7DF99ADAD347736E140A96 /* Pods-DemoOffLineDBAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoOffLineDBAppTests.debug.xcconfig"; path = "Target Support Files/Pods-DemoOffLineDBAppTests/Pods-DemoOffLineDBAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4E98434C29CD5807059AD70F /* Pods_DemoOffLineDBApp_DemoOffLineDBAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoOffLineDBApp_DemoOffLineDBAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D460294C19AF3A62DA119CF /* Pods_DemoOffLineDBApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoOffLineDBApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F13FE0E74BF0B31CE06C2F0 /* Pods-DemoOffLineDBApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoOffLineDBApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoOffLineDBApp/Pods-DemoOffLineDBApp.debug.xcconfig"; sourceTree = "<group>"; };
 		CE1CFCC22F6C5A91002DE4D3 /* DemoOffLineDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoOffLineDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1CFCD42F6C5A94002DE4D3 /* DemoOffLineDBAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoOffLineDBAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1CFCDE2F6C5A94002DE4D3 /* DemoOffLineDBAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoOffLineDBAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF351A352B386757B1A91B97 /* Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests.release.xcconfig"; path = "Target Support Files/Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests/Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E0B51ECBF033711837D89B88 /* Pods_DemoOffLineDBAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoOffLineDBAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA1C381CAAA941FECCA081F7 /* Pods-DemoOffLineDBApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoOffLineDBApp.release.xcconfig"; path = "Target Support Files/Pods-DemoOffLineDBApp/Pods-DemoOffLineDBApp.release.xcconfig"; sourceTree = "<group>"; };
-		F0AA7C71F3DFE1D5FDE48E85 /* Pods-DemoOffLineDBAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoOffLineDBAppTests.release.xcconfig"; path = "Target Support Files/Pods-DemoOffLineDBAppTests/Pods-DemoOffLineDBAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -81,8 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188C97902F765F9600DDC987 /* SDWebImageSwiftUI in Frameworks */,
-				2EB1ABC3D821425F53DCD87E /* Pods_DemoOffLineDBApp.framework in Frameworks */,
+				18BCAA302F76F1E200E7F8E8 /* SDWebImageSwiftUI in Frameworks */,
+				18BCAA2D2F76F1D400E7F8E8 /* FirebaseCore in Frameworks */,
+				18BCAA2B2F76F1D400E7F8E8 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16DC4D275A9905FB694FB7BE /* Pods_DemoOffLineDBAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,36 +88,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B0E9F3D5377BDBE81871A2B /* Pods_DemoOffLineDBApp_DemoOffLineDBAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F769E6A7B268B894015EA4E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8D460294C19AF3A62DA119CF /* Pods_DemoOffLineDBApp.framework */,
-				4E98434C29CD5807059AD70F /* Pods_DemoOffLineDBApp_DemoOffLineDBAppUITests.framework */,
-				E0B51ECBF033711837D89B88 /* Pods_DemoOffLineDBAppTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		64AE5CEF5594E61521D089CE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8F13FE0E74BF0B31CE06C2F0 /* Pods-DemoOffLineDBApp.debug.xcconfig */,
-				EA1C381CAAA941FECCA081F7 /* Pods-DemoOffLineDBApp.release.xcconfig */,
-				1824BA1B07B082EDA0C23CCF /* Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests.debug.xcconfig */,
-				CF351A352B386757B1A91B97 /* Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests.release.xcconfig */,
-				1E7DF99ADAD347736E140A96 /* Pods-DemoOffLineDBAppTests.debug.xcconfig */,
-				F0AA7C71F3DFE1D5FDE48E85 /* Pods-DemoOffLineDBAppTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		CE1CFCB92F6C5A91002DE4D3 = {
 			isa = PBXGroup;
 			children = (
@@ -135,8 +101,6 @@
 				CE1CFCD72F6C5A94002DE4D3 /* DemoOffLineDBAppTests */,
 				CE1CFCE12F6C5A94002DE4D3 /* DemoOffLineDBAppUITests */,
 				CE1CFCC32F6C5A91002DE4D3 /* Products */,
-				64AE5CEF5594E61521D089CE /* Pods */,
-				0F769E6A7B268B894015EA4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,11 +121,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE1CFCE82F6C5A94002DE4D3 /* Build configuration list for PBXNativeTarget "DemoOffLineDBApp" */;
 			buildPhases = (
-				F3124CF66787B0CB0180ADEE /* [CP] Check Pods Manifest.lock */,
 				CE1CFCBE2F6C5A91002DE4D3 /* Sources */,
 				CE1CFCBF2F6C5A91002DE4D3 /* Frameworks */,
 				CE1CFCC02F6C5A91002DE4D3 /* Resources */,
-				0E90BEAE4E5D5596841C02E2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,7 +215,8 @@
 			mainGroup = CE1CFCB92F6C5A91002DE4D3;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				188C978E2F765F9600DDC987 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				18BCAA292F76F1D400E7F8E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				18BCAA2E2F76F1E200E7F8E8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CE1CFCC32F6C5A91002DE4D3 /* Products */;
@@ -292,27 +255,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E90BEAE4E5D5596841C02E2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DemoOffLineDBApp/Pods-DemoOffLineDBApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DemoOffLineDBApp/Pods-DemoOffLineDBApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoOffLineDBApp/Pods-DemoOffLineDBApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		26A2649A41FE0218934E62BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -376,28 +318,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests/Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F3124CF66787B0CB0180ADEE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DemoOffLineDBApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -561,7 +481,6 @@
 		};
 		CE1CFCE92F6C5A94002DE4D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F13FE0E74BF0B31CE06C2F0 /* Pods-DemoOffLineDBApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -598,7 +517,6 @@
 		};
 		CE1CFCEA2F6C5A94002DE4D3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA1C381CAAA941FECCA081F7 /* Pods-DemoOffLineDBApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -635,7 +553,6 @@
 		};
 		CE1CFCEC2F6C5A94002DE4D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E7DF99ADAD347736E140A96 /* Pods-DemoOffLineDBAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -655,7 +572,6 @@
 		};
 		CE1CFCED2F6C5A94002DE4D3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0AA7C71F3DFE1D5FDE48E85 /* Pods-DemoOffLineDBAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -675,7 +591,6 @@
 		};
 		CE1CFCEF2F6C5A94002DE4D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1824BA1B07B082EDA0C23CCF /* Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -693,7 +608,6 @@
 		};
 		CE1CFCF02F6C5A94002DE4D3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF351A352B386757B1A91B97 /* Pods-DemoOffLineDBApp-DemoOffLineDBAppUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -751,7 +665,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		188C978E2F765F9600DDC987 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+		18BCAA292F76F1D400E7F8E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.11.0;
+			};
+		};
+		18BCAA2E2F76F1E200E7F8E8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
 			requirement = {
@@ -762,9 +684,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		188C978F2F765F9600DDC987 /* SDWebImageSwiftUI */ = {
+		18BCAA2A2F76F1D400E7F8E8 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 188C978E2F765F9600DDC987 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			package = 18BCAA292F76F1D400E7F8E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		18BCAA2C2F76F1D400E7F8E8 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18BCAA292F76F1D400E7F8E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		18BCAA2F2F76F1E200E7F8E8 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18BCAA2E2F76F1E200E7F8E8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */

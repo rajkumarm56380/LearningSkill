@@ -27,7 +27,7 @@ final class FirebaseAuthService: AuthServiceProtocol {
     
     func signup(user: User) async throws -> User {
         let result = try await Auth.auth().createUser(withEmail: user.email, password: user.password)
-        
+        setDisplayName(user.name)
         return User(
             id: UUID(uuidString: result.user.uid) ?? UUID(),
             name: user.name,
@@ -36,7 +36,21 @@ final class FirebaseAuthService: AuthServiceProtocol {
             isLoggedIn: true
         )
     }
-    
+
+    func setDisplayName(_ name: String) {
+        guard let user = Auth.auth().currentUser else { return }
+        let request = user.createProfileChangeRequest()
+        request.displayName = name
+
+        request.commitChanges { error in
+            if let error = error {
+                print("Error:", error)
+            } else {
+                print("Display name updated")
+            }
+        }
+    }
+
     func logout() async throws {
         try Auth.auth().signOut()
     }

@@ -79,6 +79,7 @@ final class AuthRepository: AuthRepositoryProtocol {
         return nil
     }
 
+    
     // LOGOUT
     func logout() async throws {
         try await remote.logout()
