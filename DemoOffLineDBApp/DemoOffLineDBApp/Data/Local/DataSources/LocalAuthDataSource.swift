@@ -20,7 +20,7 @@ final class LocalAuthDataSource {
             id: user.id.uuidString,
             name:user.name,
             email: user.email,
-            isLoggedIn: true
+            isLoggedIn: user.isLoggedIn
         )
         context.insert(local)
         try? context.save()

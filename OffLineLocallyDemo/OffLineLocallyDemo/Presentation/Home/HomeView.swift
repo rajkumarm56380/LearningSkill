@@ -21,12 +21,26 @@ struct HomeView: View {
                 }
             }
 
+
             Button("Logout") {
                 viewModel.logout()
                 session.logout()
                 router.popToRoot()
             }
-            .buttonStyle(.bordered)
+            .font(.headline)
+            .fontWeight(.bold)
+            .foregroundColor(.white)
+            .frame(maxWidth: .infinity)
+            .frame(height: 55)
+            .background(
+                LinearGradient(
+                    colors: [Color.pink, Color.purple],
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )
+            )
+            .cornerRadius(30)
+            .padding(.horizontal)
         }
         .navigationTitle("Home Screen")
         .appNavigationStyle()

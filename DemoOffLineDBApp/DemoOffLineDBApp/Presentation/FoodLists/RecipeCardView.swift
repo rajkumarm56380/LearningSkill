@@ -11,15 +11,13 @@ struct RecipeCardView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            CachedAsyncImage(url: recipe.image)
-            .frame(height: 140)
-            .frame(maxWidth: .infinity)
-            .clipped()
-            .cornerRadius(12)
 
-            /*Text(recipe.name)
-                .font(.headline)
-                .lineLimit(2)*/
+            SDWebImageView(imageUrl: recipe.image)
+                .scaledToFit()
+                .frame(height: 140)
+                .frame(maxWidth: .infinity)
+                .clipped()
+                .cornerRadius(12)
             Text(recipe.name)
                 .font(.headline)
                 .foregroundColor(.black)

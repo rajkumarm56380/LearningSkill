@@ -5,9 +5,6 @@
       location = "group:DemoLocationApp/DemoLocationApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:DemoVenuesApp/DemoVenuesApp.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:OffLineLocallyDemo/OffLineLocallyDemo.xcodeproj">
    </FileRef>
    <FileRef
@@ -15,5 +12,8 @@
    </FileRef>
    <FileRef
       location = "group:DemoMapView/DemoMapView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DemoVenuesApp/DemoVenuesApp.xcodeproj">
    </FileRef>
 </Workspace>

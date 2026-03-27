@@ -13,9 +13,7 @@ struct VenueCardView: View {
 
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .top, spacing: 12) {
-                CachedAsyncImage(
-                    url: venue.images.first ?? MockImage.imageUrl.rawValue
-                )
+                SDWebImageView(imageUrl: venue.images.first ?? MockImage.imageUrl.rawValue)
                 .frame(width: 110, height: 110)
                 .clipped()
                 .clipShape(RoundedRectangle(cornerRadius: 16))

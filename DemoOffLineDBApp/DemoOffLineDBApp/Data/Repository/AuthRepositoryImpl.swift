@@ -34,7 +34,7 @@ final class AuthRepository: AuthRepositoryProtocol {
             guard let localUser = local.fetchLoggedInUser() else {
                 throw AuthError.unknown("No offline session found")
             }
-
+            print("localUser ==> \(localUser.email)")
             return User(
                 id: UUID(uuidString: localUser.id) ?? UUID(),
                 name: localUser.name,
@@ -55,7 +55,7 @@ final class AuthRepository: AuthRepositoryProtocol {
             }
             let user = User(
                 id: UUID(uuidString: localUser.id) ?? UUID(),
-                name: localUser.name,
+                name: user.name,
                 email: localUser.email,
                 password: "",
                 isLoggedIn: true)

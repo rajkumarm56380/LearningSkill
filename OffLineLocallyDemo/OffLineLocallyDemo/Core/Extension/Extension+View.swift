@@ -10,7 +10,11 @@ import SwiftUI
 extension View {
     func appNavigationStyle() -> some View {
         self
-            .toolbarBackground(Color.blue, for: .navigationBar)
+            .toolbarBackground(LinearGradient(
+                colors: [Color.pink, Color.purple],
+                startPoint: .leading,
+                endPoint: .trailing
+            ), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationBarBackButtonHidden(true)
 

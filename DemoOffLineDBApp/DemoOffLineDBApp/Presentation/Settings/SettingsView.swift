@@ -27,7 +27,7 @@ struct SettingsView: View {
                             .font(.headline)
                             .foregroundColor(.black)
                         
-                        Text(session.user?.email ?? "Guest User")
+                        Text(session.user?.email ?? "***@***.***")
                             .font(.headline)
                             .foregroundColor(.black)
                         

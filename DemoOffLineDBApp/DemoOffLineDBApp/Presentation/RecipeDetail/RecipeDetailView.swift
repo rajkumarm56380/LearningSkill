@@ -14,10 +14,8 @@ struct RecipeDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                CachedAsyncImage(
-                    url: recipe.image
-                )
-                .clipped()
+                SDWebImageView(imageUrl: recipe.image)
+                 .clipped()
                 .scaledToFill()
                 .frame(height: 250)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
