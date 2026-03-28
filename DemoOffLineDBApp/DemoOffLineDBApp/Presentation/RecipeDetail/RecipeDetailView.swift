@@ -13,19 +13,19 @@ struct RecipeDetailView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
+            LazyVStack(alignment: .leading, spacing: 16) {
                 SDWebImageView(imageUrl: recipe.image)
                  .clipped()
                 .scaledToFill()
                 .frame(height: 250)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
-                HStack {
-                    Text(recipe.name)
-                        .font(.title)
-                        .fontWeight(.bold)
-                    
-                    Spacer()
-                    
+                HStack(alignment: .top) {
+                        Text(recipe.name)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(nil)
+                        Spacer()
                     /*Button(action: {
                      isFavourite.toggle()
                      }) {

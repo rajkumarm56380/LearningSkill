@@ -12,37 +12,33 @@ struct SettingsView: View {
     @EnvironmentObject var router: AppRouter
 
     var body: some View {
-        VStack(spacing: 0) {
-            ScrollView {
-                VStack(spacing: 20) {
+        ScrollView {
+            LazyVStack(spacing: 20) {
 
-                    VStack(spacing: 12) {
+                Image(systemName: "person.circle.fill")
+                    .resizable()
+                    .frame(width: 80, height: 80)
+                    .foregroundColor(.purple)
+                
+                Text((session.user?.name ?? "guest user").capitalized)
+                    .font(.headline)
+                    .foregroundColor(.black)
 
-                        Image(systemName: "person.circle.fill")
-                            .resizable()
-                            .frame(width: 80, height: 80)
-                            .foregroundColor(.purple)
+                Text(session.user?.email ?? "***@***.***")
+                    .font(.headline)
+                    .foregroundColor(.black)
 
-                        Text(session.user?.name ?? "Guest User")
-                            .font(.headline)
-                            .foregroundColor(.black)
-                        
-                        Text(session.user?.email ?? "***@***.***")
-                            .font(.headline)
-                            .foregroundColor(.black)
-                        
-                        Text("Welcome to Food App 🍽️")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(16)
-                    .shadow(radius: 4)
-                }
-                .padding()
+                Text("Welcome to Food App 🍽️")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
             }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.white)
+            .cornerRadius(16)
+            .shadow(radius: 4)
+            .padding()
+            Spacer()
             VStack {
                 Button {
                     logout()
@@ -79,7 +75,7 @@ struct SettingsView: View {
 
     // LOGOUT LOGIC
     private func logout() {
-        session.logout()
+        session.clearUser()
         router.reset()
         router.reset(to: .login)
     }

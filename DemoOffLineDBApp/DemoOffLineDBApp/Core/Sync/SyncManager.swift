@@ -5,14 +5,17 @@
 //
 
 import Combine
+import Foundation
 
-final class SyncManager {
+final class SyncManager: SyncManagerProtocol {
 
-    private let network: NetworkMonitor
-    private let api: FoodListsAPIService
-    private let local: FoodRecipeLocalDataSource
+    private let network: NetworkMonitorProtocol
+    private let api: APIClientProtocol
+    private let local: FoodRecipeLocalDataSourceProtocol
 
-    init(network: NetworkMonitor, api: FoodListsAPIService, local: FoodRecipeLocalDataSource) {
+    init(network: NetworkMonitorProtocol,
+         api: APIClientProtocol,
+         local: FoodRecipeLocalDataSourceProtocol) {
         self.network = network
         self.api = api
         self.local = local
@@ -21,21 +24,19 @@ final class SyncManager {
     func fetchProducts() -> AnyPublisher<[Recipe], APIError> {
         // OFFLINE → Always local
         guard network.isConnected else {
-                    return Just(local.fetch())
-                        .setFailureType(to: APIError.self)
-                        .eraseToAnyPublisher()
-                }
+            return Just(local.fetch())
+                .setFailureType(to: APIError.self)
+                .eraseToAnyPublisher()
+        }
 
         // ONLINE → API + Cache + Fallback
-        return api.fetchFoodRecipes()
-
+        return api.request(Endpoint.recipes.url)
         //  Save API response to local DB
             .handleEvents(receiveOutput: { [weak self] dtos in
-                self?.local.save(dtos)
+                self?.saveLocal(dtos)
             })
-
         //   Map DTO → Domain
-            .map(FoodProductMapper.mapDTOArrayToDomain)
+        .map(FoodProductMapper.mapDTOArrayToDomain)
 
         // CRITICAL: fallback to local if API fails
             .catch { [weak self] error -> AnyPublisher<[Recipe], APIError> in
@@ -45,29 +46,19 @@ final class SyncManager {
 
                 let localData = self.local.fetch()
 
-                if !localData.isEmpty {
-                    return Just(localData)
-                        .setFailureType(to: APIError.self)
-                        .eraseToAnyPublisher()
-                } else {
+                guard !localData.isEmpty else {
                     return Fail(error: error).eraseToAnyPublisher()
                 }
-            }
 
+                return Just(self.local.fetch())
+                    .setFailureType(to: APIError.self)
+                    .eraseToAnyPublisher()
+            }
             .eraseToAnyPublisher()
     }
 
-    func fetchProductsNews() -> AnyPublisher<[Recipe], APIError> {
-
-        let localPublisher = Just(local.fetch())
-            .setFailureType(to: APIError.self)
-
-        let remotePublisher = api.fetchFoodRecipes()
-            .handleEvents(receiveOutput: { [weak self] in self?.local.save($0) })
-            .map(FoodProductMapper.mapDTOArrayToDomain)
-
-        return localPublisher
-            .append(remotePublisher) // show local first, then refresh
-            .eraseToAnyPublisher()
+    //  actor-isolated — only called via Task { await }
+    private func saveLocal(_ dtos: [FoodRecipeDTO]) {
+        local.save(dtos)
     }
 }

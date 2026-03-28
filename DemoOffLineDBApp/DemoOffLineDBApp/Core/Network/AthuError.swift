@@ -6,7 +6,37 @@
 
 import Foundation
 
-enum AuthError: LocalizedError, Equatable {
+enum AuthError: LocalizedError {
+
+    case emailAlreadyInUse
+    case invalidEmail
+    case wrongPassword
+    case userNotFound
+    case invalidCredential
+    case networkError
+    case unknown(String)
+
+    var errorDescription: String? {
+        switch self {
+        case .emailAlreadyInUse:
+            return "Email already in use"
+        case .invalidEmail:
+            return "Invalid email format"
+        case .wrongPassword:
+            return "Wrong password"
+        case .userNotFound:
+            return "User not found. Please sign up"
+        case .invalidCredential:
+            return "Invalid or expired credentials"
+        case .networkError:
+            return "No internet connection"
+        case .unknown(let msg):
+            return msg
+        }
+    }
+}
+
+enum AuthErrorOld: LocalizedError, Equatable {
 
     case weakPassword
     case emptyFields
@@ -37,7 +67,9 @@ enum AuthError: LocalizedError, Equatable {
         case .credentialExpired:
             return "Session expired. Please login again."
         case .unknown(let message):
-            return message
+            print("AuthError errorDescription message ==> \(message)")
+            return "Something went wrong. Please try again."
         }
     }
 }
+

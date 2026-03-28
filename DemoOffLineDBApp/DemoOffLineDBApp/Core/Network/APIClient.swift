@@ -8,7 +8,6 @@ import Combine
 import Foundation
 
 protocol APIClientProtocol {
-    func fetchFoodRecipes() -> AnyPublisher<[FoodRecipeDTO], APIError>
     func request<T: Decodable>(_ url: URL) -> AnyPublisher<T, APIError>
 }
 

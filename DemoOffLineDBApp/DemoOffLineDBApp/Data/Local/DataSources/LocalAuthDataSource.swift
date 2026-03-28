@@ -7,7 +7,7 @@
 import SwiftData
 import Foundation
 
-final class LocalAuthDataSource {
+final class LocalAuthDataSource: LocalAuthDataSourceProtocol {
 
     private let context: ModelContext
 

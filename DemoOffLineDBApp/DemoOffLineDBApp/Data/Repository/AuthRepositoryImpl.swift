@@ -10,13 +10,13 @@ import Foundation
 final class AuthRepository: AuthRepositoryProtocol {    
 
     private let remote: AuthServiceProtocol
-    private let local: LocalAuthDataSource
-    private let network: NetworkMonitor
+    private let local: LocalAuthDataSourceProtocol
+    private let network: NetworkMonitorProtocol
     private var cancellables = Set<AnyCancellable>()
 
     init(remote: AuthServiceProtocol,
-         local: LocalAuthDataSource,
-         network: NetworkMonitor) {
+         local: LocalAuthDataSourceProtocol,
+         network: NetworkMonitorProtocol) {
         self.remote = remote
         self.local = local
         self.network = network

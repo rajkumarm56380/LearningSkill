@@ -10,6 +10,7 @@ import Combine
 @MainActor
 final class AuthViewModel: ObservableObject {
 
+    //Property Wrapper
     @Published var name = ""
     @Published var email = ""
     @Published var password = ""
@@ -21,9 +22,9 @@ final class AuthViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     private let router: AppRouter
     private let session: SessionManager
-    private let repo: AuthRepositoryProtocol
+    private let repo: AuthUseCaseProtocol
 
-    init(repo: AuthRepositoryProtocol,
+    init(repo: AuthUseCaseProtocol,
          session: SessionManager,
          router: AppRouter) {
         self.repo = repo
@@ -45,11 +46,14 @@ final class AuthViewModel: ObservableObject {
 
         Task {
             do {
-                let createdUser = try await repo.signup(user: user)
+                let createdUser = try await repo.executeSignup(user: user)
                 self.loggedUser = createdUser
+                session.setUser(user) 
                 self.router.reset(to: .foodLists)
-            } catch {
+            } catch let error as AuthError {
                 self.errorMessage = error.localizedDescription
+            } catch {
+                self.errorMessage = "Unexpected error"
             }
             self.isLoading = false
         }
@@ -62,34 +66,41 @@ final class AuthViewModel: ObservableObject {
 
         Task {
             do {
-                let user = try await repo.login(email: email, password: password)
+                let user = try await repo.executeLogin(email: email, password: password)
                 self.loggedUser = user
-                self.session.user = user
+                session.setUser(user)
                 self.router.reset(to: .foodLists)
-            } catch {
+            } catch let error as AuthError {
                 self.errorMessage = error.localizedDescription
+            } catch {
+                self.errorMessage = "Unexpected error"
             }
             self.isLoading = false
         }
     }
 
+    func logout() {
+        Task {
+            do {
+                try await repo.executeLogout()
+                session.clearUser()          // await actor call
+                self.loggedUser = nil
+                self.router.reset(to: .login)
+            } catch let error as AuthError {
+                self.errorMessage = error.localizedDescription
+            }
+        }
+    }
+
     private func loginFieldsValidate() -> Bool {
-
-        if password.isEmpty || email.isEmpty {
-            errorMessage = "All fields required!"
-            isLoading = false
-            return false
+        // ResultBuilder
+        let error = Validator.validate {
+            EmailRule(email)
+            PasswordRule(password)
         }
 
-        if password.isEmpty {
-            errorMessage = "Password is missing!"
-            isLoading = false
-            return false
-        }
-
-        if password.count < 5 {
-            errorMessage = "Password must be at least 5 characters"
-            isLoading = false
+        if let error = error {
+            errorMessage = error
             return false
         }
 
@@ -97,24 +108,19 @@ final class AuthViewModel: ObservableObject {
     }
 
     private func validateAllFields() -> Bool {
+        // ResultBuilder
+        let error = Validator.validate {
+            NameRule(name)
+            EmailRule(email)
+            PasswordRule(password)
+            ConfirmPasswordRule(password: password, confirm: confirmPassword)
+        }
 
-        if password.isEmpty || email.isEmpty || confirmPassword.isEmpty || name.isEmpty {
-            errorMessage = "All fields required"
-            isLoading = false
+        if let error = error {
+            errorMessage = error
             return false
         }
 
-        if password.count < 6 {
-            errorMessage = "Password must be at least 6 characters"
-            isLoading = false
-            return false
-        }
-
-        if password != confirmPassword {
-            errorMessage = "Password not matching"
-            isLoading = false
-            return false
-        }
         return true
     }
 

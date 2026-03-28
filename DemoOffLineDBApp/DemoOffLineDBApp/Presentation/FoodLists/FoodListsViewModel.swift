@@ -14,11 +14,11 @@ final class FoodListsViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
 
-    private let repo: FoodListsRepositoryProtocol
+    private let repo: FoodListsUseCaseProtocol
     private var cancellables = Set<AnyCancellable>()
     private var hasLoaded = false
 
-    init(repo: FoodListsRepositoryProtocol) {
+    init(repo: FoodListsUseCaseProtocol) {
         self.repo = repo
     }
 
@@ -31,13 +31,16 @@ final class FoodListsViewModel: ObservableObject {
 
         isLoading = true
 
-        repo.fetch()
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
+        repo.execute()
+            .subscribe(on: DispatchQueue.global())
+            .receive(on: DispatchQueue.main)     
+            .sink { [weak self] completion in
                 self?.isLoading = false
+                if case .failure(let error) = completion {
+                    self?.errorMessage = error.localizedDescription
+                }
             } receiveValue: { [weak self] data in
                 self?.recipes = data
-                self?.isLoading = false
             }
             .store(in: &cancellables)
     }

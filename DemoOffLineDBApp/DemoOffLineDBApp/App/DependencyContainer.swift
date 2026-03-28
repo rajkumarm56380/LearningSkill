@@ -5,7 +5,6 @@
 //
 
 import Foundation
-import Combine
 
 @MainActor
 final class DependencyContainer: ObservableObject {
@@ -36,10 +35,13 @@ final class DependencyContainer: ObservableObject {
     lazy var sync = SyncManager(network: network, api: api, local: local)
     lazy var foodListsRepo = FoodListsRepositoryImpl(sync: sync)
 
+    // MARK: - Data Layer
+    lazy var authUseCase = AuthUseCase(repo: authRepository)
+    lazy var foodListsUseCase = FoodListsUseCase(repo: foodListsRepo)
 
     // MARK: - ViewModels
     //private let repo: FoodListsRepositoryImpl =
-    lazy var foodListsVM = FoodListsViewModel(repo: foodListsRepo)
+    lazy var foodListsVM = FoodListsViewModel(repo: foodListsUseCase)
 
     func makeFoodListsVM() -> FoodListsViewModel {
         foodListsVM
@@ -47,7 +49,7 @@ final class DependencyContainer: ObservableObject {
 
     func makeAuthVM() -> AuthViewModel {
         AuthViewModel(
-            repo: authRepository,
+            repo: authUseCase,
             session: session,
             router: router
         )

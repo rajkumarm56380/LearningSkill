@@ -13,7 +13,7 @@ struct SignupView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
+            LazyVStack(spacing: 20) {
 
                 Image("FoodLogo")
                     .resizable()
@@ -30,10 +30,11 @@ struct SignupView: View {
                 AuthTextFieldView(title: "Password",
                                   text: $viewModel.password,
                                   isSecure: true)
+                .textContentType(.none)
                 AuthTextFieldView(title: "Confirm Password",
                                   text: $viewModel.confirmPassword,
                                   isSecure: true)
-
+                .textContentType(.none)
                 //ErrorTextView(message: viewModel.errorMessage)
 
                 PrimaryButtonView(
@@ -64,9 +65,10 @@ struct SignupView: View {
                  }
              }
          }
-       }.loading(viewModel.isLoading)
+       }
+        .ignoresSafeArea(.keyboard)
+        .loading(viewModel.isLoading)
         .toast(message: $viewModel.errorMessage)
-        .ignoresSafeArea(.keyboard, edges: .bottom)
     }
 }
 

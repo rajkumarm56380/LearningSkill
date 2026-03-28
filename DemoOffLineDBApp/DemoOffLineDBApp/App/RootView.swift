@@ -11,7 +11,6 @@ struct RootView: View {
     let container: DependencyContainer
     @EnvironmentObject var session: SessionManager
     @EnvironmentObject var router: AppRouter
-    @State private var showSplash = true
 
     var body: some View {
 
@@ -35,8 +34,6 @@ struct RootView: View {
                     SettingsView()
                 case .recipeDetail(let recipe):
                     RecipeDetailView(recipe: recipe)
-                default:
-                        EmptyView()
                 }
             }
         }

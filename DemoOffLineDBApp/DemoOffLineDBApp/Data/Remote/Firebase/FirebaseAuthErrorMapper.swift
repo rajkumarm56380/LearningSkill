@@ -2,19 +2,17 @@
 //  FirebaseAuthErrorMapper.swift
 //  DemoOffLineDBApp
 //
- 
-//
 
 import FirebaseAuth
 
 struct FirebaseAuthErrorMapper {
 
-    static func map(_ error: Error) -> AuthError {
+    static func mapFirebaseError(_ error: Error) -> AuthError {
 
         let nsError = error as NSError
 
         guard let code = AuthErrorCode(rawValue: nsError.code) else {
-            return .unknown(nsError.localizedDescription)
+            return .unknown(error.localizedDescription)
         }
 
         switch code {
@@ -25,9 +23,6 @@ struct FirebaseAuthErrorMapper {
         case .invalidEmail:
             return .invalidEmail
 
-        case .weakPassword:
-            return .weakPassword
-
         case .wrongPassword:
             return .wrongPassword
 
@@ -35,13 +30,13 @@ struct FirebaseAuthErrorMapper {
             return .userNotFound
 
         case .invalidCredential:
-            return .credentialExpired
+            return .invalidCredential
 
-//        case .networkError:
-//            return .unknown(nsError.localizedDescription)
+        case .networkError:
+            return .networkError
 
         default:
-            return .unknown(nsError.localizedDescription)
+            return .unknown(error.localizedDescription)
         }
     }
 }

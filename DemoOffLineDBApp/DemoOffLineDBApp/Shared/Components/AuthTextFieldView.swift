@@ -15,10 +15,10 @@ struct AuthTextFieldView: View {
         Group {
             if isSecure {
                 SecureField(title, text: $text)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled(true)
                     .textContentType(.init(rawValue: ""))
-
+                    .textContentType(.none)
+                    .autocorrectionDisabled(true)
+                    .textInputAutocapitalization(.never)
             } else {
                 TextField(title, text: $text)
                     .autocorrectionDisabled(true)

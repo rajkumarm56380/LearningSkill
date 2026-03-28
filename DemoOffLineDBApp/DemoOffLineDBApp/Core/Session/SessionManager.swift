@@ -7,55 +7,39 @@
 import FirebaseAuth
 import Combine
 
-
+@MainActor
 final class SessionManager: ObservableObject {
 
-    @Published var user: User?
-
-    var isLoggedIn: Bool {
-        user != nil
-    }
-
+    @Published private(set) var user: User?
     private let repo: AuthRepositoryProtocol
     private let service: AuthServiceProtocol
+
+    var isLoggedIn: Bool { user != nil }
 
     init(repo: AuthRepositoryProtocol,
          service: AuthServiceProtocol) {
         self.repo = repo
         self.service = service
-        self.user = repo.getCurrentUser() 
         observeAuth()
     }
 
     private func observeAuth() {
         Task {
-            for await user in service.observeAuthState() {
-                await MainActor.run {
-                    self.user = user
-                }
+            for await authUser in service.observeAuthState() {
+                self.user = authUser
             }
         }
     }
 
-    func login(email: String, password: String) {
-        Task {
-            do {
-                let user = try await repo.login(email: email, password: password)
-                await MainActor.run {
-                    self.user = user
-                }
-            } catch {
-                print(error)
-            }
-        }
+    func setUser(_ user: User) {
+        self.user = user
     }
 
-    func logout() {
-        Task {
-            try? await repo.logout()
-            await MainActor.run {
-                self.user = nil
-            }
-        }
+    func clearUser() {
+        self.user = nil
+    }
+
+    func getUser() -> User? {
+        return user
     }
 }

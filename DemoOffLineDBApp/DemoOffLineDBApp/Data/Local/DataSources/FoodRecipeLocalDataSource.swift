@@ -7,7 +7,7 @@
 import Foundation
 import SwiftData
 
-final class FoodRecipeLocalDataSource {
+final class FoodRecipeLocalDataSource: FoodRecipeLocalDataSourceProtocol {
 
     private let context: ModelContext
 

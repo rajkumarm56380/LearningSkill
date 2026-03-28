@@ -7,7 +7,7 @@
 import Network
 import Foundation
 
-final class NetworkMonitor: ObservableObject {
+final class NetworkMonitor: ObservableObject,NetworkMonitorProtocol {
 
     static let shared = NetworkMonitor()
     private let monitor = NWPathMonitor()

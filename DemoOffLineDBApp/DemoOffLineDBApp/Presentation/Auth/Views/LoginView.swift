@@ -9,11 +9,10 @@ import SwiftUI
 struct LoginView: View {
     @ObservedObject var viewModel: AuthViewModel
     @EnvironmentObject var router: AppRouter
-    @EnvironmentObject var session: SessionManager
 
     var body: some View {
         ZStack {
-            VStack(spacing: 20) {
+            LazyVStack(spacing: 20) {
 
                 Spacer()
 
@@ -29,11 +28,11 @@ struct LoginView: View {
                     .font(.title3)
 
                 AuthTextFieldView(title: "Email", text: $viewModel.email)
-                .keyboardType(.emailAddress)
+                    .keyboardType(.emailAddress)
                 AuthTextFieldView(title: "Password",
                                   text: $viewModel.password,
                                   isSecure: true)
-
+                .textContentType(.password)
                 //ErrorTextView(message: viewModel.errorMessage)
 
                 PrimaryButtonView(
@@ -52,12 +51,12 @@ struct LoginView: View {
                 .padding(.top, 10)
                 Spacer()
             }
+            .padding(.vertical)
+        }
+        .frame(maxWidth: .infinity,maxHeight: .infinity)
         .navigationBarBackButtonHidden(true)
-
-        .padding(.vertical)
-
-        }.loading(viewModel.isLoading)
+        .ignoresSafeArea(.keyboard)
+        .loading(viewModel.isLoading)
         .toast(message: $viewModel.errorMessage)
-        .ignoresSafeArea(.keyboard, edges: .bottom)
     }
 }
