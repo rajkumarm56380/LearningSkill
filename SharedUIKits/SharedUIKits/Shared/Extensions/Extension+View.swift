@@ -7,7 +7,7 @@
 import Foundation
 import SwiftUI
 
-extension View {
+public extension View {
     func appNavigationStyle() -> some View {
         self
             .toolbarBackground(.purple, for: .navigationBar)

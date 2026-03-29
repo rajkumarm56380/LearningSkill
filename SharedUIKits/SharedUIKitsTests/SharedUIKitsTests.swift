@@ -2,7 +2,6 @@
 //  SharedUIKitsTests.swift
 //  SharedUIKitsTests
 //
-//  Created by user on 27/03/26.
 //
 
 import XCTest

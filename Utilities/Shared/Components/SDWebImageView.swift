@@ -1,6 +1,6 @@
 //
 //  SDWebImageView.swift
-//  DemoVenuesApp
+//  DemoOffLineDBApp
 //
 //
 
@@ -16,3 +16,4 @@ struct SDWebImageView: View {
             .transition(.fade(duration: 0.5))
     }
 }
+

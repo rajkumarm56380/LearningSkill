@@ -11,9 +11,12 @@
       location = "group:WeatherApp/WeatherApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:DemoMapView/DemoMapView.xcodeproj">
+      location = "group:DemoVenuesApp/DemoVenuesApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:DemoVenuesApp/DemoVenuesApp.xcodeproj">
+      location = "group:DemoOffLineDBApp/DemoOffLineDBApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SharedUIKits/SharedUIKits.xcodeproj">
    </FileRef>
 </Workspace>

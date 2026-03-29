@@ -6,8 +6,8 @@
 
 import SwiftUI
 
-struct CustomStyleView: ViewModifier {
-    func body(content: Content) -> some View {
+public struct CustomStyleView: ViewModifier {
+    public func body(content: Content) -> some View {
         content
             .padding()
             .textFieldStyle(.roundedBorder)

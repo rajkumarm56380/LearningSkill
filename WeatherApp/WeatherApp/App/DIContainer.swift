@@ -2,7 +2,6 @@
 //  DIContainer.swift
 //  WeatherApp
 //
-//  Created by Apple on 19/03/26.
 //
 
 import Foundation

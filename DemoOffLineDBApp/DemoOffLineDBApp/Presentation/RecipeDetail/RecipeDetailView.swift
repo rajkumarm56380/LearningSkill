@@ -5,6 +5,7 @@
 //
 
 import SwiftUI
+import SharedUIKits
 
 struct RecipeDetailView: View {
     let recipe: Recipe

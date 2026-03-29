@@ -6,11 +6,16 @@
 
 import SwiftUI
 
-struct PrimaryButtonView: View {
-    let title: String
-    let action: () -> Void
+public struct PrimaryButtonView: View {
+    public let title: String
+    public let action: () -> Void
 
-    var body: some View {
+    public init(title: String, action: @escaping () -> Void) {
+        self.title = title
+        self.action = action
+    }
+    
+    public var body: some View {
         Button(action: action) {
             ZStack {
                 Text(title)

@@ -44,7 +44,7 @@ final class DependencyContainer: ObservableObject {
     lazy var foodListsVM = FoodListsViewModel(repo: foodListsUseCase)
 
     func makeFoodListsVM() -> FoodListsViewModel {
-        foodListsVM
+        return foodListsVM
     }
 
     func makeAuthVM() -> AuthViewModel {

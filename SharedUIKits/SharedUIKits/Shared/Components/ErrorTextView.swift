@@ -6,10 +6,13 @@
 
 import SwiftUI
 
-struct ErrorTextView: View {
+public struct ErrorTextView: View {
     let message: String?
 
-    var body: some View {
+    init(message: String?) {
+        self.message = message
+    }
+    public var body: some View {
         if let message = message {
             Text(message)
                 .foregroundColor(.red)

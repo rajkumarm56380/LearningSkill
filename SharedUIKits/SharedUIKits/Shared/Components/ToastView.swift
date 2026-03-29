@@ -6,11 +6,15 @@
 
 import SwiftUI
 
-struct ToastView: View {
+public struct ToastView: View {
 
     let message: String
 
-    var body: some View {
+    public init(message: String) {
+        self.message = message
+    }
+
+    public var body: some View {
         Text(message)
             .font(.footnote)
             .foregroundColor(.white)

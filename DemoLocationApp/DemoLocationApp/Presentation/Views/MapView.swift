@@ -65,7 +65,7 @@ struct MapView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             // MARK: - Lifecycle
-            .onAppear {
+            .task {
                 viewModel.getCurrentLocation()
             }
 
@@ -77,22 +77,24 @@ struct MapView: View {
                 }
             }
 
-            // ✅ TEST HOOK (IMPORTANT)
+            // TEST HOOK (IMPORTANT)
                 ForEach(viewModel.locations) { location in
                     Circle()
                         .fill(Color.clear)
                         .frame(width: 20, height: 20)
                         .accessibilityIdentifier("map_pin")
                 }
+
             if let location = viewModel.selectedLocation {
                 VStack {
                     LocationDetailPopup(location: location)
                 }
                 .accessibilityElement(children: .contain)
-                .accessibilityIdentifier("location_popup") // ✅ APPLY HERE
+                .accessibilityIdentifier("location_popup")
                 .zIndex(1)
             }
         }
+
         .ignoresSafeArea()
     }
 }

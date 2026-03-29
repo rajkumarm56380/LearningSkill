@@ -5,13 +5,14 @@
 //
 
 import SwiftUI
+import SharedUIKits
 
 struct VenueCardView: View {
     let venue: LocalResult
 
     var body: some View {
 
-        VStack(alignment: .leading, spacing: 12) {
+        LazyVStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .top, spacing: 12) {
                 SDWebImageView(imageUrl: venue.images.first ?? MockImage.imageUrl.rawValue)
                 .frame(width: 110, height: 110)

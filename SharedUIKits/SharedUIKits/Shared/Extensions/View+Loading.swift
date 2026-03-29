@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-extension View {
+public extension View {
     func loadingOverlay(_ isLoading: Bool) -> some View {
         ZStack {
             self.overlay {

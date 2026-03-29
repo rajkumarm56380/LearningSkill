@@ -6,12 +6,12 @@
 
 import SwiftUI
 
-struct ErrorOverlayView: View {
+public struct ErrorOverlayView: View {
 
     let message: String
     var retryAction: (() -> Void)?
 
-    var body: some View {
+    public var body: some View {
         ZStack {
             Color.black.opacity(0.4)
                 .ignoresSafeArea()

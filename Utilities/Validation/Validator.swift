@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct Validator {
+public struct Validator {
 
     static func validate(@ValidationBuilder _ rules: () -> [ValidationRule]) -> String? {
         for rule in rules() {

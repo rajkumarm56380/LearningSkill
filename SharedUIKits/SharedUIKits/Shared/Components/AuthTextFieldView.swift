@@ -6,19 +6,29 @@
 
 import SwiftUI
 
-struct AuthTextFieldView: View {
-    let title: String
-    @Binding var text: String
-    var isSecure: Bool = false
+public struct AuthTextFieldView: View {
+    public let title: String
+    @Binding public var text: String
+    public var isSecure: Bool
 
-    var body: some View {
+    public init(
+        title: String,
+        text: Binding<String>,
+        isSecure: Bool = false
+    ) {
+        self.title = title
+        self._text = text
+        self.isSecure = isSecure
+    }
+
+    public var body: some View {
         Group {
             if isSecure {
                 SecureField(title, text: $text)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled(true)
                     .textContentType(.init(rawValue: ""))
-
+                    .textContentType(.none)
+                    .autocorrectionDisabled(true)
+                    .textInputAutocapitalization(.never)
             } else {
                 TextField(title, text: $text)
                     .autocorrectionDisabled(true)

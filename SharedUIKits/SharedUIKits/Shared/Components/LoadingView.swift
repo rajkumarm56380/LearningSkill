@@ -6,10 +6,10 @@
 
 import SwiftUI
 
-struct LoadingView: View {
-    var message: String = "Loading..."
+public struct LoadingView: View {
+    public var message: String = "Loading..."
 
-    var body: some View {
+    public var body: some View {
         ZStack {
             // Background blur
             Color.black.opacity(0.3)

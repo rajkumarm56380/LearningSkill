@@ -6,6 +6,7 @@
 
 import Combine
 import SwiftUI
+import SharedUIKits
 
 struct VenueListView: View {
     @StateObject var viewModel: VenueListViewModel
@@ -27,8 +28,8 @@ struct VenueListView: View {
             .toolbarColorScheme(.dark, for: .navigationBar)
 
         }
-        .loadingOverlay(viewModel.isLoading)
-        .onAppear {
+        .loading(viewModel.isLoading)
+        .task {
             viewModel.loadVenues()
         }
     }

@@ -6,6 +6,7 @@
 
 import Foundation
 import Combine
+import SharedUIKits
 
 @MainActor
 final class AuthViewModel: ObservableObject {

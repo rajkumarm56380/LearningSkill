@@ -2,7 +2,6 @@
 //  SharedUIKits.h
 //  SharedUIKits
 //
-//  Created by user on 27/03/26.
 //
 
 #import <Foundation/Foundation.h>

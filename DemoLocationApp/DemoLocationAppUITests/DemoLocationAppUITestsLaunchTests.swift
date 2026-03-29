@@ -2,7 +2,6 @@
 //  DemoLocationAppUITestsLaunchTests.swift
 //  DemoLocationAppUITests
 //
-//  Created by user on 18/03/26.
 //
 
 import XCTest

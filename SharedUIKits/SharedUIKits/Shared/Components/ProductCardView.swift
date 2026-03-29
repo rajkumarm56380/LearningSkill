@@ -6,7 +6,8 @@
 
 import SwiftUI
 
-struct ProductCardView: View {
+
+/*struct ProductCardView: View {
     let product: Product
     let onFavorite: () -> Void
 
@@ -24,7 +25,4 @@ struct ProductCardView: View {
         .cornerRadius(12)
     }
 }
-
-//#Preview {
-//    ProductCardView()
-//}
+*/

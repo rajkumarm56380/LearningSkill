@@ -10,6 +10,10 @@
 		18BCAA2B2F76F1D400E7F8E8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 18BCAA2A2F76F1D400E7F8E8 /* FirebaseAuth */; };
 		18BCAA2D2F76F1D400E7F8E8 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 18BCAA2C2F76F1D400E7F8E8 /* FirebaseCore */; };
 		18BCAA302F76F1E200E7F8E8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 18BCAA2F2F76F1E200E7F8E8 /* SDWebImageSwiftUI */; };
+		18C2BB132F78F436005F579B /* SharedUIKits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C2BB122F78F436005F579B /* SharedUIKits.framework */; };
+		18C2BB142F78F436005F579B /* SharedUIKits.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18C2BB122F78F436005F579B /* SharedUIKits.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18C2BB272F78F87E005F579B /* SharedUIKits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C2BB262F78F87E005F579B /* SharedUIKits.framework */; };
+		18C2BB282F78F87E005F579B /* SharedUIKits.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18C2BB262F78F87E005F579B /* SharedUIKits.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +33,34 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		18C2BB152F78F436005F579B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				18C2BB142F78F436005F579B /* SharedUIKits.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C2BB292F78F87E005F579B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				18C2BB282F78F87E005F579B /* SharedUIKits.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		18C2BB122F78F436005F579B /* SharedUIKits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SharedUIKits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18C2BB262F78F87E005F579B /* SharedUIKits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SharedUIKits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1CFCC22F6C5A91002DE4D3 /* DemoOffLineDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoOffLineDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1CFCD42F6C5A94002DE4D3 /* DemoOffLineDBAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoOffLineDBAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1CFCDE2F6C5A94002DE4D3 /* DemoOffLineDBAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoOffLineDBAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,13 +79,6 @@
 				Core/Network/NetworkMonitor.swift,
 				Core/Session/SessionManager.swift,
 				Core/Sync/SyncManager.swift,
-				Core/Validation/Rules/ConfirmPasswordRule.swift,
-				Core/Validation/Rules/EmailRule.swift,
-				Core/Validation/Rules/NameRule.swift,
-				Core/Validation/Rules/PasswordRule.swift,
-				Core/Validation/ValidationBuilder.swift,
-				Core/Validation/ValidationRule.swift,
-				Core/Validation/Validator.swift,
 				Data/Local/DataSources/FoodRecipeLocalDataSource.swift,
 				Data/Local/DataSources/LocalAuthDataSource.swift,
 				Data/Local/Entities/FoodRecipeEntity.swift,
@@ -119,6 +143,7 @@
 			files = (
 				18BCAA302F76F1E200E7F8E8 /* SDWebImageSwiftUI in Frameworks */,
 				18BCAA2D2F76F1D400E7F8E8 /* FirebaseCore in Frameworks */,
+				18C2BB132F78F436005F579B /* SharedUIKits.framework in Frameworks */,
 				18BCAA2B2F76F1D400E7F8E8 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C2BB272F78F87E005F579B /* SharedUIKits.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,12 +166,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18C2BB112F78F436005F579B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18C2BB262F78F87E005F579B /* SharedUIKits.framework */,
+				18C2BB122F78F436005F579B /* SharedUIKits.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE1CFCB92F6C5A91002DE4D3 = {
 			isa = PBXGroup;
 			children = (
 				CE1CFCC42F6C5A91002DE4D3 /* DemoOffLineDBApp */,
 				CE1CFCD72F6C5A94002DE4D3 /* DemoOffLineDBAppTests */,
 				CE1CFCE12F6C5A94002DE4D3 /* DemoOffLineDBAppUITests */,
+				18C2BB112F78F436005F579B /* Frameworks */,
 				CE1CFCC32F6C5A91002DE4D3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -170,6 +206,7 @@
 				CE1CFCBE2F6C5A91002DE4D3 /* Sources */,
 				CE1CFCBF2F6C5A91002DE4D3 /* Frameworks */,
 				CE1CFCC02F6C5A91002DE4D3 /* Resources */,
+				18C2BB152F78F436005F579B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,6 +227,7 @@
 				CE1CFCD02F6C5A94002DE4D3 /* Sources */,
 				CE1CFCD12F6C5A94002DE4D3 /* Frameworks */,
 				CE1CFCD22F6C5A94002DE4D3 /* Resources */,
+				18C2BB292F78F87E005F579B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -462,7 +500,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DemoOffLineDBApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = UD9CQ54GSU;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -498,7 +536,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DemoOffLineDBApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = UD9CQ54GSU;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;

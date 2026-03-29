@@ -1,6 +1,6 @@
 //
 //  ImageCacheService.swift
-//  DemoVenuesApp
+//  DemoOffLineDBApp
 //
 //
 
@@ -21,3 +21,4 @@ final class ImageCacheService {
         cache.setObject(image, forKey: key as NSString)
     }
 }
+

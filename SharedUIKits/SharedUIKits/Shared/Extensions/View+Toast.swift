@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-extension View {
+public extension View {
 
     func toast(
         message: Binding<String?>,
@@ -22,7 +22,7 @@ extension View {
                     ToastView(message: msg)
                 }
                 .transition(.move(edge: .bottom).combined(with: .opacity))
-                .onAppear {
+                .task {
                     DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
                         withAnimation {
                             message.wrappedValue = nil

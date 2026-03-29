@@ -1,6 +1,6 @@
 //
 //  PrimaryButtonView.swift
-//  OffLineLocallyDemo
+//  DemoOffLineDBApp
 //
 //
 

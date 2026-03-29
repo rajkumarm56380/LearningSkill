@@ -2,7 +2,6 @@
 //  MockAPIClient.swift
 //  DemoOffLineDBAppTests
 //
-//  Created by Apple on 28/03/26.
 //
 
 import Combine

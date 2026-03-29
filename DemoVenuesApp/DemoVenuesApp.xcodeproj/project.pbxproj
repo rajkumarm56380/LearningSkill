@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		188C97E12F76611F00DDC987 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 188C97E02F76611F00DDC987 /* SDWebImageSwiftUI */; };
+		18C2B72F2F78F2B4005F579B /* SharedUIKits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C2B72E2F78F2B4005F579B /* SharedUIKits.framework */; };
+		18C2B7302F78F2B4005F579B /* SharedUIKits.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18C2B72E2F78F2B4005F579B /* SharedUIKits.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +29,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		18C2B7312F78F2B4005F579B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				18C2B7302F78F2B4005F579B /* SharedUIKits.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		18C2B72E2F78F2B4005F579B /* SharedUIKits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SharedUIKits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2A4D3A2F6AA40500A1DB4B /* DemoVenuesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoVenuesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2A4D4C2F6AA40600A1DB4B /* DemoVenuesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoVenuesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2A4D562F6AA40600A1DB4B /* DemoVenuesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoVenuesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C2B72F2F78F2B4005F579B /* SharedUIKits.framework in Frameworks */,
 				188C97E12F76611F00DDC987 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,12 +134,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18C2B72D2F78F2B4005F579B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18C2B72E2F78F2B4005F579B /* SharedUIKits.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE2A4D312F6AA40400A1DB4B = {
 			isa = PBXGroup;
 			children = (
 				CE2A4D3C2F6AA40500A1DB4B /* DemoVenuesApp */,
 				CE2A4D4F2F6AA40600A1DB4B /* DemoVenuesAppTests */,
 				CE2A4D592F6AA40600A1DB4B /* DemoVenuesAppUITests */,
+				18C2B72D2F78F2B4005F579B /* Frameworks */,
 				CE2A4D3B2F6AA40500A1DB4B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -146,6 +173,7 @@
 				CE2A4D362F6AA40500A1DB4B /* Sources */,
 				CE2A4D372F6AA40500A1DB4B /* Frameworks */,
 				CE2A4D382F6AA40500A1DB4B /* Resources */,
+				18C2B7312F78F2B4005F579B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -2,15 +2,14 @@
 //  ValidationRule.swift
 //  DemoOffLineDBApp
 //
-//  Created by Apple on 28/03/26.
 //
 
 import Foundation
 
-protocol ValidationRule {
+public protocol ValidationRule {
     func validate() -> String?
 }
 
-struct ValidationResult {
-    let error: String?
+public struct ValidationResult {
+    public let error: String?
 }

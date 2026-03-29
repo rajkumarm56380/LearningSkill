@@ -5,6 +5,7 @@
 //
 
 import SwiftUI
+import SharedUIKits
 
 struct LoginView: View {
     @ObservedObject var viewModel: AuthViewModel

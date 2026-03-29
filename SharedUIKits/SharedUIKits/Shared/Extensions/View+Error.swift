@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-extension View {
+public extension View {
     func errorOverlay(
         error: String?,
         retryAction: (() -> Void)? = nil

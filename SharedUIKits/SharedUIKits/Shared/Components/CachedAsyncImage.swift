@@ -6,12 +6,16 @@
 
 import SwiftUI
 
-struct CachedAsyncImage: View {
+public struct CachedAsyncImage: View {
 
     @StateObject private var loader = ImageLoader()
-    let url: String
+    public let url: String
 
-    var body: some View {
+    public init(url: String) {
+        self.url = url
+    }
+
+    public var body: some View {
         Group {
             if let image = loader.image {
                 Image(uiImage: image)
@@ -24,7 +28,7 @@ struct CachedAsyncImage: View {
                 }
             }
         }
-        .onAppear {
+        .task {
             loader.load(urlString: url)
         }
     }
