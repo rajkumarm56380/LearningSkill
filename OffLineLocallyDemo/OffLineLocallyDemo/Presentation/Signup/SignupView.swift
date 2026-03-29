@@ -5,15 +5,17 @@
 //
 
 import SwiftUI
+import SharedUIKits
 
 struct SignupView: View {
 
     @StateObject var viewModel: SignupViewModel
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var router: Router
+    @EnvironmentObject var router: AppRouter
 
     var body: some View {
-            VStack(spacing: 20) {
+        ZStack{
+            LazyVStack(spacing: 20) {
 
                 Text("Create Account")
                     .font(.largeTitle.bold())
@@ -45,27 +47,26 @@ struct SignupView: View {
                     .fontWeight(.semibold)
                 }
                 .padding(.top, 10)
-                
+
                 if viewModel.signupSuccess {
                     Text("Signup Successful")
                         .foregroundColor(.green)
                 }
-                
-                if let error = viewModel.errorMessage {
-                    Text(error)
-                        .foregroundColor(.red)
-                }
-                
+
                 if viewModel.isLoading {
                     ProgressView()
                 }
             }
-            .padding()
+        }
+        .frame(maxWidth: .infinity,maxHeight: .infinity)
+        .padding()
             .onChange(of: viewModel.signupSuccess) {
                 if viewModel.signupSuccess {
                     router.pop()
                 }
             }
+            .toast(message: $viewModel.errorMessage)
+            .loading(viewModel.isLoading)
     }
 }
 

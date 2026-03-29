@@ -1,5 +1,5 @@
 //
-//  AppRoute.swift
+//  Route.swift
 //  OffLineLocallyDemo
 //
 //
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AppRoute: Hashable {
+enum Route: Hashable {
     case signup
     case home(User)
 }

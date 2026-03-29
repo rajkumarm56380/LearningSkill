@@ -8,14 +8,13 @@ import SwiftUI
 
 @main
 struct OffLineLocallyDemoApp: App {
-    @StateObject private var sessionManager = SessionManager()
-    @StateObject private var router = Router()
+    @StateObject private var container = DependencyContainer()
 
     var body: some Scene {
         WindowGroup {
-            RootView()
-                .environmentObject(sessionManager)
-                .environmentObject(router)
+            RootView(container: container)
+                .environmentObject(container.sessionManager)
+                .environmentObject(container.router)
         }
     }
 }

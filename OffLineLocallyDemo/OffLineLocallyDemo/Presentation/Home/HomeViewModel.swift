@@ -13,26 +13,25 @@ final class HomeViewModel: ObservableObject {
     @Published var user: User?
     @Published var welcomeMessage: String = ""
 
-    init(user: User?) {
-        self.user = user
+    private let session: SessionManager
+
+    init(session: SessionManager) {
+        self.session =  session
         setupWelcome()
     }
 
     private func setupWelcome() {
 
-        guard let user = user else {
+        guard let user = session.currentUser else {
             welcomeMessage = "Welcome Guest"
             return
         }
-
+        self.user = user
         welcomeMessage = "Welcome \(user.name)"
     }
 
     func logout() {
         user?.isLoggedIn = false
-        if let user = user {
-            DependencyContainer.storage.saveUser(user)
-        }
         user = nil
         welcomeMessage = "Welcome Guest"
     }

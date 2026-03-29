@@ -13,6 +13,7 @@ final class SessionManager: ObservableObject {
     @Published var currentUser: User?
 
     private let loginKey = "isLoggedIn"
+    private let currentUserKey = "currentUserEmail"
 
     init() {
         checkLoginStatus()
@@ -35,23 +36,26 @@ final class SessionManager: ObservableObject {
         isLoggedIn = true
 
         UserDefaults.standard.set(true, forKey: loginKey)
+        if let data = try? JSONEncoder().encode(user) {
+            UserDefaults.standard.set(data, forKey: currentUserKey)
+        }
+
     }
 
     func logout() {
 
         currentUser = nil
         isLoggedIn = false
-
+        UserDefaults.standard.removeObject(forKey: currentUserKey)
         UserDefaults.standard.set(false, forKey: loginKey)
     }
 
     private func loadUser() {
-        
-        guard let data = UserDefaults.standard.data(forKey: "users"),
-              let users = try? JSONDecoder().decode([User].self, from: data)
+        guard let data = UserDefaults.standard.data(forKey: currentUserKey),
+              let user = try? JSONDecoder().decode(User.self, from: data)
         else { return }
-        
-        currentUser = users.first
+
+        currentUser = user
     }
 
 }

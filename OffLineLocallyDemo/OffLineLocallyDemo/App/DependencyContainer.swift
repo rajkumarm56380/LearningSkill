@@ -7,44 +7,34 @@
 import Foundation
 
 @MainActor
-final class DependencyContainer {
+final class DependencyContainer: ObservableObject {
 
     // MARK: Shared Services
-    static let sessionManager = SessionManager()
+    lazy var sessionManager = SessionManager()
+    let router = AppRouter()
 
     // MARK: - Storage
-    static var storage = UserStorage()
+    lazy var storage = UserStorage()
 
     // MARK: - Repository
-    private static let authRepository = AuthRepository(storage: storage)
+    lazy var authRepository = AuthRepository(storage: storage)
 
     // MARK: - UseCases
-    static func makeLoginUseCase() -> LoginUseCase {
-        LoginUseCase(repo: authRepository)
-    }
-
-    static func makeSignupUseCase() -> SignupUseCase {
-        SignupUseCase(repo: authRepository)
-    }
+    lazy var makeLoginUseCase = LoginUseCase(repo: authRepository)
+    lazy var makeSignupUseCase = SignupUseCase(repo: authRepository)
 
     // MARK: - ViewModels
 
-    static func makeLoginViewModel() -> LoginViewModel {
-        LoginViewModel(
-            loginUseCase: makeLoginUseCase(),
-            sessionManager: sessionManager
-        )
+    func makeLoginVM() -> LoginViewModel {
+        LoginViewModel(loginUseCase: makeLoginUseCase, sessionManager: sessionManager)
     }
 
-    static func makeSignupViewModel() -> SignupViewModel {
-        SignupViewModel(
-            signupUseCase: makeSignupUseCase(),
-            sessionManager: sessionManager
-        )
+    func makeSignupVM() -> SignupViewModel {
+        SignupViewModel(signupUseCase: makeSignupUseCase, sessionManager: sessionManager)
     }
-    
-    static func makeHomeViewModel(user: User?) -> HomeViewModel {
-        HomeViewModel(user: user)
-    }
-    
+
+    func makeHomeViewModel() -> HomeViewModel {
+       HomeViewModel(session: sessionManager)
+   }
+
 }

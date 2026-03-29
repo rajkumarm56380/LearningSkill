@@ -4,9 +4,9 @@
 //
 //
 
-import Foundation
-import SwiftUI
 import Combine
+import SharedUIKits
+import Foundation
 
 @MainActor
 final class SignupViewModel: ObservableObject {
@@ -66,21 +66,15 @@ final class SignupViewModel: ObservableObject {
 
     private func validateFields() -> Bool {
 
-        if password.isEmpty || email.isEmpty || confirmPassword.isEmpty || name.isEmpty {
-            errorMessage = "All fields required"
-            isLoading = false
-            return false
+        let error = Validator.validate {
+                    NameRule(name)
+                    EmailRule(email)
+                    PasswordRule(password)
+                    ConfirmPasswordRule(password: password, confirm: confirmPassword)
         }
 
-        if password.count < 6 {
-            errorMessage = "Password must be at least 6 characters"
-            isLoading = false
-            return false
-        }
-
-        if password != confirmPassword {
-            errorMessage = "Password not matching"
-            isLoading = false
+        if let error = error {
+            errorMessage = error
             return false
         }
         return true

@@ -7,8 +7,9 @@
 import SwiftUI
 
 struct RootView: View {
+    let container: DependencyContainer
     @EnvironmentObject var session: SessionManager
-    @EnvironmentObject var router: Router
+    @EnvironmentObject var router: AppRouter
 
     var body: some View {
 
@@ -17,29 +18,28 @@ struct RootView: View {
             Group {
                 if session.isLoggedIn {
                     HomeView(
-                        viewModel: DependencyContainer
-                            .makeHomeViewModel(user: session.currentUser)
+                        viewModel: container.makeHomeViewModel()
                     )
                 } else {
                     LoginView(
-                        viewModel: DependencyContainer.makeLoginViewModel()
+                        viewModel: container.makeLoginVM()
                     )
                 }
             }
             .toolbar(.visible, for: .navigationBar)
             //  REQUIRED for Router navigation
-            .navigationDestination(for: AppRoute.self) { route in
+            .navigationDestination(for: Route.self) { route in
 
                 switch route {
 
                 case .signup:
                     SignupView(
-                        viewModel: DependencyContainer.makeSignupViewModel()
+                        viewModel: container.makeSignupVM()
                     )
 
                 case .home(let user):
                     HomeView(
-                        viewModel: DependencyContainer.makeHomeViewModel(user: user)
+                        viewModel: container.makeHomeViewModel()
                     )
                 }
             }
@@ -47,5 +47,5 @@ struct RootView: View {
     }
 }
 #Preview {
-    RootView()
+    RootView(container: DependencyContainer())
 }

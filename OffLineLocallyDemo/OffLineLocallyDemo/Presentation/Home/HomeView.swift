@@ -5,15 +5,16 @@
 //
 
 import SwiftUI
+import SharedUIKits
 
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
     @EnvironmentObject var session: SessionManager
-    @EnvironmentObject var router: Router
+    @EnvironmentObject var router: AppRouter
     
     var body: some View {
 
-        VStack(spacing: 20) {
+        LazyVStack(spacing: 20) {
             if let user = viewModel.user {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Name: \(user.name)")
@@ -48,14 +49,3 @@ struct HomeView: View {
     }
 }
 
-#Preview {
-    let user = User(
-                id: UUID(),
-                name: "Raj",
-                email: "raj@test.com",
-                password: "1234",
-                isLoggedIn: false
-            )
-
-    HomeView(viewModel: DependencyContainer.makeHomeViewModel(user: user))
-}

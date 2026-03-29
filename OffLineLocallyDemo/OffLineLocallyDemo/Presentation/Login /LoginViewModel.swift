@@ -6,6 +6,7 @@
 
 import Combine
 import Foundation
+import SharedUIKits
 
 @MainActor
 class LoginViewModel: ObservableObject {
@@ -58,21 +59,15 @@ class LoginViewModel: ObservableObject {
 
     private func validateFields() -> Bool {
 
-        if password.isEmpty || email.isEmpty {
-            errorMessage = "All fields required"
-            return false
+        let error = Validator.validate {
+            EmailRule(email)
+            PasswordRule(password)
         }
-
-        if password.count < 6 {
-            errorMessage = "Password must be at least 6 characters"
+        if let error = error {
+            errorMessage = error
             return false
         }
 
         return true
     }
-//    
-//    private func isValid(email: String) - > Bool {
-//     let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-//     let predicate = NSPredicate(format: "SELF MATCHES %@", regex) return predicate.evaluate(with: email)
-//    }
 }

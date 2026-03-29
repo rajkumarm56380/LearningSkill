@@ -1,16 +1,16 @@
 //
-//  Router.swift
+//  AppRouter.swift
 //  OffLineLocallyDemo
 //
 //
 
 import SwiftUI
 
-final class Router: ObservableObject {
+final class AppRouter: ObservableObject {
 
     @Published var path = NavigationPath()
 
-    func push(_ route: AppRoute) {
+    func push(_ route: Route) {
         path.append(route)
     }
 
